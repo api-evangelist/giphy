@@ -1,5 +1,5 @@
 {
-    "id": "e981c15fa46f2a443cb52f4c0d6b0176",
+    "id": "e0be923f04132fdecc6b04e59157ba4f",
     "name": "Giphy",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "0878a2a01ac91c51a5aac2f3862d495e",
+            "id": "23f54c79a7458cfd061b9dd2272fb896",
             "name": "Get GIFs by ID",
             "url": "httpapi.giphy.com\/v1\/gifs",
             "description": "A multiget version of the get GIF by ID endpoint.\n",
@@ -29,11 +29,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "e981c15fa46f2a443cb52f4c0d6b0176",
+            "collectionId": "e0be923f04132fdecc6b04e59157ba4f",
             "rawModeData": ""
         },
         {
-            "id": "a986dfa5650b126823bf045f3ecc53e5",
+            "id": "6903135894fa4f8e99243f703b7cb9fe",
             "name": "Random GIF",
             "url": "httpapi.giphy.com\/v1\/gifs\/random",
             "description": "Returns a random GIF, limited by tag. Excluding the tag parameter will return a random GIF from the GIPHY catalog.\n",
@@ -52,11 +52,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "e981c15fa46f2a443cb52f4c0d6b0176",
+            "collectionId": "e0be923f04132fdecc6b04e59157ba4f",
             "rawModeData": ""
         },
         {
-            "id": "445a96bbb3977fbacfd5d6f61b901f8f",
+            "id": "71cb6dced89f06ec33d839a020bd1c46",
             "name": "Search GIFs",
             "url": "httpapi.giphy.com\/v1\/gifs\/search",
             "description": "Search all GIPHY GIFs for a word or phrase. Punctuation will be stripped and ignored.  Use a plus or url encode for phrases. Example paul+rudd, ryan+gosling or american+psycho.\n",
@@ -75,11 +75,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "e981c15fa46f2a443cb52f4c0d6b0176",
+            "collectionId": "e0be923f04132fdecc6b04e59157ba4f",
             "rawModeData": ""
         },
         {
-            "id": "d5de3a7dd2e4164278188a030e2573ba",
+            "id": "80222f2e24abda9446f54fd5e3d68239",
             "name": "Translate phrase to GIF",
             "url": "httpapi.giphy.com\/v1\/gifs\/translate",
             "description": "The translate API draws on search, but uses the GIPHY `special sauce` to handle translating from one vocabulary to another. In this case, words and phrases to GIF\n",
@@ -98,11 +98,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "e981c15fa46f2a443cb52f4c0d6b0176",
+            "collectionId": "e0be923f04132fdecc6b04e59157ba4f",
             "rawModeData": ""
         },
         {
-            "id": "6840898aa17ead7c615b78cb66c4a28c",
+            "id": "8da28b275c87792f83185117ec986e25",
             "name": "Trending GIFs",
             "url": "httpapi.giphy.com\/v1\/gifs\/trending",
             "description": "Fetch GIFs currently trending online. Hand curated by the GIPHY editorial team.  The data returned mirrors the GIFs showcased on the GIPHY homepage. Returns 25 results by default.\n",
@@ -121,11 +121,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "e981c15fa46f2a443cb52f4c0d6b0176",
+            "collectionId": "e0be923f04132fdecc6b04e59157ba4f",
             "rawModeData": ""
         },
         {
-            "id": "51004ba668ec3274993dd0179793643d",
+            "id": "9e0e0ce13ce7d21da716c69d981463b9",
             "name": "Get GIF by Id",
             "url": "httpapi.giphy.com\/v1\/gifs\/{gifId}",
             "description": "Returns a GIF given that GIF's unique ID\n",
@@ -144,11 +144,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "e981c15fa46f2a443cb52f4c0d6b0176",
+            "collectionId": "e0be923f04132fdecc6b04e59157ba4f",
             "rawModeData": ""
         },
         {
-            "id": "75853f1bf74af79b1b47d6adfbdcadf4",
+            "id": "5fb119be7cd75ced8bf33a0a42c3f24a",
             "name": "Random Sticker",
             "url": "httpapi.giphy.com\/v1\/stickers\/random",
             "description": "Returns a random GIF, limited by tag. Excluding the tag parameter will return a random GIF from the GIPHY catalog.\n",
@@ -167,11 +167,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "e981c15fa46f2a443cb52f4c0d6b0176",
+            "collectionId": "e0be923f04132fdecc6b04e59157ba4f",
             "rawModeData": ""
         },
         {
-            "id": "39434fad53b76a41bfbf6ee3ff273d65",
+            "id": "c06c065d259eba497b242af2ad8cac42",
             "name": "Search Stickers",
             "url": "httpapi.giphy.com\/v1\/stickers\/search",
             "description": "Replicates the functionality and requirements of the classic GIPHY search, but returns animated stickers rather than GIFs.\n",
@@ -190,11 +190,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "e981c15fa46f2a443cb52f4c0d6b0176",
+            "collectionId": "e0be923f04132fdecc6b04e59157ba4f",
             "rawModeData": ""
         },
         {
-            "id": "84649ad5691757fb42556310395e0a4e",
+            "id": "813a0b5e343cf45483a49db5613f7200",
             "name": "Translate phrase to Sticker",
             "url": "httpapi.giphy.com\/v1\/stickers\/translate",
             "description": "The translate API draws on search, but uses the GIPHY `special sauce` to handle translating from one vocabulary to another. In this case, words and phrases to GIFs.\n",
@@ -213,11 +213,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "e981c15fa46f2a443cb52f4c0d6b0176",
+            "collectionId": "e0be923f04132fdecc6b04e59157ba4f",
             "rawModeData": ""
         },
         {
-            "id": "51d2aa742b6866fe03c1448eeb3a4086",
+            "id": "51d2802e3288263281379ae60683ca3f",
             "name": "Trending Stickers",
             "url": "httpapi.giphy.com\/v1\/stickers\/trending",
             "description": "Fetch Stickers currently trending online. Hand curated by the GIPHY editorial team. Returns 25 results by default.\n",
@@ -236,7 +236,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "e981c15fa46f2a443cb52f4c0d6b0176",
+            "collectionId": "e0be923f04132fdecc6b04e59157ba4f",
             "rawModeData": ""
         }
     ]
