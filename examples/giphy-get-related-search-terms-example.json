@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.giphy.com/v1/tags/related/happy?api_key=YOUR_KEY"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": [
+        { "name": "joy" },
+        { "name": "yay" },
+        { "name": "celebrate" }
+      ]
+    }
+  }
+}

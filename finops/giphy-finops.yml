@@ -1,0 +1,60 @@
+finops:
+  framework: FinOps Foundation FOCUS 1.0
+  provider: giphy
+  documentation: https://developers.giphy.com/
+  created: '2026-05-30'
+  modified: '2026-05-30'
+  notes: >-
+    GIPHY does not publish a meter or price list. Production keys are negotiated
+    individually; Beta keys are free with rate limits. This FinOps document records
+    the cost-relevant dimensions an integrator should track to align GIPHY usage with
+    a FOCUS-style cost view, even when the upstream invoice is opaque.
+
+billingPosture:
+  publishedPricing: false
+  freeTier: true
+  customPricing: true
+  billingCadence: negotiated
+  unitOfBilling: undisclosed
+
+focusDimensions:
+  - column: BilledCost
+    source: 'GIPHY invoice (Production agreements only); $0 for Beta.'
+  - column: EffectiveCost
+    source: 'Internal allocation derived from request-volume telemetry.'
+  - column: ChargeCategory
+    source: 'Always "Usage" for API calls; "License" if a media-license rider exists.'
+  - column: ChargePeriodStart / ChargePeriodEnd
+    source: 'Internal accrual window (monthly recommended).'
+  - column: ServiceName
+    source: '"GIPHY API"'
+  - column: ServiceCategory
+    source: 'Media Services / Content APIs.'
+  - column: ProviderName
+    source: '"GIPHY (Meta)"'
+  - column: PublisherName
+    source: '"GIPHY, LLC"'
+  - column: ConsumedQuantity
+    source: 'Sum of API requests per ChargePeriod (instrument via internal API gateway).'
+  - column: ConsumedUnit
+    source: '"Requests"'
+  - column: PricingQuantity
+    source: 'Same as ConsumedQuantity unless a per-impression pricing rider applies.'
+  - column: PricingUnit
+    source: '"Requests" (or "Impressions" if rider applies).'
+  - column: SubAccountId / SubAccountName
+    source: 'GIPHY API key fingerprint -> internal account/owner mapping.'
+  - column: Tags
+    source: 'Internal tags: surface (gifs|stickers|emoji|clips|upload|analytics), environment, team.'
+
+trackingRecommendations:
+  - Instrument every outbound GIPHY request at your gateway and emit metrics tagged by surface and environment.
+  - Map each GIPHY key (Beta vs Production) to a logical "account" so cost-of-zero rows still flow through FOCUS pipelines.
+  - For Clips access, track approved use cases separately; gated surfaces tend to attract distinct contractual terms.
+  - For upload-heavy workloads, accrue an internal cost-per-MB to reflect bandwidth and storage commitments even though GIPHY does not bill it directly.
+
+riskFlags:
+  - PricingOpaque: Production pricing is private; budget owners should require a signed agreement before depending on it.
+  - VendorLockIn: GIPHY (owned by Meta) is the dominant supplier of branded GIF reactions; document fallback providers.
+  - GatedSurface: Clips access can be revoked or re-priced; treat as conditional capability.
+  - ComplianceReview: Verify GIPHY content rating filters are sufficient for your audience policy.

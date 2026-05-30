@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/giphy/json-schema/giphy-clip-schema.json",
+  "title": "GIPHY Clip",
+  "description": "A GIPHY Clip extends the standard GIF object with a video block describing assets, captions, and duration.",
+  "allOf": [
+    { "$ref": "giphy-gif-schema.json" },
+    {
+      "type": "object",
+      "properties": {
+        "video": {
+          "type": "object",
+          "properties": {
+            "duration": { "type": "number" },
+            "dimensions": {
+              "type": "object",
+              "properties": {
+                "width": { "type": "integer" },
+                "height": { "type": "integer" }
+              }
+            },
+            "assets": {
+              "type": "object",
+              "description": "Map of rendition key (e.g. 360p, 480p, 720p, 1080p, 4k) to asset details.",
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "url": { "type": "string", "format": "uri" },
+                  "width": { "type": "integer" },
+                  "height": { "type": "integer" }
+                }
+              }
+            },
+            "captions": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "lang": { "type": "string" },
+                  "srt": { "type": "string", "format": "uri" },
+                  "vtt": { "type": "string", "format": "uri" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

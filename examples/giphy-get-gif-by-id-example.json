@@ -1,0 +1,29 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.giphy.com/v1/gifs/xT4uQulxzV39haRFjG?api_key=YOUR_KEY"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": {
+        "type": "gif",
+        "id": "xT4uQulxzV39haRFjG",
+        "slug": "thumbsup-xT4uQulxzV39haRFjG",
+        "url": "https://giphy.com/gifs/thumbsup-xT4uQulxzV39haRFjG",
+        "rating": "g",
+        "title": "Thumbs Up GIF",
+        "user": {
+          "username": "officialgiphy",
+          "display_name": "GIPHY",
+          "is_verified": true,
+          "avatar_url": "https://media1.giphy.com/avatars/officialgiphy/QECMSAtfNJT3.gif"
+        },
+        "images": {
+          "original": { "url": "https://media1.giphy.com/media/xT4uQulxzV39haRFjG/giphy.gif", "width": "480", "height": "270" }
+        }
+      },
+      "meta": { "status": 200, "msg": "OK", "response_id": "5894d9f7..." }
+    }
+  }
+}

@@ -1,0 +1,96 @@
+name: GIPHY API Vocabulary
+description: Controlled vocabulary for the operational and capability dimensions of the GIPHY API.
+url: https://developers.giphy.com/docs/api
+created: '2026-05-30'
+modified: '2026-05-30'
+provider: giphy
+
+operationalDimensions:
+  - name: Resource
+    description: Top-level GIPHY resource a request targets.
+    values:
+      - GIF
+      - Sticker
+      - Emoji
+      - Clip
+      - Channel
+      - Category
+      - SearchTerm
+      - SearchAction
+      - RandomId
+  - name: Action
+    description: Verb performed against the resource.
+    values:
+      - Search
+      - Trending
+      - Translate
+      - Random
+      - Get
+      - List
+      - Autocomplete
+      - Related
+      - Upload
+      - Animate
+      - RegisterAction
+  - name: Rating
+    description: MPAA-style content rating used for filtering.
+    values: [y, g, pg, pg-13, r]
+  - name: Locale
+    description: Country and language dimensions for localized results.
+    values: [country_code, lang]
+  - name: Pagination
+    description: Result-set windowing.
+    values: [limit, offset, total_count]
+  - name: Rendition
+    description: Image/video rendition keys returned in the images map.
+    values:
+      - fixed_height
+      - fixed_height_still
+      - fixed_height_downsampled
+      - fixed_height_small
+      - fixed_height_small_still
+      - fixed_width
+      - fixed_width_still
+      - fixed_width_downsampled
+      - fixed_width_small
+      - fixed_width_small_still
+      - downsized
+      - downsized_still
+      - downsized_large
+      - downsized_medium
+      - downsized_small
+      - original
+      - original_still
+      - looping
+      - preview
+      - preview_gif
+
+capabilityDimensions:
+  - name: Surface
+    description: Naftiko capability surface (mirrors OpenAPI tag).
+    values: [GIFs, Stickers, Emoji, Clips, Animate, Channels, Categories, Search Discovery, Analytics, Upload, Utilities]
+  - name: Authentication
+    description: Auth mechanism used for the surface.
+    values: [ApiKeyQuery]
+  - name: TierAccess
+    description: Whether a surface is gated behind extra approval.
+    values: [Public, Production-Reviewed, Clips-Gated]
+  - name: BillingModel
+    description: How the surface is monetized.
+    values: [Free, Production, Enterprise]
+
+domainDimensions:
+  - name: Industry
+    description: Common consumer industries integrating GIPHY.
+    values: [Messaging, SocialMedia, Productivity, Gaming, Marketing, Advertising, Creator Tools, eCommerce, Education]
+  - name: UseCase
+    description: Common end-user use cases.
+    values:
+      - InMessageReactions
+      - StoryStickers
+      - ContentDiscovery
+      - BrandedSticker
+      - PostComposer
+      - VideoEditor
+      - AdCreative
+      - SearchAutocomplete

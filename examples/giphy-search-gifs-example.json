@@ -1,0 +1,48 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.giphy.com/v1/gifs/search?api_key=YOUR_KEY&q=cheeseburgers&limit=2&offset=0&rating=g&lang=en"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": [
+        {
+          "type": "gif",
+          "id": "FiGiRei2ICzzG",
+          "slug": "cheeseburger-FiGiRei2ICzzG",
+          "url": "https://giphy.com/gifs/cheeseburger-FiGiRei2ICzzG",
+          "bitly_gif_url": "https://gph.is/2Hb2QGZ",
+          "embed_url": "https://giphy.com/embed/FiGiRei2ICzzG",
+          "username": "",
+          "source": "http://tumblr.com",
+          "rating": "g",
+          "title": "Hungry Cheese Burger GIF",
+          "alt_text": "An animated cheeseburger spinning slowly on a plate.",
+          "import_datetime": "2014-05-29 02:28:32",
+          "trending_datetime": "2017-08-18 16:15:01",
+          "images": {
+            "fixed_height": {
+              "url": "https://media1.giphy.com/media/FiGiRei2ICzzG/200.gif",
+              "width": "200",
+              "height": "200",
+              "size": "32381",
+              "mp4": "https://media1.giphy.com/media/FiGiRei2ICzzG/200.mp4",
+              "webp": "https://media1.giphy.com/media/FiGiRei2ICzzG/200.webp"
+            },
+            "original": {
+              "url": "https://media1.giphy.com/media/FiGiRei2ICzzG/giphy.gif",
+              "width": "500",
+              "height": "500",
+              "size": "150000",
+              "frames": "23"
+            }
+          },
+          "analytics_response_payload": "e=Z2lmX2lkPUZpR2lSZWkySUN6ekc"
+        }
+      ],
+      "pagination": { "total_count": 4287, "count": 2, "offset": 0 },
+      "meta": { "status": 200, "msg": "OK", "response_id": "5894d8d8c83e1c19c41cd24a" }
+    }
+  }
+}

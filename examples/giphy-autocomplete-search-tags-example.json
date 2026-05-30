@@ -1,0 +1,15 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.giphy.com/v1/gifs/search/tags?api_key=YOUR_KEY&q=star"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": [
+        { "name": "star wars", "analytics_response_payload": "e=..." },
+        { "name": "star trek", "analytics_response_payload": "e=..." }
+      ]
+    }
+  }
+}

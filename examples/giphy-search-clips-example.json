@@ -1,0 +1,30 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.giphy.com/v1/clips/search?api_key=YOUR_KEY&q=oscars&limit=1"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": [
+        {
+          "type": "gif",
+          "id": "clip-abc-123",
+          "url": "https://giphy.com/clips/oscars-clip-abc-123",
+          "title": "Oscars Acceptance",
+          "rating": "pg",
+          "video": {
+            "duration": 7.2,
+            "dimensions": { "width": 1280, "height": 720 },
+            "assets": {
+              "720p": { "url": "https://media1.giphy.com/clips/abc-720.mp4", "width": 1280, "height": 720 }
+            },
+            "captions": [ { "lang": "en", "srt": "https://media1.giphy.com/clips/abc-en.srt", "vtt": "https://media1.giphy.com/clips/abc-en.vtt" } ]
+          }
+        }
+      ],
+      "pagination": { "total_count": 22, "count": 1, "offset": 0 },
+      "meta": { "status": 200, "msg": "OK", "response_id": "abc" }
+    }
+  }
+}

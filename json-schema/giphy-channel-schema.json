@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/giphy/json-schema/giphy-channel-schema.json",
+  "title": "GIPHY Channel",
+  "type": "object",
+  "description": "A GIPHY content channel (community or editorial).",
+  "properties": {
+    "id": { "type": "integer" },
+    "slug": { "type": "string" },
+    "url": { "type": "string" },
+    "display_name": { "type": "string" },
+    "short_display_name": { "type": "string" },
+    "description": { "type": "string" },
+    "type": { "type": "string", "enum": ["community", "editorial"] },
+    "content_type": { "type": "string", "enum": ["gif", "sticker", "mixed"] },
+    "banner_image": { "type": "string", "format": "uri" },
+    "is_private": { "type": "boolean" },
+    "user": { "$ref": "giphy-user-schema.json" },
+    "featured_gif": { "$ref": "giphy-gif-schema.json" },
+    "ancestors": {
+      "type": "array",
+      "items": { "$ref": "giphy-channel-schema.json" }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "channel": { "type": "integer" },
+          "rank": { "type": "integer" },
+          "tag": { "type": "string" }
+        }
+      }
+    }
+  }
+}

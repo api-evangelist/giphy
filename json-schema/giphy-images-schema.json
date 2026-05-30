@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/giphy/json-schema/giphy-images-schema.json",
+  "title": "GIPHY Images",
+  "type": "object",
+  "description": "Map of rendition keys to rendition metadata. Common keys include: fixed_height, fixed_height_still, fixed_height_downsampled, fixed_height_small, fixed_height_small_still, fixed_width, fixed_width_still, fixed_width_downsampled, fixed_width_small, fixed_width_small_still, downsized, downsized_still, downsized_large, downsized_medium, downsized_small, original, original_still, looping, preview, preview_gif.",
+  "additionalProperties": {
+    "type": "object",
+    "properties": {
+      "url": { "type": "string", "format": "uri" },
+      "width": { "type": "string" },
+      "height": { "type": "string" },
+      "size": { "type": "string" },
+      "mp4": { "type": "string", "format": "uri" },
+      "mp4_size": { "type": "string" },
+      "webp": { "type": "string", "format": "uri" },
+      "webp_size": { "type": "string" },
+      "frames": { "type": "string" },
+      "hash": { "type": "string" }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "https://api.giphy.com/v1/gifs/search/actions?api_key=YOUR_KEY",
+    "headers": { "Content-Type": "application/json" },
+    "body": {
+      "action_type": "CLICK",
+      "analytics_response_payload": "e=Z2lmX2lkPUZpR2lSZWkySUN6ekc",
+      "random_id": "abc-random-id-from-randomid-endpoint",
+      "ts": 1716838193000
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {}
+  }
+}

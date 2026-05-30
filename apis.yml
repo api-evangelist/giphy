@@ -1,32 +1,310 @@
 aid: giphy
 name: Giphy
-description: "Get all your gifs"
-url: https://developers.giphy.com/docs/
+description: >-
+  GIPHY is the world's largest library of GIFs, stickers, animated emoji, and
+  Clips (GIFs with sound), with a developer API used by messaging apps, social
+  platforms, productivity tools, ads, and creator products. GIPHY is owned by
+  Meta. Authentication is via API key (Beta or Production tier) and all surfaces
+  share the same envelope (data + meta + pagination) with rich, multi-rendition
+  media payloads.
+url: https://developers.giphy.com/
+image: https://giphy.com/static/img/giphy-be-animated-logo.gif
 specificationVersion: '0.20'
 created: '2026-05-28'
-modified: '2026-05-28'
+modified: '2026-05-30'
 x-source: public-apis/public-apis
-x-category: "Photography"
-x-tier: 3
-x-tier-reason: bulk-registered-from-public-apis
+x-category: 'Photography'
+x-type: company
+x-tier: 1
+x-tier-reason: enriched-full-pipeline-2026-05-30
 tags:
   - Photography
-  - Public APIs
+  - Media
+  - GIFs
+  - Stickers
+  - Emoji
+  - Video
+  - Messaging
+  - Social
+  - Meta
 apis:
-  - name: Giphy
-    description: "Get all your gifs"
-    humanURL: https://developers.giphy.com/docs/
-    baseURL: https://developers.giphy.com/docs/
+  - name: GIPHY API
+    description: >-
+      The GIPHY REST API. Search, trending, translate, random, lookup, categories,
+      autocomplete, related/trending terms, channels, animated emoji, animated text,
+      Clips, analytics pingbacks, and uploads — all behind a single API key.
+    humanURL: https://developers.giphy.com/docs/api
+    baseURL: https://api.giphy.com
     tags:
-      - Photography
+      - GIFs
+      - Stickers
+      - Emoji
+      - Clips
+      - Channels
+      - Categories
+      - Search Discovery
+      - Analytics
+      - Upload
+      - Utilities
     properties:
       - type: Documentation
-        url: https://developers.giphy.com/docs/
+        url: https://developers.giphy.com/docs/api
+      - type: APIReference
+        url: https://developers.giphy.com/docs/api/endpoint
+      - type: GettingStarted
+        url: https://developers.giphy.com/docs/api
+      - type: Authentication
+        url: https://developers.giphy.com/docs/api#quick-start-guide
+      - type: OpenAPI
+        url: openapi/giphy-openapi.yml
+      - type: JSONSchema
+        url: json-schema/giphy-gif-schema.json
+        title: GIF Schema
+      - type: JSONSchema
+        url: json-schema/giphy-clip-schema.json
+        title: Clip Schema
+      - type: JSONSchema
+        url: json-schema/giphy-user-schema.json
+        title: User Schema
+      - type: JSONSchema
+        url: json-schema/giphy-channel-schema.json
+        title: Channel Schema
+      - type: JSONSchema
+        url: json-schema/giphy-category-schema.json
+        title: Category Schema
+      - type: JSONSchema
+        url: json-schema/giphy-images-schema.json
+        title: Images / Renditions Schema
+      - type: JSONSchema
+        url: json-schema/giphy-analytics-schema.json
+        title: Analytics Pingbacks Schema
+      - type: JSONSchema
+        url: json-schema/giphy-meta-schema.json
+        title: Meta Envelope Schema
+      - type: JSONSchema
+        url: json-schema/giphy-pagination-schema.json
+        title: Pagination Schema
+      - type: JSONStructure
+        url: json-structure/giphy-gif-structure.json
+        title: GIF Structure
+      - type: JSONStructure
+        url: json-structure/giphy-clip-structure.json
+        title: Clip Structure
+      - type: JSONStructure
+        url: json-structure/giphy-images-structure.json
+        title: Images Structure
+      - type: JSONStructure
+        url: json-structure/giphy-channel-structure.json
+        title: Channel Structure
+      - type: Example
+        url: examples/giphy-search-gifs-example.json
+        title: Search GIFs Example
+      - type: Example
+        url: examples/giphy-get-trending-gifs-example.json
+        title: Trending GIFs Example
+      - type: Example
+        url: examples/giphy-translate-gif-example.json
+        title: Translate GIF Example
+      - type: Example
+        url: examples/giphy-get-random-gif-example.json
+        title: Random GIF Example
+      - type: Example
+        url: examples/giphy-get-gif-by-id-example.json
+        title: Get GIF by ID Example
+      - type: Example
+        url: examples/giphy-list-gif-categories-example.json
+        title: List Categories Example
+      - type: Example
+        url: examples/giphy-autocomplete-search-tags-example.json
+        title: Autocomplete Search Tags Example
+      - type: Example
+        url: examples/giphy-get-related-search-terms-example.json
+        title: Related Search Terms Example
+      - type: Example
+        url: examples/giphy-get-trending-searches-example.json
+        title: Trending Searches Example
+      - type: Example
+        url: examples/giphy-search-stickers-example.json
+        title: Search Stickers Example
+      - type: Example
+        url: examples/giphy-list-emoji-example.json
+        title: List Emoji Example
+      - type: Example
+        url: examples/giphy-search-clips-example.json
+        title: Search Clips Example
+      - type: Example
+        url: examples/giphy-upload-gif-example.json
+        title: Upload GIF Example
+      - type: Example
+        url: examples/giphy-register-search-action-example.json
+        title: Register Analytics Action Example
+      - type: NaftikoCapability
+        url: capabilities/giphy-gifs.yaml
+        title: GIFs Capability
+      - type: NaftikoCapability
+        url: capabilities/giphy-stickers.yaml
+        title: Stickers Capability
+      - type: NaftikoCapability
+        url: capabilities/giphy-emoji.yaml
+        title: Emoji Capability
+      - type: NaftikoCapability
+        url: capabilities/giphy-clips.yaml
+        title: Clips Capability
+      - type: NaftikoCapability
+        url: capabilities/giphy-animate.yaml
+        title: Animate Capability
+      - type: NaftikoCapability
+        url: capabilities/giphy-channels.yaml
+        title: Channels Capability
+      - type: NaftikoCapability
+        url: capabilities/giphy-categories.yaml
+        title: Categories Capability
+      - type: NaftikoCapability
+        url: capabilities/giphy-search-discovery.yaml
+        title: Search Discovery Capability
+      - type: NaftikoCapability
+        url: capabilities/giphy-analytics.yaml
+        title: Analytics Capability
+      - type: NaftikoCapability
+        url: capabilities/giphy-upload.yaml
+        title: Upload Capability
+      - type: NaftikoCapability
+        url: capabilities/giphy-utilities.yaml
+        title: Utilities Capability
+      - type: SDK
+        url: https://github.com/Giphy/giphy-ios-sdk
+        title: iOS SDK
+      - type: SDK
+        url: https://github.com/Giphy/giphy-android-sdk
+        title: Android SDK
+      - type: SDK
+        url: https://github.com/Giphy/giphy-react-native-sdk
+        title: React Native SDK
+      - type: SDK
+        url: https://github.com/Giphy/giphy-flutter-sdk
+        title: Flutter SDK
+      - type: SDK
+        url: https://github.com/Giphy/giphy-js
+        title: Web / JavaScript SDK (@giphy/js-fetch-api, @giphy/react-components)
+      - type: SDK
+        url: https://github.com/Giphy/giphy-python-client
+        title: Python Client (legacy, last updated 2023)
+      - type: SDK
+        url: https://github.com/Giphy/giphy-ruby-client
+        title: Ruby Client (legacy)
+      - type: SDK
+        url: https://github.com/Giphy/giphy-php-client
+        title: PHP Client (legacy)
+      - type: RateLimits
+        url: rate-limits/giphy-rate-limits.yml
+      - type: Pricing
+        url: plans/giphy-plans-pricing.yml
 common:
   - type: Website
+    url: https://giphy.com/
+  - type: DeveloperPortal
+    url: https://developers.giphy.com/
+  - type: Documentation
     url: https://developers.giphy.com/docs/
-  - type: PublicAPIsListing
-    url: https://github.com/public-apis/public-apis
+  - type: Console
+    url: https://developers.giphy.com/dashboard/
+  - type: SignUp
+    url: https://giphy.com/join
+  - type: Login
+    url: https://giphy.com/login
+  - type: TermsOfService
+    url: https://developers.giphy.com/terms/
+  - type: PrivacyPolicy
+    url: https://support.giphy.com/hc/en-us/articles/360032872931-GIPHY-Privacy-Policy
+  - type: Branding
+    url: https://support.giphy.com/hc/en-us/articles/360020027252-GIPHY-Brand-Guidelines
+  - type: Support
+    url: https://support.giphy.com/hc/en-us
+  - type: GitHubOrganization
+    url: https://github.com/Giphy
+  - type: GitHubRepository
+    url: https://github.com/Giphy/GiphyAPI
+    title: Historical API Reference (archived)
+  - type: Blog
+    url: https://medium.com/@giphy
+  - type: X
+    url: https://x.com/giphy
+  - type: Tools
+    url: https://github.com/Giphy/giphy-bandwidth-saver
+    title: GIPHY Bandwidth Saver (reference implementation)
+  - type: Tools
+    url: https://github.com/Giphy/cloudflare-cdn-config-ref-implementation
+    title: Cloudflare CDN Config Reference
+  - type: Tools
+    url: https://github.com/Giphy/fastly-compute-ref-implementation
+    title: Fastly Compute Reference
+  - type: SpectralRules
+    url: rules/giphy-rules.yml
+  - type: Vocabulary
+    url: vocabulary/giphy-vocabulary.yml
+  - type: JSONLD
+    url: json-ld/giphy-context.jsonld
+  - type: Plans
+    url: plans/giphy-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/giphy-rate-limits.yml
+  - type: Resources
+    url: finops/giphy-finops.yml
+    title: FinOps Cost Tracking Profile
+  - type: Features
+    data:
+      - name: Search & Trending
+        description: Query millions of GIFs/stickers/emoji or fetch curated trending content.
+      - name: Translate
+        description: Convert any phrase to a single contextually relevant GIF or sticker.
+      - name: Random
+        description: Surface a random GIF or sticker, optionally tag-filtered.
+      - name: Animate
+        description: Programmatically generate animated text GIFs.
+      - name: Clips
+        description: Short-form videos with sound, gated behind approval.
+      - name: Multi-Rendition Assets
+        description: Every result includes 20+ pre-encoded renditions (GIF, MP4, WebP) for any surface.
+      - name: Analytics Pingbacks
+        description: Per-result onload/onclick/onsent URLs power view/click/share telemetry.
+      - name: Programmatic Upload
+        description: Upload GIFs or videos to GIPHY (up to 100 MB) via upload.giphy.com.
+      - name: First-Party SDKs
+        description: Native iOS, Android, React Native, Flutter, and Web SDKs ship UI-ready pickers.
+  - type: UseCases
+    data:
+      - name: Messaging GIF Picker
+        description: Drop-in GIF/sticker picker for chat apps using the GIPHY SDKs.
+      - name: Story / Post Stickers
+        description: Animated stickers and emoji for stories and posts.
+      - name: Content Discovery
+        description: Trending and search-driven discovery for GIF-led products.
+      - name: Brand & Ad Creative
+        description: Branded stickers and channels for marketing campaigns.
+      - name: Video Editor Integrations
+        description: Clips and stickers embedded in mobile video editors.
+      - name: Productivity / Reactions
+        description: Reactions, lightweight expressions in productivity software.
+  - type: Integrations
+    data:
+      - name: Meta (Facebook, Instagram, Messenger, WhatsApp)
+        description: GIPHY is the GIF search backbone across Meta surfaces.
+      - name: Slack, Discord, Microsoft Teams
+        description: GIPHY powers in-chat GIF reactions across major chat platforms.
+      - name: iMessage / Telegram / Signal
+        description: Native and third-party stickers via the SDKs.
+      - name: Twitter / X
+        description: GIF picker integration.
+      - name: Adobe Express / Canva / Mobile Editors
+        description: Stickers and clips in creative-tool integrations.
+  - type: Solutions
+    data:
+      - name: Beta Key
+        description: Free, rate-limited API access for development.
+      - name: Production Key
+        description: Reviewed access with higher throughput, custom pricing.
+      - name: Clips Access
+        description: Gated access to GIFs-with-sound endpoints.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

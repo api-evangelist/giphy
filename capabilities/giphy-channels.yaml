@@ -1,0 +1,76 @@
+naftiko: "1.0.0-alpha2"
+
+info:
+  label: "GIPHY API — Channels"
+  description: >-
+    GIPHY — Channels. 1 operation. Lead operation: Find GIPHY channels matching a
+    query. Self-contained Naftiko capability covering one GIPHY business surface.
+  tags:
+    - GIPHY
+    - Channels
+  created: "2026-05-30"
+  modified: "2026-05-30"
+
+binds:
+  - namespace: env
+    keys:
+      GIPHY_API_KEY: GIPHY_API_KEY
+
+capability:
+
+  consumes:
+    - type: http
+      namespace: "giphy-channels"
+      baseUri: "https://api.giphy.com"
+      description: "GIPHY API — Channels business capability."
+      authentication:
+        type: apikey
+        key: api_key
+        value: "{{env.GIPHY_API_KEY}}"
+        placement: query
+      resources:
+        - name: "channels-search"
+          path: "/v1/channels/search"
+          operations:
+            - name: "searchChannels"
+              method: GET
+              description: "Find GIPHY channels matching the supplied query."
+              inputParameters:
+                - { name: q, in: query, type: string, required: true, description: "Search query." }
+                - { name: limit, in: query, type: integer, required: false, description: "Results per page." }
+                - { name: offset, in: query, type: integer, required: false, description: "Pagination offset." }
+              outputRawFormat: json
+              outputParameters:
+                - { name: result, type: object, value: "$." }
+
+  exposes:
+    - type: rest
+      namespace: "giphy-channels-rest"
+      port: 8080
+      description: "REST adapter for GIPHY API — Channels."
+      resources:
+        - path: "/v1/channels-search"
+          name: "channels-search"
+          description: "REST surface for channel search."
+          operations:
+            - method: GET
+              name: "searchChannels"
+              description: "Search channels."
+              call: "giphy-channels.searchChannels"
+              with: { q: "rest.q", limit: "rest.limit", offset: "rest.offset" }
+              outputParameters:
+                - { type: object, mapping: "$." }
+
+    - type: mcp
+      namespace: "giphy-channels-mcp"
+      port: 9090
+      transport: http
+      description: "MCP adapter for GIPHY API — Channels."
+      tools:
+        - name: "search-channels"
+          description: "Search GIPHY channels."
+          hints: { readOnly: true, destructive: false, idempotent: true }
+          call: "giphy-channels.searchChannels"
+          with: { q: "tools.q", limit: "tools.limit", offset: "tools.offset" }
+          outputParameters:
+            - { type: object, mapping: "$." }

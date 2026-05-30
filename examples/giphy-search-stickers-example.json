@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.giphy.com/v1/stickers/search?api_key=YOUR_KEY&q=happy&limit=1"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": [
+        {
+          "type": "sticker",
+          "id": "3o7TKsxQbtJlhPyD8s",
+          "url": "https://giphy.com/stickers/happy-3o7TKsxQbtJlhPyD8s",
+          "rating": "g",
+          "images": {
+            "original": { "url": "https://media1.giphy.com/stickers/3o7TKsxQbtJlhPyD8s/giphy.gif", "width": "480", "height": "480" }
+          }
+        }
+      ],
+      "pagination": { "total_count": 1500, "count": 1, "offset": 0 },
+      "meta": { "status": 200, "msg": "OK", "response_id": "abc" }
+    }
+  }
+}

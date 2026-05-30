@@ -1,0 +1,23 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.giphy.com/v1/gifs/random?api_key=YOUR_KEY&tag=coffee&rating=g"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": {
+        "type": "gif",
+        "id": "l0He4tYoErhi0kCDe",
+        "slug": "coffee-morning-l0He4tYoErhi0kCDe",
+        "url": "https://giphy.com/gifs/coffee-morning-l0He4tYoErhi0kCDe",
+        "rating": "g",
+        "title": "Coffee Pour GIF",
+        "images": {
+          "original": { "url": "https://media1.giphy.com/media/l0He4tYoErhi0kCDe/giphy.gif", "width": "480", "height": "270" }
+        }
+      },
+      "meta": { "status": 200, "msg": "OK", "response_id": "5894d97b5e90e91ae0ff7e0a" }
+    }
+  }
+}

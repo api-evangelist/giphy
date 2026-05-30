@@ -1,0 +1,64 @@
+apiCommonsRateLimits: '0.1'
+provider:
+  id: giphy
+  name: GIPHY
+  url: https://developers.giphy.com/docs/api
+created: '2026-05-30'
+modified: '2026-05-30'
+
+policies:
+  - id: beta-key
+    appliesTo:
+      planIds: [beta]
+      operations: ["*"]
+    requestRate:
+      limit: 100
+      window: PT1H
+      enforcement: hard
+      headers:
+        remaining: null
+        reset: null
+      response:
+        status: 429
+        message: |
+          Beta keys are capped at 100 API calls per hour. Apply for a Production key for higher throughput.
+    resultLimit:
+      maxResultsPerRequest: 50
+    concurrency:
+      maxConcurrentRequests: null
+
+  - id: production-key
+    appliesTo:
+      planIds: [production]
+      operations: ["*"]
+    requestRate:
+      limit: custom
+      window: PT1H
+      enforcement: hard
+      note: Negotiated per agreement with GIPHY; not publicly documented.
+    resultLimit:
+      maxResultsPerRequest: 100
+      note: Production keys typically receive higher per-request result caps.
+    concurrency:
+      maxConcurrentRequests: custom
+
+  - id: upload-size-limit
+    appliesTo:
+      operationIds: [uploadGif]
+    payload:
+      maxBodyBytes: 104857600
+      maxBodyMegabytes: 100
+      enforcement: hard
+      response:
+        status: 413
+        message: 'GIPHY uploads are capped at 100 MB per file.'
+
+  - id: clips-access
+    appliesTo:
+      operationIds: [searchClips, getTrendingClips]
+    accessControl:
+      gated: true
+      contact: clips@giphy.com
+      response:
+        status: 403
+        message: 'Clips endpoints require approval; email clips@giphy.com.'

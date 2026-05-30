@@ -1,0 +1,23 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.giphy.com/v2/emoji?api_key=YOUR_KEY&limit=2"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": [
+        {
+          "type": "emoji",
+          "id": "VbnUQpnihPSIgIXuZv",
+          "url": "https://giphy.com/emoji/VbnUQpnihPSIgIXuZv",
+          "images": {
+            "original": { "url": "https://media1.giphy.com/media/VbnUQpnihPSIgIXuZv/giphy.gif", "width": "100", "height": "100" }
+          }
+        }
+      ],
+      "pagination": { "total_count": 200, "count": 2, "offset": 0 },
+      "meta": { "status": 200, "msg": "OK", "response_id": "abc" }
+    }
+  }
+}

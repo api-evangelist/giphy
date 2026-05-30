@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/draft/2025-04/schema",
+  "title": "GIPHY Clip Structure",
+  "description": "Per-field structural documentation for the GIPHY Clip object (GIF with sound).",
+  "extends": "giphy-gif-structure.json",
+  "type": "object",
+  "properties": {
+    "video": {
+      "type": "object",
+      "purpose": "playback",
+      "properties": {
+        "duration":   { "type": "number",  "purpose": "duration-seconds" },
+        "dimensions": { "type": "object",  "purpose": "geometry" },
+        "assets":     { "type": "object",  "purpose": "renditions", "note": "Map of 360p/480p/720p/1080p/4k to asset details." },
+        "captions":   { "type": "array",   "purpose": "accessibility", "note": "SRT and WebVTT subtitle URLs per language." }
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+apiCommonsPlans: '0.1'
+provider:
+  id: giphy
+  name: GIPHY
+  url: https://developers.giphy.com/
+  description: >-
+    GIPHY operates a two-tier developer model: a free, rate-limited Beta key for
+    development and prototyping, and a Production key granted after application review.
+    Production pricing is not publicly listed and is discussed individually with
+    qualifying applicants. The GIPHY SDKs (iOS, Android, Web, React Native, Flutter)
+    are free to use against the same API surface.
+created: '2026-05-30'
+modified: '2026-05-30'
+
+plans:
+  - id: beta
+    name: Beta Key
+    description: >-
+      Free public-API access for development, testing, and personal projects. Subject
+      to a 100 requests/hour rate limit and a 50 results-per-request cap.
+    price:
+      model: free
+      amount: 0
+      currency: USD
+    eligibility:
+      - Open to anyone with a GIPHY developer account.
+    surface:
+      - All public GIF, Sticker, Emoji, Search Discovery, Channels, and Categories endpoints.
+      - Programmatic Upload is supported.
+      - Clips endpoints require additional approval (clips@giphy.com).
+    limits:
+      requestsPerHour: 100
+      resultsPerRequest: 50
+    obtainedVia: https://developers.giphy.com/dashboard/
+
+  - id: production
+    name: Production Key
+    description: >-
+      Higher-throughput production access granted after a review by GIPHY's developer
+      team. Required for shipping consumer products and high-volume integrations.
+      Pricing is negotiated case-by-case.
+    price:
+      model: custom
+      currency: USD
+      note: Contact GIPHY for production pricing; SDK distribution remains free.
+    eligibility:
+      - Applicants must submit production-key request describing the product and expected volume.
+      - GIPHY reviews and contacts qualified applicants individually.
+    surface:
+      - All Beta surface plus higher rate-limit and result-set ceilings.
+      - Clips access can be added on request.
+    limits:
+      requestsPerHour: custom
+      resultsPerRequest: custom
+    obtainedVia: https://developers.giphy.com/dashboard/
+
+  - id: clips-access
+    name: Clips Access
+    description: >-
+      Access to the GIPHY Clips (GIFs with sound) endpoints is gated. Approved
+      applications can use /v1/clips/search and /v1/clips/trending against the standard
+      API key.
+    price:
+      model: gated-free
+      currency: USD
+      note: No incremental cost beyond the standard key tier, but approval required.
+    eligibility:
+      - Email clips@giphy.com with use-case details.
+    obtainedVia: mailto:clips@giphy.com

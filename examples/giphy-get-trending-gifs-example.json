@@ -1,0 +1,30 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.giphy.com/v1/gifs/trending?api_key=YOUR_KEY&limit=1&rating=g"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": [
+        {
+          "type": "gif",
+          "id": "3o7TKsQ8gqVrYf6Ksw",
+          "slug": "happy-monday-3o7TKsQ8gqVrYf6Ksw",
+          "url": "https://giphy.com/gifs/happy-monday-3o7TKsQ8gqVrYf6Ksw",
+          "rating": "g",
+          "title": "Trending Happy Monday GIF",
+          "images": {
+            "original": {
+              "url": "https://media1.giphy.com/media/3o7TKsQ8gqVrYf6Ksw/giphy.gif",
+              "width": "480",
+              "height": "270"
+            }
+          }
+        }
+      ],
+      "pagination": { "total_count": 4000, "count": 1, "offset": 0 },
+      "meta": { "status": 200, "msg": "OK", "response_id": "abc123" }
+    }
+  }
+}

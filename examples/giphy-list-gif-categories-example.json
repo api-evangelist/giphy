@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.giphy.com/v1/gifs/categories?api_key=YOUR_KEY"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": [
+        {
+          "name": "reactions",
+          "name_encoded": "reactions",
+          "subcategories": [
+            { "name": "haha", "name_encoded": "haha" },
+            { "name": "wow", "name_encoded": "wow" }
+          ],
+          "gif": { "id": "abc", "type": "gif", "url": "https://giphy.com/gifs/abc" }
+        }
+      ],
+      "pagination": { "total_count": 26, "count": 1, "offset": 0 },
+      "meta": { "status": 200, "msg": "OK", "response_id": "x" }
+    }
+  }
+}

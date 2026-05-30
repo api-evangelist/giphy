@@ -1,0 +1,115 @@
+extends:
+  - spectral:oas
+formats:
+  - oas3
+  - oas3_1
+documentationUrl: https://developers.giphy.com/docs/api
+rules:
+  # Disable noisy core rule we override below
+  operation-tag-defined: off
+
+  giphy-operation-id-camel-case:
+    description: GIPHY operationIds must be lowerCamelCase (verb + resource).
+    message: '{{property}} operationId "{{value}}" must be lowerCamelCase, e.g. searchGifs, getTrendingGifs.'
+    severity: error
+    given: $.paths.*[get,post,put,patch,delete].operationId
+    then:
+      function: pattern
+      functionOptions:
+        match: '^[a-z][a-zA-Z0-9]+$'
+
+  giphy-operation-summary-title-case:
+    description: Operation summaries must use Title Case.
+    message: 'Summary "{{value}}" must be in Title Case.'
+    severity: warn
+    given: $.paths.*[get,post,put,patch,delete].summary
+    then:
+      function: pattern
+      functionOptions:
+        match: '^([A-Z][a-z0-9]*|GIFs?|ID|URL|API|MP4|WebP|JSON|GIPHY)(\s+([A-Z][a-z0-9]*|GIFs?|ID|URL|API|MP4|WebP|JSON|GIPHY|by|to|the|a|an|of|for|and|or|in|on))*$'
+
+  giphy-tag-allow-list:
+    description: All operations must use one of the canonical GIPHY tags.
+    message: 'Tag "{{value}}" is not in the canonical list.'
+    severity: error
+    given: $.paths.*[get,post,put,patch,delete].tags[*]
+    then:
+      function: enumeration
+      functionOptions:
+        values:
+          - GIFs
+          - Stickers
+          - Emoji
+          - Clips
+          - Animate
+          - Channels
+          - Categories
+          - Search Discovery
+          - Analytics
+          - Upload
+          - Utilities
+
+  giphy-api-key-required:
+    description: Every GIPHY operation must require an api_key parameter or security scheme.
+    message: Operation must declare the ApiKeyAuth security or an api_key parameter.
+    severity: error
+    given: $.paths.*[get,post,put,patch,delete]
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: object
+          anyOf:
+            - required: [security]
+            - properties:
+                parameters:
+                  type: array
+                  contains:
+                    type: object
+                    properties:
+                      name: { const: api_key }
+                    required: [name]
+
+  giphy-versioned-paths:
+    description: All paths must be versioned under /v1/ or /v2/.
+    message: 'Path "{{path}}" must start with /v1/ or /v2/.'
+    severity: error
+    given: $.paths
+    then:
+      field: '@key'
+      function: pattern
+      functionOptions:
+        match: '^/v[12]/'
+
+  giphy-rating-enum:
+    description: Rating parameters must use the canonical enum (y, g, pg, pg-13, r).
+    message: 'Rating enum should be [y, g, pg, pg-13, r].'
+    severity: warn
+    given: $.paths.*[get,post].parameters[?(@.name=='rating')].schema.enum
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: array
+          items:
+            enum: [y, g, pg, pg-13, r]
+
+  giphy-response-envelope:
+    description: 2xx responses should expose a data/meta envelope.
+    message: '2xx responses should include `data` and `meta` properties.'
+    severity: warn
+    given: "$.paths.*[get,post,put,patch].responses['200','201'].content.application/json.schema"
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: object
+          anyOf:
+            - required: [properties]
+              properties:
+                properties:
+                  type: object
+                  required: [data, meta]
+            - required: [$ref]
+            - required: [allOf]
+            - required: [oneOf]

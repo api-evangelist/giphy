@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-structure.org/draft/2025-04/schema",
+  "title": "GIPHY Images Structure",
+  "description": "Documents the named rendition keys returned in every GIF's `images` map.",
+  "type": "object",
+  "purpose": "rendition-catalog",
+  "renditions": {
+    "fixed_height":              "200px height; animated GIF/MP4/WebP.",
+    "fixed_height_still":        "Static 200px-tall preview.",
+    "fixed_height_downsampled":  "200px-tall, 6-frame animated GIF.",
+    "fixed_height_small":        "100px height; animated GIF/MP4/WebP.",
+    "fixed_height_small_still":  "Static 100px-tall preview.",
+    "fixed_width":               "200px width; animated GIF/MP4/WebP.",
+    "fixed_width_still":         "Static 200px-wide preview.",
+    "fixed_width_downsampled":   "200px-wide, 6-frame animated GIF.",
+    "fixed_width_small":         "100px width; animated GIF/MP4/WebP.",
+    "fixed_width_small_still":   "Static 100px-wide preview.",
+    "downsized":                 "Optimised under 2 MB.",
+    "downsized_still":           "Static downsized preview.",
+    "downsized_large":           "Optimised under 8 MB.",
+    "downsized_medium":          "Optimised under 5 MB.",
+    "downsized_small":           "Under 200 KB; MP4 only.",
+    "original":                  "Desktop, full-quality GIF.",
+    "original_still":            "Static original preview.",
+    "looping":                   "15-second loop, MP4.",
+    "preview":                   "50 KB MP4, 1-2 seconds.",
+    "preview_gif":               "50 KB GIF, 1-2 seconds."
+  },
+  "fields": {
+    "url":      "Direct URL to the GIF asset.",
+    "width":    "Width in pixels (string).",
+    "height":   "Height in pixels (string).",
+    "size":     "File size in bytes (string).",
+    "mp4":      "MP4 alternative URL (where available).",
+    "mp4_size": "MP4 file size in bytes.",
+    "webp":     "WebP alternative URL (where available).",
+    "webp_size":"WebP file size in bytes.",
+    "frames":   "Frame count (original rendition only).",
+    "hash":     "Content hash."
+  }
+}

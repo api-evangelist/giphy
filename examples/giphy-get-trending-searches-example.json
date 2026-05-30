@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.giphy.com/v1/trending/searches?api_key=YOUR_KEY"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": ["mood", "monday", "happy birthday", "celebrate", "thank you"],
+      "meta": { "status": 200, "msg": "OK", "response_id": "abc" }
+    }
+  }
+}

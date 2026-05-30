@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-structure.org/draft/2025-04/schema",
+  "title": "GIPHY GIF Structure",
+  "description": "Per-field structural documentation for the GIPHY GIF object.",
+  "type": "object",
+  "properties": {
+    "type":             { "type": "string",  "purpose": "discriminator", "values": ["gif","sticker","emoji"] },
+    "id":               { "type": "string",  "purpose": "identifier",   "note": "GIPHY ID; used in /v1/gifs/{gif_id}." },
+    "slug":             { "type": "string",  "purpose": "url-component" },
+    "url":              { "type": "string",  "purpose": "canonical-url" },
+    "embed_url":        { "type": "string",  "purpose": "embed-url" },
+    "bitly_gif_url":    { "type": "string",  "purpose": "short-url" },
+    "rating":           { "type": "string",  "purpose": "moderation",   "values": ["g","pg","pg-13","r","y"] },
+    "title":            { "type": "string",  "purpose": "display" },
+    "alt_text":         { "type": "string",  "purpose": "accessibility" },
+    "username":         { "type": "string",  "purpose": "attribution" },
+    "source":           { "type": "string",  "purpose": "provenance" },
+    "source_post_url":  { "type": "string",  "purpose": "provenance" },
+    "source_tld":       { "type": "string",  "purpose": "provenance" },
+    "import_datetime":  { "type": "string",  "purpose": "lifecycle" },
+    "create_datetime":  { "type": "string",  "purpose": "lifecycle" },
+    "update_datetime":  { "type": "string",  "purpose": "lifecycle" },
+    "trending_datetime":{ "type": "string",  "purpose": "lifecycle" },
+    "user":             { "type": "object",  "purpose": "attribution", "ref": "../json-schema/giphy-user-schema.json" },
+    "images":           { "type": "object",  "purpose": "renditions",  "ref": "../json-schema/giphy-images-schema.json" },
+    "analytics":        { "type": "object",  "purpose": "telemetry",   "ref": "../json-schema/giphy-analytics-schema.json" },
+    "analytics_response_payload": { "type": "string", "purpose": "telemetry" },
+    "is_low_contrast":  { "type": "boolean", "purpose": "rendering-hint" }
+  }
+}

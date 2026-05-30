@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/giphy/json-schema/giphy-analytics-schema.json",
+  "title": "GIPHY Analytics Pingbacks",
+  "type": "object",
+  "description": "Pingback URLs returned alongside each GIF for measuring user engagement.",
+  "properties": {
+    "onload":  { "type": "object", "properties": { "url": { "type": "string", "format": "uri" } } },
+    "onclick": { "type": "object", "properties": { "url": { "type": "string", "format": "uri" } } },
+    "onsent":  { "type": "object", "properties": { "url": { "type": "string", "format": "uri" } } }
+  }
+}

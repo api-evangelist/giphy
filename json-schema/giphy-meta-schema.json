@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/giphy/json-schema/giphy-meta-schema.json",
+  "title": "GIPHY Meta",
+  "type": "object",
+  "properties": {
+    "msg": { "type": "string" },
+    "status": { "type": "integer" },
+    "response_id": { "type": "string" }
+  }
+}

@@ -1,0 +1,200 @@
+naftiko: "1.0.0-alpha2"
+
+info:
+  label: "GIPHY API — GIFs"
+  description: >-
+    GIPHY — GIFs. 5 operations. Lead operation: Search GIPHY's library of millions of
+    GIFs by keyword. Self-contained Naftiko capability covering one GIPHY business surface.
+  tags:
+    - GIPHY
+    - Media
+    - GIFs
+  created: "2026-05-30"
+  modified: "2026-05-30"
+
+binds:
+  - namespace: env
+    keys:
+      GIPHY_API_KEY: GIPHY_API_KEY
+
+capability:
+
+  consumes:
+    - type: http
+      namespace: "giphy-gifs"
+      baseUri: "https://api.giphy.com"
+      description: "GIPHY API — GIFs business capability. Self-contained, no shared references."
+      authentication:
+        type: apikey
+        key: api_key
+        value: "{{env.GIPHY_API_KEY}}"
+        placement: query
+      resources:
+        - name: "gifs-search"
+          path: "/v1/gifs/search"
+          operations:
+            - name: "searchGifs"
+              method: GET
+              description: "Search GIPHY's library of millions of GIFs by keyword."
+              inputParameters:
+                - { name: q, in: query, type: string, required: true, description: "Search query (max 50 chars)." }
+                - { name: limit, in: query, type: integer, required: false, description: "Results per page (max 50)." }
+                - { name: offset, in: query, type: integer, required: false, description: "Pagination offset." }
+                - { name: rating, in: query, type: string, required: false, description: "MPAA-style rating filter." }
+                - { name: lang, in: query, type: string, required: false, description: "ISO 639-1 language code." }
+              outputRawFormat: json
+              outputParameters:
+                - { name: result, type: object, value: "$." }
+        - name: "gifs-trending"
+          path: "/v1/gifs/trending"
+          operations:
+            - name: "getTrendingGifs"
+              method: GET
+              description: "Return the most relevant and engaging GIFs each day."
+              inputParameters:
+                - { name: limit, in: query, type: integer, required: false, description: "Results per page." }
+                - { name: offset, in: query, type: integer, required: false, description: "Pagination offset." }
+                - { name: rating, in: query, type: string, required: false, description: "Rating filter." }
+              outputRawFormat: json
+              outputParameters:
+                - { name: result, type: object, value: "$." }
+        - name: "gifs-translate"
+          path: "/v1/gifs/translate"
+          operations:
+            - name: "translateGif"
+              method: GET
+              description: "Convert words and phrases to a single GIF."
+              inputParameters:
+                - { name: s, in: query, type: string, required: true, description: "Phrase to translate." }
+                - { name: weirdness, in: query, type: integer, required: false, description: "0-10 weirdness." }
+                - { name: rating, in: query, type: string, required: false, description: "Rating filter." }
+              outputRawFormat: json
+              outputParameters:
+                - { name: result, type: object, value: "$." }
+        - name: "gifs-random"
+          path: "/v1/gifs/random"
+          operations:
+            - name: "getRandomGif"
+              method: GET
+              description: "Return a single random GIF, optionally filtered by tag."
+              inputParameters:
+                - { name: tag, in: query, type: string, required: false, description: "Filter by tag." }
+                - { name: rating, in: query, type: string, required: false, description: "Rating filter." }
+              outputRawFormat: json
+              outputParameters:
+                - { name: result, type: object, value: "$." }
+        - name: "gifs-by-id"
+          path: "/v1/gifs/{gif_id}"
+          operations:
+            - name: "getGifById"
+              method: GET
+              description: "Retrieve metadata for a single GIF by ID."
+              inputParameters:
+                - { name: gif_id, in: path, type: string, required: true, description: "GIPHY GIF ID." }
+              outputRawFormat: json
+              outputParameters:
+                - { name: result, type: object, value: "$." }
+
+  exposes:
+    - type: rest
+      namespace: "giphy-gifs-rest"
+      port: 8080
+      description: "REST adapter for GIPHY API — GIFs. One Spectral-compliant resource per consumed operation, prefixed with /v1."
+      resources:
+        - path: "/v1/gifs-search"
+          name: "gifs-search"
+          description: "REST surface for GIF search."
+          operations:
+            - method: GET
+              name: "searchGifs"
+              description: "Search GIFs by keyword."
+              call: "giphy-gifs.searchGifs"
+              with: { q: "rest.q", limit: "rest.limit", offset: "rest.offset", rating: "rest.rating", lang: "rest.lang" }
+              outputParameters:
+                - { type: object, mapping: "$." }
+        - path: "/v1/gifs-trending"
+          name: "gifs-trending"
+          description: "REST surface for trending GIFs."
+          operations:
+            - method: GET
+              name: "getTrendingGifs"
+              description: "Get trending GIFs."
+              call: "giphy-gifs.getTrendingGifs"
+              with: { limit: "rest.limit", offset: "rest.offset", rating: "rest.rating" }
+              outputParameters:
+                - { type: object, mapping: "$." }
+        - path: "/v1/gifs-translate"
+          name: "gifs-translate"
+          description: "REST surface for translating a phrase into a GIF."
+          operations:
+            - method: GET
+              name: "translateGif"
+              description: "Translate phrase to GIF."
+              call: "giphy-gifs.translateGif"
+              with: { s: "rest.s", weirdness: "rest.weirdness", rating: "rest.rating" }
+              outputParameters:
+                - { type: object, mapping: "$." }
+        - path: "/v1/gifs-random"
+          name: "gifs-random"
+          description: "REST surface for a random GIF."
+          operations:
+            - method: GET
+              name: "getRandomGif"
+              description: "Get a random GIF."
+              call: "giphy-gifs.getRandomGif"
+              with: { tag: "rest.tag", rating: "rest.rating" }
+              outputParameters:
+                - { type: object, mapping: "$." }
+        - path: "/v1/gifs/{gif-id}"
+          name: "gif-by-id"
+          description: "REST surface to fetch one GIF."
+          operations:
+            - method: GET
+              name: "getGifById"
+              description: "Get a GIF by ID."
+              call: "giphy-gifs.getGifById"
+              with: { gif_id: "rest.gif-id" }
+              outputParameters:
+                - { type: object, mapping: "$." }
+
+    - type: mcp
+      namespace: "giphy-gifs-mcp"
+      port: 9090
+      transport: http
+      description: "MCP adapter for GIPHY API — GIFs. One tool per consumed operation, routed inline through this capability's consumes block."
+      tools:
+        - name: "search-gifs"
+          description: "Search GIPHY's library of GIFs by keyword."
+          hints: { readOnly: true, destructive: false, idempotent: true }
+          call: "giphy-gifs.searchGifs"
+          with: { q: "tools.q", limit: "tools.limit", offset: "tools.offset", rating: "tools.rating", lang: "tools.lang" }
+          outputParameters:
+            - { type: object, mapping: "$." }
+        - name: "get-trending-gifs"
+          description: "Return trending GIFs of the day."
+          hints: { readOnly: true, destructive: false, idempotent: true }
+          call: "giphy-gifs.getTrendingGifs"
+          with: { limit: "tools.limit", offset: "tools.offset", rating: "tools.rating" }
+          outputParameters:
+            - { type: object, mapping: "$." }
+        - name: "translate-gif"
+          description: "Translate a phrase into a single GIF."
+          hints: { readOnly: true, destructive: false, idempotent: true }
+          call: "giphy-gifs.translateGif"
+          with: { s: "tools.s", weirdness: "tools.weirdness", rating: "tools.rating" }
+          outputParameters:
+            - { type: object, mapping: "$." }
+        - name: "get-random-gif"
+          description: "Return a random GIF."
+          hints: { readOnly: true, destructive: false, idempotent: true }
+          call: "giphy-gifs.getRandomGif"
+          with: { tag: "tools.tag", rating: "tools.rating" }
+          outputParameters:
+            - { type: object, mapping: "$." }
+        - name: "get-gif-by-id"
+          description: "Fetch metadata for one GIF by ID."
+          hints: { readOnly: true, destructive: false, idempotent: true }
+          call: "giphy-gifs.getGifById"
+          with: { gif_id: "tools.gif_id" }
+          outputParameters:
+            - { type: object, mapping: "$." }

@@ -1,0 +1,74 @@
+naftiko: "1.0.0-alpha2"
+
+info:
+  label: "GIPHY API — Utilities"
+  description: >-
+    GIPHY — Utilities. 1 operation. Lead operation: Generate a unique, privacy-
+    preserving identifier for tracking users in a session. Self-contained Naftiko
+    capability covering one GIPHY business surface.
+  tags:
+    - GIPHY
+    - Utilities
+  created: "2026-05-30"
+  modified: "2026-05-30"
+
+binds:
+  - namespace: env
+    keys:
+      GIPHY_API_KEY: GIPHY_API_KEY
+
+capability:
+
+  consumes:
+    - type: http
+      namespace: "giphy-utilities"
+      baseUri: "https://api.giphy.com"
+      description: "GIPHY API — Utilities business capability."
+      authentication:
+        type: apikey
+        key: api_key
+        value: "{{env.GIPHY_API_KEY}}"
+        placement: query
+      resources:
+        - name: "random-id"
+          path: "/v1/randomid"
+          operations:
+            - name: "createRandomId"
+              method: GET
+              description: "Generate a unique random ID for user tracking."
+              inputParameters: []
+              outputRawFormat: json
+              outputParameters:
+                - { name: result, type: object, value: "$." }
+
+  exposes:
+    - type: rest
+      namespace: "giphy-utilities-rest"
+      port: 8080
+      description: "REST adapter for GIPHY API — Utilities."
+      resources:
+        - path: "/v1/random-id"
+          name: "random-id"
+          description: "REST surface for random ID generation."
+          operations:
+            - method: GET
+              name: "createRandomId"
+              description: "Generate random user ID."
+              call: "giphy-utilities.createRandomId"
+              with: {}
+              outputParameters:
+                - { type: object, mapping: "$." }
+
+    - type: mcp
+      namespace: "giphy-utilities-mcp"
+      port: 9090
+      transport: http
+      description: "MCP adapter for GIPHY API — Utilities."
+      tools:
+        - name: "create-random-id"
+          description: "Generate a privacy-preserving random user ID."
+          hints: { readOnly: true, destructive: false, idempotent: false }
+          call: "giphy-utilities.createRandomId"
+          with: {}
+          outputParameters:
+            - { type: object, mapping: "$." }

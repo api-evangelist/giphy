@@ -1,0 +1,21 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "https://upload.giphy.com/v1/gifs",
+    "headers": { "Content-Type": "multipart/form-data" },
+    "form": {
+      "api_key": "YOUR_KEY",
+      "source_image_url": "https://example.com/my.gif",
+      "username": "myhandle",
+      "tags": "celebration,confetti",
+      "source_post_url": "https://example.com/post/123"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": { "id": "xyz123uploaded" },
+      "meta": { "status": 200, "msg": "OK", "response_id": "abc" }
+    }
+  }
+}

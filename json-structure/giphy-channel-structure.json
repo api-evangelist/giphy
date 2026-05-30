@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-structure.org/draft/2025-04/schema",
+  "title": "GIPHY Channel Structure",
+  "type": "object",
+  "purpose": "content-organization",
+  "properties": {
+    "id":                  { "type": "integer", "purpose": "identifier" },
+    "slug":                { "type": "string",  "purpose": "url-slug" },
+    "display_name":        { "type": "string",  "purpose": "display" },
+    "short_display_name":  { "type": "string",  "purpose": "display" },
+    "description":         { "type": "string",  "purpose": "description" },
+    "type":                { "type": "string",  "purpose": "classification", "values": ["community","editorial"] },
+    "content_type":        { "type": "string",  "purpose": "classification", "values": ["gif","sticker","mixed"] },
+    "banner_image":        { "type": "string",  "purpose": "branding" },
+    "is_private":          { "type": "boolean", "purpose": "visibility" },
+    "user":                { "type": "object",  "purpose": "attribution" },
+    "featured_gif":        { "type": "object",  "purpose": "hero-content" },
+    "ancestors":           { "type": "array",   "purpose": "hierarchy" },
+    "tags":                { "type": "array",   "purpose": "categorization" }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.giphy.com/v1/gifs/translate?api_key=YOUR_KEY&s=ryan+gosling&weirdness=5"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "data": {
+        "type": "gif",
+        "id": "feqkVgjJpYtjy",
+        "slug": "ryan-gosling-hey-girl-feqkVgjJpYtjy",
+        "url": "https://giphy.com/gifs/ryan-gosling-hey-girl-feqkVgjJpYtjy",
+        "title": "Ryan Gosling Hey Girl GIF",
+        "rating": "pg-13",
+        "images": {
+          "original": { "url": "https://media1.giphy.com/media/feqkVgjJpYtjy/giphy.gif", "width": "245", "height": "138" }
+        }
+      },
+      "meta": { "status": 200, "msg": "OK", "response_id": "5894d97b5e90e91ae0ff7e0a" }
+    }
+  }
+}
