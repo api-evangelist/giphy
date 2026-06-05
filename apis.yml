@@ -1,19 +1,17 @@
 aid: giphy
 name: Giphy
 description: >-
-  GIPHY is the world's largest library of GIFs, stickers, animated emoji, and
-  Clips (GIFs with sound), with a developer API used by messaging apps, social
-  platforms, productivity tools, ads, and creator products. GIPHY is owned by
-  Meta. Authentication is via API key (Beta or Production tier) and all surfaces
-  share the same envelope (data + meta + pagination) with rich, multi-rendition
-  media payloads.
+  GIPHY is the world's largest library of GIFs, stickers, animated emoji, and Clips (GIFs with sound), with a developer
+  API used by messaging apps, social platforms, productivity tools, ads, and creator products. GIPHY is owned by Meta.
+  Authentication is via API key (Beta or Production tier) and all surfaces share the same envelope (data + meta +
+  pagination) with rich, multi-rendition media payloads.
 url: https://developers.giphy.com/
 image: https://giphy.com/static/img/giphy-be-animated-logo.gif
 specificationVersion: '0.20'
 created: '2026-05-28'
 modified: '2026-05-30'
 x-source: public-apis/public-apis
-x-category: 'Photography'
+x-category: Photography
 x-type: company
 x-tier: 1
 x-tier-reason: enriched-full-pipeline-2026-05-30
@@ -30,9 +28,8 @@ tags:
 apis:
   - name: GIPHY API
     description: >-
-      The GIPHY REST API. Search, trending, translate, random, lookup, categories,
-      autocomplete, related/trending terms, channels, animated emoji, animated text,
-      Clips, analytics pingbacks, and uploads — all behind a single API key.
+      The GIPHY REST API. Search, trending, translate, random, lookup, categories, autocomplete, related/trending terms,
+      channels, animated emoji, animated text, Clips, analytics pingbacks, and uploads — all behind a single API key.
     humanURL: https://developers.giphy.com/docs/api
     baseURL: https://api.giphy.com
     tags:
@@ -138,39 +135,6 @@ apis:
       - type: Example
         url: examples/giphy-register-search-action-example.json
         title: Register Analytics Action Example
-      - type: NaftikoCapability
-        url: capabilities/giphy-gifs.yaml
-        title: GIFs Capability
-      - type: NaftikoCapability
-        url: capabilities/giphy-stickers.yaml
-        title: Stickers Capability
-      - type: NaftikoCapability
-        url: capabilities/giphy-emoji.yaml
-        title: Emoji Capability
-      - type: NaftikoCapability
-        url: capabilities/giphy-clips.yaml
-        title: Clips Capability
-      - type: NaftikoCapability
-        url: capabilities/giphy-animate.yaml
-        title: Animate Capability
-      - type: NaftikoCapability
-        url: capabilities/giphy-channels.yaml
-        title: Channels Capability
-      - type: NaftikoCapability
-        url: capabilities/giphy-categories.yaml
-        title: Categories Capability
-      - type: NaftikoCapability
-        url: capabilities/giphy-search-discovery.yaml
-        title: Search Discovery Capability
-      - type: NaftikoCapability
-        url: capabilities/giphy-analytics.yaml
-        title: Analytics Capability
-      - type: NaftikoCapability
-        url: capabilities/giphy-upload.yaml
-        title: Upload Capability
-      - type: NaftikoCapability
-        url: capabilities/giphy-utilities.yaml
-        title: Utilities Capability
       - type: SDK
         url: https://github.com/Giphy/giphy-ios-sdk
         title: iOS SDK
