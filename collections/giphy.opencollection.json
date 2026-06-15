@@ -1,0 +1,940 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GIPHY API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "GIFs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search GIFs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/gifs/search",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Search query term or phrase, URL-encoded, max 50 characters."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Position in the result set for pagination."
+              },
+              {
+                "name": "rating",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by MPAA-style rating."
+              },
+              {
+                "name": "lang",
+                "value": "",
+                "type": "query",
+                "description": "Default language (ISO 639-1) for regional content."
+              },
+              {
+                "name": "bundle",
+                "value": "",
+                "type": "query",
+                "description": "Reduce response payload by requesting only the rendition bundle you need."
+              },
+              {
+                "name": "random_id",
+                "value": "",
+                "type": "query",
+                "description": "Privacy-preserving user identifier produced by /v1/randomid."
+              },
+              {
+                "name": "country_code",
+                "value": "",
+                "type": "query",
+                "description": "ISO 3166-1 alpha-2 country code used to localize results."
+              }
+            ]
+          },
+          "docs": "Search GIPHY's library of millions of GIFs by keyword."
+        },
+        {
+          "info": {
+            "name": "Get Trending GIFs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/gifs/trending",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Position in the result set for pagination."
+              },
+              {
+                "name": "rating",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by MPAA-style rating."
+              },
+              {
+                "name": "bundle",
+                "value": "",
+                "type": "query",
+                "description": "Reduce response payload by requesting only the rendition bundle you need."
+              },
+              {
+                "name": "random_id",
+                "value": "",
+                "type": "query",
+                "description": "Privacy-preserving user identifier produced by /v1/randomid."
+              },
+              {
+                "name": "country_code",
+                "value": "",
+                "type": "query",
+                "description": "ISO 3166-1 alpha-2 country code used to localize results."
+              }
+            ]
+          },
+          "docs": "Return the most relevant and engaging GIFs each day."
+        },
+        {
+          "info": {
+            "name": "Translate Term to GIF",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/gifs/translate",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "s",
+                "value": "",
+                "type": "query",
+                "description": "Search term to translate to a GIF."
+              },
+              {
+                "name": "weirdness",
+                "value": "",
+                "type": "query",
+                "description": "Translate weirdness (0 conservative ... 10 most weird)."
+              },
+              {
+                "name": "rating",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by MPAA-style rating."
+              },
+              {
+                "name": "random_id",
+                "value": "",
+                "type": "query",
+                "description": "Privacy-preserving user identifier produced by /v1/randomid."
+              }
+            ]
+          },
+          "docs": "Convert words and phrases to a single, contextually relevant GIF."
+        },
+        {
+          "info": {
+            "name": "Get Random GIF",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/gifs/random",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "tag",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by tag."
+              },
+              {
+                "name": "rating",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by MPAA-style rating."
+              },
+              {
+                "name": "random_id",
+                "value": "",
+                "type": "query",
+                "description": "Privacy-preserving user identifier produced by /v1/randomid."
+              }
+            ]
+          },
+          "docs": "Return a single random GIF, optionally filtered by tag."
+        },
+        {
+          "info": {
+            "name": "Get GIF by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/gifs/:gif_id",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "gif_id",
+                "value": "",
+                "type": "path",
+                "description": "GIPHY ID of the GIF."
+              }
+            ]
+          },
+          "docs": "Retrieve metadata for a single GIF."
+        },
+        {
+          "info": {
+            "name": "Get GIFs by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/gifs",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of GIF IDs (max 100)."
+              }
+            ]
+          },
+          "docs": "Fetch metadata for up to 100 GIFs at once, by comma-separated IDs."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Categories",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List GIF Categories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/gifs/categories",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Position in the result set for pagination."
+              }
+            ]
+          },
+          "docs": "Return the list of GIF categories."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Search Discovery",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Autocomplete Search Tags",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/gifs/search/tags",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Partial search term."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Position in the result set for pagination."
+              }
+            ]
+          },
+          "docs": "Return tag suggestions for a partial search term."
+        },
+        {
+          "info": {
+            "name": "Get Related Search Terms",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/tags/related/:term",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "term",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Return related search terms for a given query."
+        },
+        {
+          "info": {
+            "name": "Get Trending Search Terms",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/trending/searches",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              }
+            ]
+          },
+          "docs": "Return the most popular search terms across GIPHY."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Stickers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Stickers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/stickers/search",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Position in the result set for pagination."
+              },
+              {
+                "name": "rating",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by MPAA-style rating."
+              },
+              {
+                "name": "lang",
+                "value": "",
+                "type": "query",
+                "description": "Default language (ISO 639-1) for regional content."
+              }
+            ]
+          },
+          "docs": "Search GIPHY's library of stickers (transparent-background animations)."
+        },
+        {
+          "info": {
+            "name": "Get Trending Stickers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/stickers/trending",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Position in the result set for pagination."
+              },
+              {
+                "name": "rating",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by MPAA-style rating."
+              }
+            ]
+          },
+          "docs": "Return the most relevant and engaging stickers each day."
+        },
+        {
+          "info": {
+            "name": "Translate Term to Sticker",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/stickers/translate",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "s",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "weirdness",
+                "value": "",
+                "type": "query",
+                "description": "Translate weirdness (0 conservative ... 10 most weird)."
+              },
+              {
+                "name": "rating",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by MPAA-style rating."
+              }
+            ]
+          },
+          "docs": "Convert words and phrases to a single contextually relevant sticker."
+        },
+        {
+          "info": {
+            "name": "Get Random Sticker",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/stickers/random",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "tag",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "rating",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by MPAA-style rating."
+              }
+            ]
+          },
+          "docs": "Return a single random sticker, optionally filtered by tag."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Emoji",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Animated Emoji",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v2/emoji",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Position in the result set for pagination."
+              }
+            ]
+          },
+          "docs": "Return GIPHY's animated emoji library."
+        },
+        {
+          "info": {
+            "name": "Get Emoji Variations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v2/emoji/:gif_id/variations",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "gif_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Return all variations of a single animated emoji."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Clips",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Clips",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/clips/search",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Position in the result set for pagination."
+              },
+              {
+                "name": "rating",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by MPAA-style rating."
+              },
+              {
+                "name": "lang",
+                "value": "",
+                "type": "query",
+                "description": "Default language (ISO 639-1) for regional content."
+              },
+              {
+                "name": "country_code",
+                "value": "",
+                "type": "query",
+                "description": "ISO 3166-1 alpha-2 country code used to localize results."
+              }
+            ]
+          },
+          "docs": "Search the GIPHY Clips library (GIFs with sound)."
+        },
+        {
+          "info": {
+            "name": "Get Trending Clips",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/clips/trending",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Position in the result set for pagination."
+              },
+              {
+                "name": "rating",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by MPAA-style rating."
+              },
+              {
+                "name": "country_code",
+                "value": "",
+                "type": "query",
+                "description": "ISO 3166-1 alpha-2 country code used to localize results."
+              }
+            ]
+          },
+          "docs": "Return the most popular Clips of the day."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Animate",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Animate Text",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/animate",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "m",
+                "value": "",
+                "type": "query",
+                "description": "Text or phrase to animate."
+              },
+              {
+                "name": "style",
+                "value": "",
+                "type": "query",
+                "description": "Optional animation style identifier."
+              }
+            ]
+          },
+          "docs": "Programmatically generate an animated text GIF from a phrase."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Channels",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Channels",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/channels/search",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Position in the result set for pagination."
+              }
+            ]
+          },
+          "docs": "Find GIPHY channels matching the supplied query."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Utilities",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create Random ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/randomid",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              }
+            ]
+          },
+          "docs": "Generate a unique, privacy-preserving identifier for tracking users in a session."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Analytics",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Register Search Action",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.giphy.com/v1/gifs/search/actions",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Register an action (view, click, share) on a GIF using the analytics pingback URLs\nincluded in search responses. Endpoint is fire-and-forget; HTTP 200 indicates the\nevent was accepted.\n"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Upload",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Upload GIF",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.giphy.com/v1/gifs",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "api_key",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "source_image_url",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "username",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "tags",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "source_post_url",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "is_hidden",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Upload a GIF or video file to GIPHY at `upload.giphy.com/v1/gifs`. Maximum file\nsize is 100 MB. This operation runs against the `upload.giphy.com` host (overrides\nthe default server).\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
