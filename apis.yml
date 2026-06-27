@@ -93,70 +93,70 @@ apis:
       - type: JSONStructure
         url: json-structure/giphy-channel-structure.json
         title: Channel Structure
-      - type: Example
+      - type: Examples
         url: examples/giphy-search-gifs-example.json
         title: Search GIFs Example
-      - type: Example
+      - type: Examples
         url: examples/giphy-get-trending-gifs-example.json
         title: Trending GIFs Example
-      - type: Example
+      - type: Examples
         url: examples/giphy-translate-gif-example.json
         title: Translate GIF Example
-      - type: Example
+      - type: Examples
         url: examples/giphy-get-random-gif-example.json
         title: Random GIF Example
-      - type: Example
+      - type: Examples
         url: examples/giphy-get-gif-by-id-example.json
         title: Get GIF by ID Example
-      - type: Example
+      - type: Examples
         url: examples/giphy-list-gif-categories-example.json
         title: List Categories Example
-      - type: Example
+      - type: Examples
         url: examples/giphy-autocomplete-search-tags-example.json
         title: Autocomplete Search Tags Example
-      - type: Example
+      - type: Examples
         url: examples/giphy-get-related-search-terms-example.json
         title: Related Search Terms Example
-      - type: Example
+      - type: Examples
         url: examples/giphy-get-trending-searches-example.json
         title: Trending Searches Example
-      - type: Example
+      - type: Examples
         url: examples/giphy-search-stickers-example.json
         title: Search Stickers Example
-      - type: Example
+      - type: Examples
         url: examples/giphy-list-emoji-example.json
         title: List Emoji Example
-      - type: Example
+      - type: Examples
         url: examples/giphy-search-clips-example.json
         title: Search Clips Example
-      - type: Example
+      - type: Examples
         url: examples/giphy-upload-gif-example.json
         title: Upload GIF Example
-      - type: Example
+      - type: Examples
         url: examples/giphy-register-search-action-example.json
         title: Register Analytics Action Example
-      - type: SDK
+      - type: SDKs
         url: https://github.com/Giphy/giphy-ios-sdk
         title: iOS SDK
-      - type: SDK
+      - type: SDKs
         url: https://github.com/Giphy/giphy-android-sdk
         title: Android SDK
-      - type: SDK
+      - type: SDKs
         url: https://github.com/Giphy/giphy-react-native-sdk
         title: React Native SDK
-      - type: SDK
+      - type: SDKs
         url: https://github.com/Giphy/giphy-flutter-sdk
         title: Flutter SDK
-      - type: SDK
+      - type: SDKs
         url: https://github.com/Giphy/giphy-js
         title: Web / JavaScript SDK (@giphy/js-fetch-api, @giphy/react-components)
-      - type: SDK
+      - type: SDKs
         url: https://github.com/Giphy/giphy-python-client
         title: Python Client (legacy, last updated 2023)
-      - type: SDK
+      - type: SDKs
         url: https://github.com/Giphy/giphy-ruby-client
         title: Ruby Client (legacy)
-      - type: SDK
+      - type: SDKs
         url: https://github.com/Giphy/giphy-php-client
         title: PHP Client (legacy)
       - type: RateLimits
@@ -172,7 +172,7 @@ common:
     url: https://developers.giphy.com/docs/
   - type: Console
     url: https://developers.giphy.com/dashboard/
-  - type: SignUp
+  - type: Signup
     url: https://giphy.com/join
   - type: Login
     url: https://giphy.com/login
