@@ -1,0 +1,13 @@
+generated: '2026-07-11'
+method: searched
+probe: true
+source: https://giphy.com/explore/compliance
+url: https://giphy.com/explore/compliance
+certifications:
+- HIPAA
+- GDPR
+evidence:
+- source: https://giphy.com/explore/compliance
+  keywords:
+  - hipaa
+  - gdpr

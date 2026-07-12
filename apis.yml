@@ -164,6 +164,14 @@ apis:
       - type: Pricing
         url: plans/giphy-plans-pricing.yml
 common:
+  - type: TrustCenter
+    url: security/giphy-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/giphy-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/giphy-domain-security.yml
+  - type: Authentication
+    url: authentication/giphy-authentication.yml
   - type: Website
     url: https://giphy.com/
   - type: DeveloperPortal
