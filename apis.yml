@@ -164,6 +164,8 @@ apis:
       - type: Pricing
         url: plans/giphy-plans-pricing.yml
 common:
+  - type: AgenticAccess
+    url: agentic-access/giphy-agentic-access.yml
   - type: TrustCenter
     url: security/giphy-trust-center.yml
   - type: VulnerabilityDisclosure
