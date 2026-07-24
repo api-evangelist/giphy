@@ -1,0 +1,90 @@
+openapi: 3.1.0
+info:
+  title: GIPHY Analytics API
+  description: 'The GIPHY API provides programmatic access to the world''s largest library of
+
+    GIFs, stickers, animated emoji and Clips (GIFs with sound). Search, trending,
+
+    translate, random, and category endpoints all return rich media objects with
+
+    multiple image renditions optimized for any surface.
+
+
+    Authentication is via API key. New developers receive a rate-limited Beta key;
+
+    a Production key is granted after application review.
+
+    '
+  version: '1.0'
+  contact:
+    name: GIPHY Developers
+    url: https://developers.giphy.com/
+    email: support@giphy.com
+  termsOfService: https://developers.giphy.com/terms/
+  license:
+    name: GIPHY API Terms of Service
+    url: https://developers.giphy.com/terms/
+servers:
+- url: https://api.giphy.com
+  description: Production API
+- url: https://upload.giphy.com
+  description: Upload API
+security:
+- ApiKeyAuth: []
+tags:
+- name: Analytics
+  description: Pingback and action register endpoints for measuring user engagement.
+paths:
+  /v1/gifs/search/actions:
+    post:
+      tags:
+      - Analytics
+      operationId: registerSearchAction
+      summary: Register Search Action
+      description: 'Register an action (view, click, share) on a GIF using the analytics pingback URLs
+
+        included in search responses. Endpoint is fire-and-forget; HTTP 200 indicates the
+
+        event was accepted.
+
+        '
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                action_type:
+                  type: string
+                  enum:
+                  - SEEN
+                  - CLICK
+                  - SENT
+                analytics_response_payload:
+                  type: string
+                random_id:
+                  type: string
+                ts:
+                  type: integer
+                  description: Epoch timestamp in milliseconds.
+      responses:
+        '200':
+          description: Event accepted.
+components:
+  parameters:
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: GIPHY API key (Beta or Production).
+      schema:
+        type: string
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: api_key
+      description: API key issued via the GIPHY developer dashboard.

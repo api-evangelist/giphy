@@ -1,0 +1,501 @@
+openapi: 3.1.0
+info:
+  title: GIPHY Analytics GIFs API
+  description: 'The GIPHY API provides programmatic access to the world''s largest library of
+
+    GIFs, stickers, animated emoji and Clips (GIFs with sound). Search, trending,
+
+    translate, random, and category endpoints all return rich media objects with
+
+    multiple image renditions optimized for any surface.
+
+
+    Authentication is via API key. New developers receive a rate-limited Beta key;
+
+    a Production key is granted after application review.
+
+    '
+  version: '1.0'
+  contact:
+    name: GIPHY Developers
+    url: https://developers.giphy.com/
+    email: support@giphy.com
+  termsOfService: https://developers.giphy.com/terms/
+  license:
+    name: GIPHY API Terms of Service
+    url: https://developers.giphy.com/terms/
+servers:
+- url: https://api.giphy.com
+  description: Production API
+- url: https://upload.giphy.com
+  description: Upload API
+security:
+- ApiKeyAuth: []
+tags:
+- name: GIFs
+  description: Search, trending, translate, random, and lookup endpoints for animated GIFs.
+paths:
+  /v1/gifs/search:
+    get:
+      tags:
+      - GIFs
+      operationId: searchGifs
+      summary: Search GIFs
+      description: Search GIPHY's library of millions of GIFs by keyword.
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - name: q
+        in: query
+        required: true
+        description: Search query term or phrase, URL-encoded, max 50 characters.
+        schema:
+          type: string
+          maxLength: 50
+      - $ref: '#/components/parameters/Limit'
+      - $ref: '#/components/parameters/Offset'
+      - $ref: '#/components/parameters/Rating'
+      - $ref: '#/components/parameters/Lang'
+      - $ref: '#/components/parameters/Bundle'
+      - $ref: '#/components/parameters/RandomId'
+      - $ref: '#/components/parameters/CountryCode'
+      responses:
+        '200':
+          $ref: '#/components/responses/GifListResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+  /v1/gifs/trending:
+    get:
+      tags:
+      - GIFs
+      operationId: getTrendingGifs
+      summary: Get Trending GIFs
+      description: Return the most relevant and engaging GIFs each day.
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - $ref: '#/components/parameters/Limit'
+      - $ref: '#/components/parameters/Offset'
+      - $ref: '#/components/parameters/Rating'
+      - $ref: '#/components/parameters/Bundle'
+      - $ref: '#/components/parameters/RandomId'
+      - $ref: '#/components/parameters/CountryCode'
+      responses:
+        '200':
+          $ref: '#/components/responses/GifListResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+  /v1/gifs/translate:
+    get:
+      tags:
+      - GIFs
+      operationId: translateGif
+      summary: Translate Term to GIF
+      description: Convert words and phrases to a single, contextually relevant GIF.
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - name: s
+        in: query
+        required: true
+        description: Search term to translate to a GIF.
+        schema:
+          type: string
+      - $ref: '#/components/parameters/Weirdness'
+      - $ref: '#/components/parameters/Rating'
+      - $ref: '#/components/parameters/RandomId'
+      responses:
+        '200':
+          $ref: '#/components/responses/SingleGifResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /v1/gifs/random:
+    get:
+      tags:
+      - GIFs
+      operationId: getRandomGif
+      summary: Get Random GIF
+      description: Return a single random GIF, optionally filtered by tag.
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - name: tag
+        in: query
+        required: false
+        description: Filter results by tag.
+        schema:
+          type: string
+      - $ref: '#/components/parameters/Rating'
+      - $ref: '#/components/parameters/RandomId'
+      responses:
+        '200':
+          $ref: '#/components/responses/SingleGifResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /v1/gifs/{gif_id}:
+    get:
+      tags:
+      - GIFs
+      operationId: getGifById
+      summary: Get GIF by ID
+      description: Retrieve metadata for a single GIF.
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - name: gif_id
+        in: path
+        required: true
+        description: GIPHY ID of the GIF.
+        schema:
+          type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/SingleGifResponse'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /v1/gifs:
+    get:
+      tags:
+      - GIFs
+      operationId: getGifsById
+      summary: Get GIFs by ID
+      description: Fetch metadata for up to 100 GIFs at once, by comma-separated IDs.
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - name: ids
+        in: query
+        required: true
+        description: Comma-separated list of GIF IDs (max 100).
+        schema:
+          type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/GifListResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+components:
+  schemas:
+    Meta:
+      type: object
+      properties:
+        msg:
+          type: string
+        status:
+          type: integer
+        response_id:
+          type: string
+    User:
+      type: object
+      description: GIPHY user / channel associated with content.
+      properties:
+        avatar_url:
+          type: string
+          format: uri
+        banner_image:
+          type: string
+          format: uri
+        banner_url:
+          type: string
+          format: uri
+        profile_url:
+          type: string
+          format: uri
+        username:
+          type: string
+        display_name:
+          type: string
+        description:
+          type: string
+        instagram_url:
+          type: string
+          format: uri
+        website_url:
+          type: string
+          format: uri
+        is_verified:
+          type: boolean
+    Analytics:
+      type: object
+      description: Pingback URLs returned alongside each GIF for measuring user engagement.
+      properties:
+        onload:
+          type: object
+          properties:
+            url:
+              type: string
+              format: uri
+        onclick:
+          type: object
+          properties:
+            url:
+              type: string
+              format: uri
+        onsent:
+          type: object
+          properties:
+            url:
+              type: string
+              format: uri
+    Gif:
+      type: object
+      description: Standard GIPHY GIF object returned by most endpoints.
+      properties:
+        type:
+          type: string
+          enum:
+          - gif
+          - sticker
+          - emoji
+          description: Type of media object.
+        id:
+          type: string
+          description: GIPHY ID for the object.
+        slug:
+          type: string
+          description: URL slug used in giphy.com URLs.
+        url:
+          type: string
+          format: uri
+          description: Canonical GIPHY URL.
+        bitly_gif_url:
+          type: string
+          format: uri
+        bitly_url:
+          type: string
+          format: uri
+        embed_url:
+          type: string
+          format: uri
+        username:
+          type: string
+        source:
+          type: string
+        rating:
+          type: string
+          enum:
+          - g
+          - pg
+          - pg-13
+          - r
+          - y
+        content_url:
+          type: string
+        user:
+          $ref: '#/components/schemas/User'
+        source_tld:
+          type: string
+        source_post_url:
+          type: string
+          format: uri
+        update_datetime:
+          type: string
+          format: date-time
+        create_datetime:
+          type: string
+          format: date-time
+        import_datetime:
+          type: string
+          format: date-time
+        trending_datetime:
+          type: string
+          format: date-time
+        images:
+          $ref: '#/components/schemas/Images'
+        title:
+          type: string
+        alt_text:
+          type: string
+        is_low_contrast:
+          type: boolean
+        analytics_response_payload:
+          type: string
+        analytics:
+          $ref: '#/components/schemas/Analytics'
+    Pagination:
+      type: object
+      properties:
+        offset:
+          type: integer
+        total_count:
+          type: integer
+        count:
+          type: integer
+    Images:
+      type: object
+      description: Map of rendition keys to rendition metadata. Available renditions include fixed_height, fixed_height_still, fixed_height_downsampled, fixed_height_small, fixed_height_small_still, fixed_width, fixed_width_still, fixed_width_downsampled, fixed_width_small, fixed_width_small_still, downsized, downsized_still, downsized_large, downsized_medium, downsized_small, original, original_still, looping, preview, preview_gif.
+      additionalProperties:
+        $ref: '#/components/schemas/Rendition'
+    Rendition:
+      type: object
+      properties:
+        url:
+          type: string
+          format: uri
+        width:
+          type: string
+          description: Width in pixels (string in API).
+        height:
+          type: string
+          description: Height in pixels (string in API).
+        size:
+          type: string
+          description: File size in bytes (string in API).
+        mp4:
+          type: string
+          format: uri
+        mp4_size:
+          type: string
+        webp:
+          type: string
+          format: uri
+        webp_size:
+          type: string
+        frames:
+          type: string
+        hash:
+          type: string
+    Error:
+      type: object
+      properties:
+        meta:
+          $ref: '#/components/schemas/Meta'
+  parameters:
+    RandomId:
+      name: random_id
+      in: query
+      required: false
+      description: Privacy-preserving user identifier produced by /v1/randomid.
+      schema:
+        type: string
+    Limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return per page.
+      schema:
+        type: integer
+        default: 25
+        maximum: 50
+    Rating:
+      name: rating
+      in: query
+      required: false
+      description: Filter results by MPAA-style rating.
+      schema:
+        type: string
+        enum:
+        - g
+        - pg
+        - pg-13
+        - r
+        - y
+    Weirdness:
+      name: weirdness
+      in: query
+      required: false
+      description: Translate weirdness (0 conservative ... 10 most weird).
+      schema:
+        type: integer
+        minimum: 0
+        maximum: 10
+    Offset:
+      name: offset
+      in: query
+      required: false
+      description: Position in the result set for pagination.
+      schema:
+        type: integer
+        default: 0
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: GIPHY API key (Beta or Production).
+      schema:
+        type: string
+    Lang:
+      name: lang
+      in: query
+      required: false
+      description: Default language (ISO 639-1) for regional content.
+      schema:
+        type: string
+    CountryCode:
+      name: country_code
+      in: query
+      required: false
+      description: ISO 3166-1 alpha-2 country code used to localize results.
+      schema:
+        type: string
+    Bundle:
+      name: bundle
+      in: query
+      required: false
+      description: Reduce response payload by requesting only the rendition bundle you need.
+      schema:
+        type: string
+        enum:
+        - low_bandwidth
+        - messaging_non_clips
+        - sticker_layering
+        - clips_grid_picker
+  responses:
+    GifListResponse:
+      description: A paginated list of GIF or Sticker objects.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Gif'
+              pagination:
+                $ref: '#/components/schemas/Pagination'
+              meta:
+                $ref: '#/components/schemas/Meta'
+    RateLimited:
+      description: API rate limit exceeded.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Missing or invalid API key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Resource not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    SingleGifResponse:
+      description: A single GIF or Sticker object.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: '#/components/schemas/Gif'
+              meta:
+                $ref: '#/components/schemas/Meta'
+    BadRequest:
+      description: Malformed request.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: api_key
+      description: API key issued via the GIPHY developer dashboard.

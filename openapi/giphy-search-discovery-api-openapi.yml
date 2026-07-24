@@ -1,0 +1,167 @@
+openapi: 3.1.0
+info:
+  title: GIPHY Analytics Search Discovery API
+  description: 'The GIPHY API provides programmatic access to the world''s largest library of
+
+    GIFs, stickers, animated emoji and Clips (GIFs with sound). Search, trending,
+
+    translate, random, and category endpoints all return rich media objects with
+
+    multiple image renditions optimized for any surface.
+
+
+    Authentication is via API key. New developers receive a rate-limited Beta key;
+
+    a Production key is granted after application review.
+
+    '
+  version: '1.0'
+  contact:
+    name: GIPHY Developers
+    url: https://developers.giphy.com/
+    email: support@giphy.com
+  termsOfService: https://developers.giphy.com/terms/
+  license:
+    name: GIPHY API Terms of Service
+    url: https://developers.giphy.com/terms/
+servers:
+- url: https://api.giphy.com
+  description: Production API
+- url: https://upload.giphy.com
+  description: Upload API
+security:
+- ApiKeyAuth: []
+tags:
+- name: Search Discovery
+  description: Tag autocompletion, related search terms, and trending search queries.
+paths:
+  /v1/gifs/search/tags:
+    get:
+      tags:
+      - Search Discovery
+      operationId: autocompleteSearchTags
+      summary: Autocomplete Search Tags
+      description: Return tag suggestions for a partial search term.
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - name: q
+        in: query
+        required: true
+        description: Partial search term.
+        schema:
+          type: string
+      - $ref: '#/components/parameters/Limit'
+      - $ref: '#/components/parameters/Offset'
+      responses:
+        '200':
+          description: Tag autocomplete results.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                        analytics_response_payload:
+                          type: string
+  /v1/tags/related/{term}:
+    get:
+      tags:
+      - Search Discovery
+      operationId: getRelatedSearchTerms
+      summary: Get Related Search Terms
+      description: Return related search terms for a given query.
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - name: term
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Related search terms.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                        analytics_response_payload:
+                          type: string
+  /v1/trending/searches:
+    get:
+      tags:
+      - Search Discovery
+      operationId: getTrendingSearches
+      summary: Get Trending Search Terms
+      description: Return the most popular search terms across GIPHY.
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      responses:
+        '200':
+          description: Trending search terms.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: string
+                  meta:
+                    $ref: '#/components/schemas/Meta'
+components:
+  parameters:
+    Offset:
+      name: offset
+      in: query
+      required: false
+      description: Position in the result set for pagination.
+      schema:
+        type: integer
+        default: 0
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: GIPHY API key (Beta or Production).
+      schema:
+        type: string
+    Limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return per page.
+      schema:
+        type: integer
+        default: 25
+        maximum: 50
+  schemas:
+    Meta:
+      type: object
+      properties:
+        msg:
+          type: string
+        status:
+          type: integer
+        response_id:
+          type: string
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: api_key
+      description: API key issued via the GIPHY developer dashboard.

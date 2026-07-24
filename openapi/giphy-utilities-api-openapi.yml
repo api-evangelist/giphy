@@ -1,0 +1,86 @@
+openapi: 3.1.0
+info:
+  title: GIPHY Analytics Utilities API
+  description: 'The GIPHY API provides programmatic access to the world''s largest library of
+
+    GIFs, stickers, animated emoji and Clips (GIFs with sound). Search, trending,
+
+    translate, random, and category endpoints all return rich media objects with
+
+    multiple image renditions optimized for any surface.
+
+
+    Authentication is via API key. New developers receive a rate-limited Beta key;
+
+    a Production key is granted after application review.
+
+    '
+  version: '1.0'
+  contact:
+    name: GIPHY Developers
+    url: https://developers.giphy.com/
+    email: support@giphy.com
+  termsOfService: https://developers.giphy.com/terms/
+  license:
+    name: GIPHY API Terms of Service
+    url: https://developers.giphy.com/terms/
+servers:
+- url: https://api.giphy.com
+  description: Production API
+- url: https://upload.giphy.com
+  description: Upload API
+security:
+- ApiKeyAuth: []
+tags:
+- name: Utilities
+  description: Identifier generation and other helpers.
+paths:
+  /v1/randomid:
+    get:
+      tags:
+      - Utilities
+      operationId: createRandomId
+      summary: Create Random ID
+      description: Generate a unique, privacy-preserving identifier for tracking users in a session.
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      responses:
+        '200':
+          description: A new random ID.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      random_id:
+                        type: string
+                  meta:
+                    $ref: '#/components/schemas/Meta'
+components:
+  parameters:
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: GIPHY API key (Beta or Production).
+      schema:
+        type: string
+  schemas:
+    Meta:
+      type: object
+      properties:
+        msg:
+          type: string
+        status:
+          type: integer
+        response_id:
+          type: string
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: api_key
+      description: API key issued via the GIPHY developer dashboard.

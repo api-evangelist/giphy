@@ -1,0 +1,388 @@
+openapi: 3.1.0
+info:
+  title: GIPHY Analytics Clips API
+  description: 'The GIPHY API provides programmatic access to the world''s largest library of
+
+    GIFs, stickers, animated emoji and Clips (GIFs with sound). Search, trending,
+
+    translate, random, and category endpoints all return rich media objects with
+
+    multiple image renditions optimized for any surface.
+
+
+    Authentication is via API key. New developers receive a rate-limited Beta key;
+
+    a Production key is granted after application review.
+
+    '
+  version: '1.0'
+  contact:
+    name: GIPHY Developers
+    url: https://developers.giphy.com/
+    email: support@giphy.com
+  termsOfService: https://developers.giphy.com/terms/
+  license:
+    name: GIPHY API Terms of Service
+    url: https://developers.giphy.com/terms/
+servers:
+- url: https://api.giphy.com
+  description: Production API
+- url: https://upload.giphy.com
+  description: Upload API
+security:
+- ApiKeyAuth: []
+tags:
+- name: Clips
+  description: GIFs with sound. Access is gated; contact clips@giphy.com.
+paths:
+  /v1/clips/search:
+    get:
+      tags:
+      - Clips
+      operationId: searchClips
+      summary: Search Clips
+      description: Search the GIPHY Clips library (GIFs with sound).
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - name: q
+        in: query
+        required: true
+        schema:
+          type: string
+      - $ref: '#/components/parameters/Limit'
+      - $ref: '#/components/parameters/Offset'
+      - $ref: '#/components/parameters/Rating'
+      - $ref: '#/components/parameters/Lang'
+      - $ref: '#/components/parameters/CountryCode'
+      responses:
+        '200':
+          $ref: '#/components/responses/ClipListResponse'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+  /v1/clips/trending:
+    get:
+      tags:
+      - Clips
+      operationId: getTrendingClips
+      summary: Get Trending Clips
+      description: Return the most popular Clips of the day.
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - $ref: '#/components/parameters/Limit'
+      - $ref: '#/components/parameters/Offset'
+      - $ref: '#/components/parameters/Rating'
+      - $ref: '#/components/parameters/CountryCode'
+      responses:
+        '200':
+          $ref: '#/components/responses/ClipListResponse'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+components:
+  schemas:
+    Images:
+      type: object
+      description: Map of rendition keys to rendition metadata. Available renditions include fixed_height, fixed_height_still, fixed_height_downsampled, fixed_height_small, fixed_height_small_still, fixed_width, fixed_width_still, fixed_width_downsampled, fixed_width_small, fixed_width_small_still, downsized, downsized_still, downsized_large, downsized_medium, downsized_small, original, original_still, looping, preview, preview_gif.
+      additionalProperties:
+        $ref: '#/components/schemas/Rendition'
+    Rendition:
+      type: object
+      properties:
+        url:
+          type: string
+          format: uri
+        width:
+          type: string
+          description: Width in pixels (string in API).
+        height:
+          type: string
+          description: Height in pixels (string in API).
+        size:
+          type: string
+          description: File size in bytes (string in API).
+        mp4:
+          type: string
+          format: uri
+        mp4_size:
+          type: string
+        webp:
+          type: string
+          format: uri
+        webp_size:
+          type: string
+        frames:
+          type: string
+        hash:
+          type: string
+    Meta:
+      type: object
+      properties:
+        msg:
+          type: string
+        status:
+          type: integer
+        response_id:
+          type: string
+    Gif:
+      type: object
+      description: Standard GIPHY GIF object returned by most endpoints.
+      properties:
+        type:
+          type: string
+          enum:
+          - gif
+          - sticker
+          - emoji
+          description: Type of media object.
+        id:
+          type: string
+          description: GIPHY ID for the object.
+        slug:
+          type: string
+          description: URL slug used in giphy.com URLs.
+        url:
+          type: string
+          format: uri
+          description: Canonical GIPHY URL.
+        bitly_gif_url:
+          type: string
+          format: uri
+        bitly_url:
+          type: string
+          format: uri
+        embed_url:
+          type: string
+          format: uri
+        username:
+          type: string
+        source:
+          type: string
+        rating:
+          type: string
+          enum:
+          - g
+          - pg
+          - pg-13
+          - r
+          - y
+        content_url:
+          type: string
+        user:
+          $ref: '#/components/schemas/User'
+        source_tld:
+          type: string
+        source_post_url:
+          type: string
+          format: uri
+        update_datetime:
+          type: string
+          format: date-time
+        create_datetime:
+          type: string
+          format: date-time
+        import_datetime:
+          type: string
+          format: date-time
+        trending_datetime:
+          type: string
+          format: date-time
+        images:
+          $ref: '#/components/schemas/Images'
+        title:
+          type: string
+        alt_text:
+          type: string
+        is_low_contrast:
+          type: boolean
+        analytics_response_payload:
+          type: string
+        analytics:
+          $ref: '#/components/schemas/Analytics'
+    Pagination:
+      type: object
+      properties:
+        offset:
+          type: integer
+        total_count:
+          type: integer
+        count:
+          type: integer
+    User:
+      type: object
+      description: GIPHY user / channel associated with content.
+      properties:
+        avatar_url:
+          type: string
+          format: uri
+        banner_image:
+          type: string
+          format: uri
+        banner_url:
+          type: string
+          format: uri
+        profile_url:
+          type: string
+          format: uri
+        username:
+          type: string
+        display_name:
+          type: string
+        description:
+          type: string
+        instagram_url:
+          type: string
+          format: uri
+        website_url:
+          type: string
+          format: uri
+        is_verified:
+          type: boolean
+    Analytics:
+      type: object
+      description: Pingback URLs returned alongside each GIF for measuring user engagement.
+      properties:
+        onload:
+          type: object
+          properties:
+            url:
+              type: string
+              format: uri
+        onclick:
+          type: object
+          properties:
+            url:
+              type: string
+              format: uri
+        onsent:
+          type: object
+          properties:
+            url:
+              type: string
+              format: uri
+    Clip:
+      allOf:
+      - $ref: '#/components/schemas/Gif'
+      - type: object
+        properties:
+          video:
+            type: object
+            description: Video metadata for Clip objects (GIFs with sound).
+            properties:
+              duration:
+                type: number
+              dimensions:
+                type: object
+                properties:
+                  width:
+                    type: integer
+                  height:
+                    type: integer
+              assets:
+                type: object
+                additionalProperties:
+                  type: object
+                  properties:
+                    url:
+                      type: string
+                      format: uri
+                    width:
+                      type: integer
+                    height:
+                      type: integer
+              captions:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    lang:
+                      type: string
+                    srt:
+                      type: string
+                      format: uri
+                    vtt:
+                      type: string
+                      format: uri
+    Error:
+      type: object
+      properties:
+        meta:
+          $ref: '#/components/schemas/Meta'
+  responses:
+    ClipListResponse:
+      description: A paginated list of Clip objects (GIFs with sound).
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Clip'
+              pagination:
+                $ref: '#/components/schemas/Pagination'
+              meta:
+                $ref: '#/components/schemas/Meta'
+    Forbidden:
+      description: Access is restricted; for Clips endpoints, request access via clips@giphy.com.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  parameters:
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: GIPHY API key (Beta or Production).
+      schema:
+        type: string
+    Lang:
+      name: lang
+      in: query
+      required: false
+      description: Default language (ISO 639-1) for regional content.
+      schema:
+        type: string
+    Limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return per page.
+      schema:
+        type: integer
+        default: 25
+        maximum: 50
+    CountryCode:
+      name: country_code
+      in: query
+      required: false
+      description: ISO 3166-1 alpha-2 country code used to localize results.
+      schema:
+        type: string
+    Offset:
+      name: offset
+      in: query
+      required: false
+      description: Position in the result set for pagination.
+      schema:
+        type: integer
+        default: 0
+    Rating:
+      name: rating
+      in: query
+      required: false
+      description: Filter results by MPAA-style rating.
+      schema:
+        type: string
+        enum:
+        - g
+        - pg
+        - pg-13
+        - r
+        - y
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: api_key
+      description: API key issued via the GIPHY developer dashboard.

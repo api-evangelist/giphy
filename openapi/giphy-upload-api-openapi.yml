@@ -1,0 +1,123 @@
+openapi: 3.1.0
+info:
+  title: GIPHY Analytics Upload API
+  description: 'The GIPHY API provides programmatic access to the world''s largest library of
+
+    GIFs, stickers, animated emoji and Clips (GIFs with sound). Search, trending,
+
+    translate, random, and category endpoints all return rich media objects with
+
+    multiple image renditions optimized for any surface.
+
+
+    Authentication is via API key. New developers receive a rate-limited Beta key;
+
+    a Production key is granted after application review.
+
+    '
+  version: '1.0'
+  contact:
+    name: GIPHY Developers
+    url: https://developers.giphy.com/
+    email: support@giphy.com
+  termsOfService: https://developers.giphy.com/terms/
+  license:
+    name: GIPHY API Terms of Service
+    url: https://developers.giphy.com/terms/
+servers:
+- url: https://api.giphy.com
+  description: Production API
+- url: https://upload.giphy.com
+  description: Upload API
+security:
+- ApiKeyAuth: []
+tags:
+- name: Upload
+  description: Programmatic upload of GIFs and video assets.
+paths:
+  /v1/gifs:
+    post:
+      tags:
+      - Upload
+      operationId: uploadGif
+      summary: Upload GIF
+      description: 'Upload a GIF or video file to GIPHY at `upload.giphy.com/v1/gifs`. Maximum file
+
+        size is 100 MB. This operation runs against the `upload.giphy.com` host (overrides
+
+        the default server).
+
+        '
+      servers:
+      - url: https://upload.giphy.com
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+              - api_key
+              properties:
+                api_key:
+                  type: string
+                file:
+                  type: string
+                  format: binary
+                  description: Image or video file (≤100 MB).
+                source_image_url:
+                  type: string
+                  format: uri
+                  description: Optionally provide a URL instead of uploading bytes.
+                username:
+                  type: string
+                tags:
+                  type: string
+                  description: Comma-separated tag list.
+                source_post_url:
+                  type: string
+                  format: uri
+                is_hidden:
+                  type: boolean
+      responses:
+        '200':
+          description: Upload accepted, returns the new GIF identifier.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                  meta:
+                    $ref: '#/components/schemas/Meta'
+components:
+  parameters:
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: GIPHY API key (Beta or Production).
+      schema:
+        type: string
+  schemas:
+    Meta:
+      type: object
+      properties:
+        msg:
+          type: string
+        status:
+          type: integer
+        response_id:
+          type: string
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: api_key
+      description: API key issued via the GIPHY developer dashboard.

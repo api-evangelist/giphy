@@ -1,0 +1,379 @@
+openapi: 3.1.0
+info:
+  title: GIPHY Analytics Stickers API
+  description: 'The GIPHY API provides programmatic access to the world''s largest library of
+
+    GIFs, stickers, animated emoji and Clips (GIFs with sound). Search, trending,
+
+    translate, random, and category endpoints all return rich media objects with
+
+    multiple image renditions optimized for any surface.
+
+
+    Authentication is via API key. New developers receive a rate-limited Beta key;
+
+    a Production key is granted after application review.
+
+    '
+  version: '1.0'
+  contact:
+    name: GIPHY Developers
+    url: https://developers.giphy.com/
+    email: support@giphy.com
+  termsOfService: https://developers.giphy.com/terms/
+  license:
+    name: GIPHY API Terms of Service
+    url: https://developers.giphy.com/terms/
+servers:
+- url: https://api.giphy.com
+  description: Production API
+- url: https://upload.giphy.com
+  description: Upload API
+security:
+- ApiKeyAuth: []
+tags:
+- name: Stickers
+  description: The same surface as GIFs but scoped to transparent-background stickers.
+paths:
+  /v1/stickers/search:
+    get:
+      tags:
+      - Stickers
+      operationId: searchStickers
+      summary: Search Stickers
+      description: Search GIPHY's library of stickers (transparent-background animations).
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - name: q
+        in: query
+        required: true
+        schema:
+          type: string
+          maxLength: 50
+      - $ref: '#/components/parameters/Limit'
+      - $ref: '#/components/parameters/Offset'
+      - $ref: '#/components/parameters/Rating'
+      - $ref: '#/components/parameters/Lang'
+      responses:
+        '200':
+          $ref: '#/components/responses/GifListResponse'
+  /v1/stickers/trending:
+    get:
+      tags:
+      - Stickers
+      operationId: getTrendingStickers
+      summary: Get Trending Stickers
+      description: Return the most relevant and engaging stickers each day.
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - $ref: '#/components/parameters/Limit'
+      - $ref: '#/components/parameters/Offset'
+      - $ref: '#/components/parameters/Rating'
+      responses:
+        '200':
+          $ref: '#/components/responses/GifListResponse'
+  /v1/stickers/translate:
+    get:
+      tags:
+      - Stickers
+      operationId: translateSticker
+      summary: Translate Term to Sticker
+      description: Convert words and phrases to a single contextually relevant sticker.
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - name: s
+        in: query
+        required: true
+        schema:
+          type: string
+      - $ref: '#/components/parameters/Weirdness'
+      - $ref: '#/components/parameters/Rating'
+      responses:
+        '200':
+          $ref: '#/components/responses/SingleGifResponse'
+  /v1/stickers/random:
+    get:
+      tags:
+      - Stickers
+      operationId: getRandomSticker
+      summary: Get Random Sticker
+      description: Return a single random sticker, optionally filtered by tag.
+      parameters:
+      - $ref: '#/components/parameters/ApiKey'
+      - name: tag
+        in: query
+        required: false
+        schema:
+          type: string
+      - $ref: '#/components/parameters/Rating'
+      responses:
+        '200':
+          $ref: '#/components/responses/SingleGifResponse'
+components:
+  schemas:
+    Images:
+      type: object
+      description: Map of rendition keys to rendition metadata. Available renditions include fixed_height, fixed_height_still, fixed_height_downsampled, fixed_height_small, fixed_height_small_still, fixed_width, fixed_width_still, fixed_width_downsampled, fixed_width_small, fixed_width_small_still, downsized, downsized_still, downsized_large, downsized_medium, downsized_small, original, original_still, looping, preview, preview_gif.
+      additionalProperties:
+        $ref: '#/components/schemas/Rendition'
+    Rendition:
+      type: object
+      properties:
+        url:
+          type: string
+          format: uri
+        width:
+          type: string
+          description: Width in pixels (string in API).
+        height:
+          type: string
+          description: Height in pixels (string in API).
+        size:
+          type: string
+          description: File size in bytes (string in API).
+        mp4:
+          type: string
+          format: uri
+        mp4_size:
+          type: string
+        webp:
+          type: string
+          format: uri
+        webp_size:
+          type: string
+        frames:
+          type: string
+        hash:
+          type: string
+    Meta:
+      type: object
+      properties:
+        msg:
+          type: string
+        status:
+          type: integer
+        response_id:
+          type: string
+    Gif:
+      type: object
+      description: Standard GIPHY GIF object returned by most endpoints.
+      properties:
+        type:
+          type: string
+          enum:
+          - gif
+          - sticker
+          - emoji
+          description: Type of media object.
+        id:
+          type: string
+          description: GIPHY ID for the object.
+        slug:
+          type: string
+          description: URL slug used in giphy.com URLs.
+        url:
+          type: string
+          format: uri
+          description: Canonical GIPHY URL.
+        bitly_gif_url:
+          type: string
+          format: uri
+        bitly_url:
+          type: string
+          format: uri
+        embed_url:
+          type: string
+          format: uri
+        username:
+          type: string
+        source:
+          type: string
+        rating:
+          type: string
+          enum:
+          - g
+          - pg
+          - pg-13
+          - r
+          - y
+        content_url:
+          type: string
+        user:
+          $ref: '#/components/schemas/User'
+        source_tld:
+          type: string
+        source_post_url:
+          type: string
+          format: uri
+        update_datetime:
+          type: string
+          format: date-time
+        create_datetime:
+          type: string
+          format: date-time
+        import_datetime:
+          type: string
+          format: date-time
+        trending_datetime:
+          type: string
+          format: date-time
+        images:
+          $ref: '#/components/schemas/Images'
+        title:
+          type: string
+        alt_text:
+          type: string
+        is_low_contrast:
+          type: boolean
+        analytics_response_payload:
+          type: string
+        analytics:
+          $ref: '#/components/schemas/Analytics'
+    Pagination:
+      type: object
+      properties:
+        offset:
+          type: integer
+        total_count:
+          type: integer
+        count:
+          type: integer
+    User:
+      type: object
+      description: GIPHY user / channel associated with content.
+      properties:
+        avatar_url:
+          type: string
+          format: uri
+        banner_image:
+          type: string
+          format: uri
+        banner_url:
+          type: string
+          format: uri
+        profile_url:
+          type: string
+          format: uri
+        username:
+          type: string
+        display_name:
+          type: string
+        description:
+          type: string
+        instagram_url:
+          type: string
+          format: uri
+        website_url:
+          type: string
+          format: uri
+        is_verified:
+          type: boolean
+    Analytics:
+      type: object
+      description: Pingback URLs returned alongside each GIF for measuring user engagement.
+      properties:
+        onload:
+          type: object
+          properties:
+            url:
+              type: string
+              format: uri
+        onclick:
+          type: object
+          properties:
+            url:
+              type: string
+              format: uri
+        onsent:
+          type: object
+          properties:
+            url:
+              type: string
+              format: uri
+  responses:
+    SingleGifResponse:
+      description: A single GIF or Sticker object.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: '#/components/schemas/Gif'
+              meta:
+                $ref: '#/components/schemas/Meta'
+    GifListResponse:
+      description: A paginated list of GIF or Sticker objects.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Gif'
+              pagination:
+                $ref: '#/components/schemas/Pagination'
+              meta:
+                $ref: '#/components/schemas/Meta'
+  parameters:
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: GIPHY API key (Beta or Production).
+      schema:
+        type: string
+    Weirdness:
+      name: weirdness
+      in: query
+      required: false
+      description: Translate weirdness (0 conservative ... 10 most weird).
+      schema:
+        type: integer
+        minimum: 0
+        maximum: 10
+    Lang:
+      name: lang
+      in: query
+      required: false
+      description: Default language (ISO 639-1) for regional content.
+      schema:
+        type: string
+    Limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return per page.
+      schema:
+        type: integer
+        default: 25
+        maximum: 50
+    Offset:
+      name: offset
+      in: query
+      required: false
+      description: Position in the result set for pagination.
+      schema:
+        type: integer
+        default: 0
+    Rating:
+      name: rating
+      in: query
+      required: false
+      description: Filter results by MPAA-style rating.
+      schema:
+        type: string
+        enum:
+        - g
+        - pg
+        - pg-13
+        - r
+        - y
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: api_key
+      description: API key issued via the GIPHY developer dashboard.
