@@ -6,6 +6,19 @@ description: >-
   Authentication is via API key (Beta or Production tier) and all surfaces share the same envelope (data + meta +
   pagination) with rich, multi-rendition media payloads.
 url: https://developers.giphy.com/
+accessModel:
+  pricing: paid
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Paid · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 image: https://giphy.com/static/img/giphy-be-animated-logo.gif
 specificationVersion: '0.20'
 created: '2026-05-28'
@@ -26,144 +39,1021 @@ tags:
   - Social
   - Meta
 apis:
-  - name: GIPHY API
-    description: >-
-      The GIPHY REST API. Search, trending, translate, random, lookup, categories, autocomplete, related/trending terms,
-      channels, animated emoji, animated text, Clips, analytics pingbacks, and uploads — all behind a single API key.
-    humanURL: https://developers.giphy.com/docs/api
-    baseURL: https://api.giphy.com
-    tags:
-      - GIFs
-      - Stickers
-      - Emoji
-      - Clips
-      - Channels
-      - Categories
-      - Search Discovery
-      - Analytics
-      - Upload
-      - Utilities
-    properties:
-      - type: Documentation
-        url: https://developers.giphy.com/docs/api
-      - type: APIReference
-        url: https://developers.giphy.com/docs/api/endpoint
-      - type: GettingStarted
-        url: https://developers.giphy.com/docs/api
-      - type: Authentication
-        url: https://developers.giphy.com/docs/api#quick-start-guide
-      - type: OpenAPI
-        url: openapi/giphy-openapi.yml
-      - type: JSONSchema
-        url: json-schema/giphy-gif-schema.json
-        title: GIF Schema
-      - type: JSONSchema
-        url: json-schema/giphy-clip-schema.json
-        title: Clip Schema
-      - type: JSONSchema
-        url: json-schema/giphy-user-schema.json
-        title: User Schema
-      - type: JSONSchema
-        url: json-schema/giphy-channel-schema.json
-        title: Channel Schema
-      - type: JSONSchema
-        url: json-schema/giphy-category-schema.json
-        title: Category Schema
-      - type: JSONSchema
-        url: json-schema/giphy-images-schema.json
-        title: Images / Renditions Schema
-      - type: JSONSchema
-        url: json-schema/giphy-analytics-schema.json
-        title: Analytics Pingbacks Schema
-      - type: JSONSchema
-        url: json-schema/giphy-meta-schema.json
-        title: Meta Envelope Schema
-      - type: JSONSchema
-        url: json-schema/giphy-pagination-schema.json
-        title: Pagination Schema
-      - type: JSONStructure
-        url: json-structure/giphy-gif-structure.json
-        title: GIF Structure
-      - type: JSONStructure
-        url: json-structure/giphy-clip-structure.json
-        title: Clip Structure
-      - type: JSONStructure
-        url: json-structure/giphy-images-structure.json
-        title: Images Structure
-      - type: JSONStructure
-        url: json-structure/giphy-channel-structure.json
-        title: Channel Structure
-      - type: Examples
-        url: examples/giphy-search-gifs-example.json
-        title: Search GIFs Example
-      - type: Examples
-        url: examples/giphy-get-trending-gifs-example.json
-        title: Trending GIFs Example
-      - type: Examples
-        url: examples/giphy-translate-gif-example.json
-        title: Translate GIF Example
-      - type: Examples
-        url: examples/giphy-get-random-gif-example.json
-        title: Random GIF Example
-      - type: Examples
-        url: examples/giphy-get-gif-by-id-example.json
-        title: Get GIF by ID Example
-      - type: Examples
-        url: examples/giphy-list-gif-categories-example.json
-        title: List Categories Example
-      - type: Examples
-        url: examples/giphy-autocomplete-search-tags-example.json
-        title: Autocomplete Search Tags Example
-      - type: Examples
-        url: examples/giphy-get-related-search-terms-example.json
-        title: Related Search Terms Example
-      - type: Examples
-        url: examples/giphy-get-trending-searches-example.json
-        title: Trending Searches Example
-      - type: Examples
-        url: examples/giphy-search-stickers-example.json
-        title: Search Stickers Example
-      - type: Examples
-        url: examples/giphy-list-emoji-example.json
-        title: List Emoji Example
-      - type: Examples
-        url: examples/giphy-search-clips-example.json
-        title: Search Clips Example
-      - type: Examples
-        url: examples/giphy-upload-gif-example.json
-        title: Upload GIF Example
-      - type: Examples
-        url: examples/giphy-register-search-action-example.json
-        title: Register Analytics Action Example
-      - type: SDKs
-        url: https://github.com/Giphy/giphy-ios-sdk
-        title: iOS SDK
-      - type: SDKs
-        url: https://github.com/Giphy/giphy-android-sdk
-        title: Android SDK
-      - type: SDKs
-        url: https://github.com/Giphy/giphy-react-native-sdk
-        title: React Native SDK
-      - type: SDKs
-        url: https://github.com/Giphy/giphy-flutter-sdk
-        title: Flutter SDK
-      - type: SDKs
-        url: https://github.com/Giphy/giphy-js
-        title: Web / JavaScript SDK (@giphy/js-fetch-api, @giphy/react-components)
-      - type: SDKs
-        url: https://github.com/Giphy/giphy-python-client
-        title: Python Client (legacy, last updated 2023)
-      - type: SDKs
-        url: https://github.com/Giphy/giphy-ruby-client
-        title: Ruby Client (legacy)
-      - type: SDKs
-        url: https://github.com/Giphy/giphy-php-client
-        title: PHP Client (legacy)
-      - type: RateLimits
-        url: rate-limits/giphy-rate-limits.yml
-      - type: Pricing
-        url: plans/giphy-plans-pricing.yml
+- aid: giphy:giphy-analytics-api
+  name: Giphy Analytics API
+  description: Pingback and action register endpoints for measuring user engagement.
+  humanURL: https://developers.giphy.com/docs/api
+  baseURL: https://api.giphy.com
+  tags:
+  - Analytics
+  properties:
+  - type: OpenAPI
+    url: openapi/giphy-analytics-api-openapi.yml
+  - type: Documentation
+    url: https://developers.giphy.com/docs/api
+  - type: APIReference
+    url: https://developers.giphy.com/docs/api/endpoint
+  - type: GettingStarted
+    url: https://developers.giphy.com/docs/api
+  - type: Authentication
+    url: https://developers.giphy.com/docs/api#quick-start-guide
+  - type: JSONSchema
+    url: json-schema/giphy-gif-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-clip-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-user-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-channel-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-category-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-images-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-analytics-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-meta-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-pagination-schema.json
+  - type: JSONStructure
+    url: json-structure/giphy-gif-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-clip-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-images-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-channel-structure.json
+  - type: Examples
+    url: examples/giphy-search-gifs-example.json
+  - type: Examples
+    url: examples/giphy-get-trending-gifs-example.json
+  - type: Examples
+    url: examples/giphy-translate-gif-example.json
+  - type: Examples
+    url: examples/giphy-get-random-gif-example.json
+  - type: Examples
+    url: examples/giphy-get-gif-by-id-example.json
+  - type: Examples
+    url: examples/giphy-list-gif-categories-example.json
+  - type: Examples
+    url: examples/giphy-autocomplete-search-tags-example.json
+  - type: Examples
+    url: examples/giphy-get-related-search-terms-example.json
+  - type: Examples
+    url: examples/giphy-get-trending-searches-example.json
+  - type: Examples
+    url: examples/giphy-search-stickers-example.json
+  - type: Examples
+    url: examples/giphy-list-emoji-example.json
+  - type: Examples
+    url: examples/giphy-search-clips-example.json
+  - type: Examples
+    url: examples/giphy-upload-gif-example.json
+  - type: Examples
+    url: examples/giphy-register-search-action-example.json
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-ios-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-android-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-react-native-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-flutter-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-js
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-python-client
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-ruby-client
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-php-client
+  - type: RateLimits
+    url: rate-limits/giphy-rate-limits.yml
+  - type: Pricing
+    url: plans/giphy-plans-pricing.yml
+- aid: giphy:giphy-animate-api
+  name: Giphy Animate API
+  description: Programmatic creation of animated text/word GIFs.
+  humanURL: https://developers.giphy.com/docs/api
+  baseURL: https://api.giphy.com
+  tags:
+  - Animate
+  properties:
+  - type: OpenAPI
+    url: openapi/giphy-animate-api-openapi.yml
+  - type: Documentation
+    url: https://developers.giphy.com/docs/api
+  - type: APIReference
+    url: https://developers.giphy.com/docs/api/endpoint
+  - type: GettingStarted
+    url: https://developers.giphy.com/docs/api
+  - type: Authentication
+    url: https://developers.giphy.com/docs/api#quick-start-guide
+  - type: JSONSchema
+    url: json-schema/giphy-gif-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-clip-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-user-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-channel-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-category-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-images-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-analytics-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-meta-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-pagination-schema.json
+  - type: JSONStructure
+    url: json-structure/giphy-gif-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-clip-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-images-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-channel-structure.json
+  - type: Examples
+    url: examples/giphy-search-gifs-example.json
+  - type: Examples
+    url: examples/giphy-get-trending-gifs-example.json
+  - type: Examples
+    url: examples/giphy-translate-gif-example.json
+  - type: Examples
+    url: examples/giphy-get-random-gif-example.json
+  - type: Examples
+    url: examples/giphy-get-gif-by-id-example.json
+  - type: Examples
+    url: examples/giphy-list-gif-categories-example.json
+  - type: Examples
+    url: examples/giphy-autocomplete-search-tags-example.json
+  - type: Examples
+    url: examples/giphy-get-related-search-terms-example.json
+  - type: Examples
+    url: examples/giphy-get-trending-searches-example.json
+  - type: Examples
+    url: examples/giphy-search-stickers-example.json
+  - type: Examples
+    url: examples/giphy-list-emoji-example.json
+  - type: Examples
+    url: examples/giphy-search-clips-example.json
+  - type: Examples
+    url: examples/giphy-upload-gif-example.json
+  - type: Examples
+    url: examples/giphy-register-search-action-example.json
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-ios-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-android-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-react-native-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-flutter-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-js
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-python-client
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-ruby-client
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-php-client
+  - type: RateLimits
+    url: rate-limits/giphy-rate-limits.yml
+  - type: Pricing
+    url: plans/giphy-plans-pricing.yml
+- aid: giphy:giphy-categories-api
+  name: Giphy Categories API
+  description: Top-level categories and subcategories used to organize GIFs.
+  humanURL: https://developers.giphy.com/docs/api
+  baseURL: https://api.giphy.com
+  tags:
+  - Categories
+  properties:
+  - type: OpenAPI
+    url: openapi/giphy-categories-api-openapi.yml
+  - type: Documentation
+    url: https://developers.giphy.com/docs/api
+  - type: APIReference
+    url: https://developers.giphy.com/docs/api/endpoint
+  - type: GettingStarted
+    url: https://developers.giphy.com/docs/api
+  - type: Authentication
+    url: https://developers.giphy.com/docs/api#quick-start-guide
+  - type: JSONSchema
+    url: json-schema/giphy-gif-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-clip-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-user-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-channel-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-category-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-images-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-analytics-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-meta-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-pagination-schema.json
+  - type: JSONStructure
+    url: json-structure/giphy-gif-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-clip-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-images-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-channel-structure.json
+  - type: Examples
+    url: examples/giphy-search-gifs-example.json
+  - type: Examples
+    url: examples/giphy-get-trending-gifs-example.json
+  - type: Examples
+    url: examples/giphy-translate-gif-example.json
+  - type: Examples
+    url: examples/giphy-get-random-gif-example.json
+  - type: Examples
+    url: examples/giphy-get-gif-by-id-example.json
+  - type: Examples
+    url: examples/giphy-list-gif-categories-example.json
+  - type: Examples
+    url: examples/giphy-autocomplete-search-tags-example.json
+  - type: Examples
+    url: examples/giphy-get-related-search-terms-example.json
+  - type: Examples
+    url: examples/giphy-get-trending-searches-example.json
+  - type: Examples
+    url: examples/giphy-search-stickers-example.json
+  - type: Examples
+    url: examples/giphy-list-emoji-example.json
+  - type: Examples
+    url: examples/giphy-search-clips-example.json
+  - type: Examples
+    url: examples/giphy-upload-gif-example.json
+  - type: Examples
+    url: examples/giphy-register-search-action-example.json
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-ios-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-android-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-react-native-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-flutter-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-js
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-python-client
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-ruby-client
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-php-client
+  - type: RateLimits
+    url: rate-limits/giphy-rate-limits.yml
+  - type: Pricing
+    url: plans/giphy-plans-pricing.yml
+- aid: giphy:giphy-channels-api
+  name: Giphy Channels API
+  description: Channel discovery and metadata.
+  humanURL: https://developers.giphy.com/docs/api
+  baseURL: https://api.giphy.com
+  tags:
+  - Channels
+  properties:
+  - type: OpenAPI
+    url: openapi/giphy-channels-api-openapi.yml
+  - type: Documentation
+    url: https://developers.giphy.com/docs/api
+  - type: APIReference
+    url: https://developers.giphy.com/docs/api/endpoint
+  - type: GettingStarted
+    url: https://developers.giphy.com/docs/api
+  - type: Authentication
+    url: https://developers.giphy.com/docs/api#quick-start-guide
+  - type: JSONSchema
+    url: json-schema/giphy-gif-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-clip-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-user-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-channel-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-category-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-images-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-analytics-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-meta-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-pagination-schema.json
+  - type: JSONStructure
+    url: json-structure/giphy-gif-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-clip-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-images-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-channel-structure.json
+  - type: Examples
+    url: examples/giphy-search-gifs-example.json
+  - type: Examples
+    url: examples/giphy-get-trending-gifs-example.json
+  - type: Examples
+    url: examples/giphy-translate-gif-example.json
+  - type: Examples
+    url: examples/giphy-get-random-gif-example.json
+  - type: Examples
+    url: examples/giphy-get-gif-by-id-example.json
+  - type: Examples
+    url: examples/giphy-list-gif-categories-example.json
+  - type: Examples
+    url: examples/giphy-autocomplete-search-tags-example.json
+  - type: Examples
+    url: examples/giphy-get-related-search-terms-example.json
+  - type: Examples
+    url: examples/giphy-get-trending-searches-example.json
+  - type: Examples
+    url: examples/giphy-search-stickers-example.json
+  - type: Examples
+    url: examples/giphy-list-emoji-example.json
+  - type: Examples
+    url: examples/giphy-search-clips-example.json
+  - type: Examples
+    url: examples/giphy-upload-gif-example.json
+  - type: Examples
+    url: examples/giphy-register-search-action-example.json
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-ios-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-android-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-react-native-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-flutter-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-js
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-python-client
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-ruby-client
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-php-client
+  - type: RateLimits
+    url: rate-limits/giphy-rate-limits.yml
+  - type: Pricing
+    url: plans/giphy-plans-pricing.yml
+- aid: giphy:giphy-clips-api
+  name: Giphy Clips API
+  description: GIFs with sound. Access is gated; contact clips@giphy.com.
+  humanURL: https://developers.giphy.com/docs/api
+  baseURL: https://api.giphy.com
+  tags:
+  - Clips
+  properties:
+  - type: OpenAPI
+    url: openapi/giphy-clips-api-openapi.yml
+  - type: Documentation
+    url: https://developers.giphy.com/docs/api
+  - type: APIReference
+    url: https://developers.giphy.com/docs/api/endpoint
+  - type: GettingStarted
+    url: https://developers.giphy.com/docs/api
+  - type: Authentication
+    url: https://developers.giphy.com/docs/api#quick-start-guide
+  - type: JSONSchema
+    url: json-schema/giphy-gif-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-clip-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-user-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-channel-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-category-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-images-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-analytics-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-meta-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-pagination-schema.json
+  - type: JSONStructure
+    url: json-structure/giphy-gif-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-clip-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-images-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-channel-structure.json
+  - type: Examples
+    url: examples/giphy-search-gifs-example.json
+  - type: Examples
+    url: examples/giphy-get-trending-gifs-example.json
+  - type: Examples
+    url: examples/giphy-translate-gif-example.json
+  - type: Examples
+    url: examples/giphy-get-random-gif-example.json
+  - type: Examples
+    url: examples/giphy-get-gif-by-id-example.json
+  - type: Examples
+    url: examples/giphy-list-gif-categories-example.json
+  - type: Examples
+    url: examples/giphy-autocomplete-search-tags-example.json
+  - type: Examples
+    url: examples/giphy-get-related-search-terms-example.json
+  - type: Examples
+    url: examples/giphy-get-trending-searches-example.json
+  - type: Examples
+    url: examples/giphy-search-stickers-example.json
+  - type: Examples
+    url: examples/giphy-list-emoji-example.json
+  - type: Examples
+    url: examples/giphy-search-clips-example.json
+  - type: Examples
+    url: examples/giphy-upload-gif-example.json
+  - type: Examples
+    url: examples/giphy-register-search-action-example.json
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-ios-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-android-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-react-native-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-flutter-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-js
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-python-client
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-ruby-client
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-php-client
+  - type: RateLimits
+    url: rate-limits/giphy-rate-limits.yml
+  - type: Pricing
+    url: plans/giphy-plans-pricing.yml
+- aid: giphy:giphy-emoji-api
+  name: Giphy Emoji API
+  description: GIPHY's animated emoji library and per-emoji variations.
+  humanURL: https://developers.giphy.com/docs/api
+  baseURL: https://api.giphy.com
+  tags:
+  - Emoji
+  properties:
+  - type: OpenAPI
+    url: openapi/giphy-emoji-api-openapi.yml
+  - type: Documentation
+    url: https://developers.giphy.com/docs/api
+  - type: APIReference
+    url: https://developers.giphy.com/docs/api/endpoint
+  - type: GettingStarted
+    url: https://developers.giphy.com/docs/api
+  - type: Authentication
+    url: https://developers.giphy.com/docs/api#quick-start-guide
+  - type: JSONSchema
+    url: json-schema/giphy-gif-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-clip-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-user-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-channel-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-category-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-images-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-analytics-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-meta-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-pagination-schema.json
+  - type: JSONStructure
+    url: json-structure/giphy-gif-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-clip-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-images-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-channel-structure.json
+  - type: Examples
+    url: examples/giphy-search-gifs-example.json
+  - type: Examples
+    url: examples/giphy-get-trending-gifs-example.json
+  - type: Examples
+    url: examples/giphy-translate-gif-example.json
+  - type: Examples
+    url: examples/giphy-get-random-gif-example.json
+  - type: Examples
+    url: examples/giphy-get-gif-by-id-example.json
+  - type: Examples
+    url: examples/giphy-list-gif-categories-example.json
+  - type: Examples
+    url: examples/giphy-autocomplete-search-tags-example.json
+  - type: Examples
+    url: examples/giphy-get-related-search-terms-example.json
+  - type: Examples
+    url: examples/giphy-get-trending-searches-example.json
+  - type: Examples
+    url: examples/giphy-search-stickers-example.json
+  - type: Examples
+    url: examples/giphy-list-emoji-example.json
+  - type: Examples
+    url: examples/giphy-search-clips-example.json
+  - type: Examples
+    url: examples/giphy-upload-gif-example.json
+  - type: Examples
+    url: examples/giphy-register-search-action-example.json
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-ios-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-android-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-react-native-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-flutter-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-js
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-python-client
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-ruby-client
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-php-client
+  - type: RateLimits
+    url: rate-limits/giphy-rate-limits.yml
+  - type: Pricing
+    url: plans/giphy-plans-pricing.yml
+- aid: giphy:giphy-gifs-api
+  name: Giphy GIFs API
+  description: Search, trending, translate, random, and lookup endpoints for animated GIFs.
+  humanURL: https://developers.giphy.com/docs/api
+  baseURL: https://api.giphy.com
+  tags:
+  - GIFs
+  properties:
+  - type: OpenAPI
+    url: openapi/giphy-gifs-api-openapi.yml
+  - type: Documentation
+    url: https://developers.giphy.com/docs/api
+  - type: APIReference
+    url: https://developers.giphy.com/docs/api/endpoint
+  - type: GettingStarted
+    url: https://developers.giphy.com/docs/api
+  - type: Authentication
+    url: https://developers.giphy.com/docs/api#quick-start-guide
+  - type: JSONSchema
+    url: json-schema/giphy-gif-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-clip-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-user-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-channel-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-category-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-images-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-analytics-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-meta-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-pagination-schema.json
+  - type: JSONStructure
+    url: json-structure/giphy-gif-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-clip-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-images-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-channel-structure.json
+  - type: Examples
+    url: examples/giphy-search-gifs-example.json
+  - type: Examples
+    url: examples/giphy-get-trending-gifs-example.json
+  - type: Examples
+    url: examples/giphy-translate-gif-example.json
+  - type: Examples
+    url: examples/giphy-get-random-gif-example.json
+  - type: Examples
+    url: examples/giphy-get-gif-by-id-example.json
+  - type: Examples
+    url: examples/giphy-list-gif-categories-example.json
+  - type: Examples
+    url: examples/giphy-autocomplete-search-tags-example.json
+  - type: Examples
+    url: examples/giphy-get-related-search-terms-example.json
+  - type: Examples
+    url: examples/giphy-get-trending-searches-example.json
+  - type: Examples
+    url: examples/giphy-search-stickers-example.json
+  - type: Examples
+    url: examples/giphy-list-emoji-example.json
+  - type: Examples
+    url: examples/giphy-search-clips-example.json
+  - type: Examples
+    url: examples/giphy-upload-gif-example.json
+  - type: Examples
+    url: examples/giphy-register-search-action-example.json
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-ios-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-android-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-react-native-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-flutter-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-js
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-python-client
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-ruby-client
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-php-client
+  - type: RateLimits
+    url: rate-limits/giphy-rate-limits.yml
+  - type: Pricing
+    url: plans/giphy-plans-pricing.yml
+- aid: giphy:giphy-search-discovery-api
+  name: Giphy Search Discovery API
+  description: Tag autocompletion, related search terms, and trending search queries.
+  humanURL: https://developers.giphy.com/docs/api
+  baseURL: https://api.giphy.com
+  tags:
+  - Search Discovery
+  properties:
+  - type: OpenAPI
+    url: openapi/giphy-search-discovery-api-openapi.yml
+  - type: Documentation
+    url: https://developers.giphy.com/docs/api
+  - type: APIReference
+    url: https://developers.giphy.com/docs/api/endpoint
+  - type: GettingStarted
+    url: https://developers.giphy.com/docs/api
+  - type: Authentication
+    url: https://developers.giphy.com/docs/api#quick-start-guide
+  - type: JSONSchema
+    url: json-schema/giphy-gif-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-clip-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-user-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-channel-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-category-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-images-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-analytics-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-meta-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-pagination-schema.json
+  - type: JSONStructure
+    url: json-structure/giphy-gif-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-clip-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-images-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-channel-structure.json
+  - type: Examples
+    url: examples/giphy-search-gifs-example.json
+  - type: Examples
+    url: examples/giphy-get-trending-gifs-example.json
+  - type: Examples
+    url: examples/giphy-translate-gif-example.json
+  - type: Examples
+    url: examples/giphy-get-random-gif-example.json
+  - type: Examples
+    url: examples/giphy-get-gif-by-id-example.json
+  - type: Examples
+    url: examples/giphy-list-gif-categories-example.json
+  - type: Examples
+    url: examples/giphy-autocomplete-search-tags-example.json
+  - type: Examples
+    url: examples/giphy-get-related-search-terms-example.json
+  - type: Examples
+    url: examples/giphy-get-trending-searches-example.json
+  - type: Examples
+    url: examples/giphy-search-stickers-example.json
+  - type: Examples
+    url: examples/giphy-list-emoji-example.json
+  - type: Examples
+    url: examples/giphy-search-clips-example.json
+  - type: Examples
+    url: examples/giphy-upload-gif-example.json
+  - type: Examples
+    url: examples/giphy-register-search-action-example.json
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-ios-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-android-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-react-native-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-flutter-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-js
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-python-client
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-ruby-client
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-php-client
+  - type: RateLimits
+    url: rate-limits/giphy-rate-limits.yml
+  - type: Pricing
+    url: plans/giphy-plans-pricing.yml
+- aid: giphy:giphy-stickers-api
+  name: Giphy Stickers API
+  description: The same surface as GIFs but scoped to transparent-background stickers.
+  humanURL: https://developers.giphy.com/docs/api
+  baseURL: https://api.giphy.com
+  tags:
+  - Stickers
+  properties:
+  - type: OpenAPI
+    url: openapi/giphy-stickers-api-openapi.yml
+  - type: Documentation
+    url: https://developers.giphy.com/docs/api
+  - type: APIReference
+    url: https://developers.giphy.com/docs/api/endpoint
+  - type: GettingStarted
+    url: https://developers.giphy.com/docs/api
+  - type: Authentication
+    url: https://developers.giphy.com/docs/api#quick-start-guide
+  - type: JSONSchema
+    url: json-schema/giphy-gif-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-clip-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-user-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-channel-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-category-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-images-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-analytics-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-meta-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-pagination-schema.json
+  - type: JSONStructure
+    url: json-structure/giphy-gif-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-clip-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-images-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-channel-structure.json
+  - type: Examples
+    url: examples/giphy-search-gifs-example.json
+  - type: Examples
+    url: examples/giphy-get-trending-gifs-example.json
+  - type: Examples
+    url: examples/giphy-translate-gif-example.json
+  - type: Examples
+    url: examples/giphy-get-random-gif-example.json
+  - type: Examples
+    url: examples/giphy-get-gif-by-id-example.json
+  - type: Examples
+    url: examples/giphy-list-gif-categories-example.json
+  - type: Examples
+    url: examples/giphy-autocomplete-search-tags-example.json
+  - type: Examples
+    url: examples/giphy-get-related-search-terms-example.json
+  - type: Examples
+    url: examples/giphy-get-trending-searches-example.json
+  - type: Examples
+    url: examples/giphy-search-stickers-example.json
+  - type: Examples
+    url: examples/giphy-list-emoji-example.json
+  - type: Examples
+    url: examples/giphy-search-clips-example.json
+  - type: Examples
+    url: examples/giphy-upload-gif-example.json
+  - type: Examples
+    url: examples/giphy-register-search-action-example.json
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-ios-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-android-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-react-native-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-flutter-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-js
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-python-client
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-ruby-client
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-php-client
+  - type: RateLimits
+    url: rate-limits/giphy-rate-limits.yml
+  - type: Pricing
+    url: plans/giphy-plans-pricing.yml
+- aid: giphy:giphy-upload-api
+  name: Giphy Upload API
+  description: Programmatic upload of GIFs and video assets.
+  humanURL: https://developers.giphy.com/docs/api
+  baseURL: https://api.giphy.com
+  tags:
+  - Upload
+  properties:
+  - type: OpenAPI
+    url: openapi/giphy-upload-api-openapi.yml
+  - type: Documentation
+    url: https://developers.giphy.com/docs/api
+  - type: APIReference
+    url: https://developers.giphy.com/docs/api/endpoint
+  - type: GettingStarted
+    url: https://developers.giphy.com/docs/api
+  - type: Authentication
+    url: https://developers.giphy.com/docs/api#quick-start-guide
+  - type: JSONSchema
+    url: json-schema/giphy-gif-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-clip-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-user-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-channel-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-category-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-images-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-analytics-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-meta-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-pagination-schema.json
+  - type: JSONStructure
+    url: json-structure/giphy-gif-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-clip-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-images-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-channel-structure.json
+  - type: Examples
+    url: examples/giphy-search-gifs-example.json
+  - type: Examples
+    url: examples/giphy-get-trending-gifs-example.json
+  - type: Examples
+    url: examples/giphy-translate-gif-example.json
+  - type: Examples
+    url: examples/giphy-get-random-gif-example.json
+  - type: Examples
+    url: examples/giphy-get-gif-by-id-example.json
+  - type: Examples
+    url: examples/giphy-list-gif-categories-example.json
+  - type: Examples
+    url: examples/giphy-autocomplete-search-tags-example.json
+  - type: Examples
+    url: examples/giphy-get-related-search-terms-example.json
+  - type: Examples
+    url: examples/giphy-get-trending-searches-example.json
+  - type: Examples
+    url: examples/giphy-search-stickers-example.json
+  - type: Examples
+    url: examples/giphy-list-emoji-example.json
+  - type: Examples
+    url: examples/giphy-search-clips-example.json
+  - type: Examples
+    url: examples/giphy-upload-gif-example.json
+  - type: Examples
+    url: examples/giphy-register-search-action-example.json
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-ios-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-android-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-react-native-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-flutter-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-js
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-python-client
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-ruby-client
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-php-client
+  - type: RateLimits
+    url: rate-limits/giphy-rate-limits.yml
+  - type: Pricing
+    url: plans/giphy-plans-pricing.yml
+- aid: giphy:giphy-utilities-api
+  name: Giphy Utilities API
+  description: Identifier generation and other helpers.
+  humanURL: https://developers.giphy.com/docs/api
+  baseURL: https://api.giphy.com
+  tags:
+  - Utilities
+  properties:
+  - type: OpenAPI
+    url: openapi/giphy-utilities-api-openapi.yml
+  - type: Documentation
+    url: https://developers.giphy.com/docs/api
+  - type: APIReference
+    url: https://developers.giphy.com/docs/api/endpoint
+  - type: GettingStarted
+    url: https://developers.giphy.com/docs/api
+  - type: Authentication
+    url: https://developers.giphy.com/docs/api#quick-start-guide
+  - type: JSONSchema
+    url: json-schema/giphy-gif-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-clip-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-user-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-channel-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-category-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-images-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-analytics-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-meta-schema.json
+  - type: JSONSchema
+    url: json-schema/giphy-pagination-schema.json
+  - type: JSONStructure
+    url: json-structure/giphy-gif-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-clip-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-images-structure.json
+  - type: JSONStructure
+    url: json-structure/giphy-channel-structure.json
+  - type: Examples
+    url: examples/giphy-search-gifs-example.json
+  - type: Examples
+    url: examples/giphy-get-trending-gifs-example.json
+  - type: Examples
+    url: examples/giphy-translate-gif-example.json
+  - type: Examples
+    url: examples/giphy-get-random-gif-example.json
+  - type: Examples
+    url: examples/giphy-get-gif-by-id-example.json
+  - type: Examples
+    url: examples/giphy-list-gif-categories-example.json
+  - type: Examples
+    url: examples/giphy-autocomplete-search-tags-example.json
+  - type: Examples
+    url: examples/giphy-get-related-search-terms-example.json
+  - type: Examples
+    url: examples/giphy-get-trending-searches-example.json
+  - type: Examples
+    url: examples/giphy-search-stickers-example.json
+  - type: Examples
+    url: examples/giphy-list-emoji-example.json
+  - type: Examples
+    url: examples/giphy-search-clips-example.json
+  - type: Examples
+    url: examples/giphy-upload-gif-example.json
+  - type: Examples
+    url: examples/giphy-register-search-action-example.json
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-ios-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-android-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-react-native-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-flutter-sdk
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-js
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-python-client
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-ruby-client
+  - type: SDKs
+    url: https://github.com/Giphy/giphy-php-client
+  - type: RateLimits
+    url: rate-limits/giphy-rate-limits.yml
+  - type: Pricing
+    url: plans/giphy-plans-pricing.yml
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/giphy/overview
   - type: AgenticAccess
     url: agentic-access/giphy-agentic-access.yml
   - type: TrustCenter
