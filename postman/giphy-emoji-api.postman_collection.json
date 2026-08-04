@@ -1,0 +1,281 @@
+{
+  "info": {
+    "_postman_id": "912ac570-f84a-4ed7-8457-d0ec4b3be967",
+    "name": "GIPHY Analytics Emoji API",
+    "description": "The GIPHY API provides programmatic access to the world's largest library of\nGIFs, stickers, animated emoji and Clips (GIFs with sound). Search, trending,\ntranslate, random, and category endpoints all return rich media objects with\nmultiple image renditions optimized for any surface.\n\nAuthentication is via API key. New developers receive a rate-limited Beta key;\na Production key is granted after application review.\n\n\nContact Support:\n Name: GIPHY Developers\n Email: support@giphy.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:44:09.000Z",
+    "updatedAt": "2026-07-28T01:44:09.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-912ac570-f84a-4ed7-8457-d0ec4b3be967"
+  },
+  "item": [
+    {
+      "name": "v2",
+      "item": [
+        {
+          "name": "emoji",
+          "item": [
+            {
+              "name": "{gif_id}",
+              "item": [
+                {
+                  "name": "variations",
+                  "item": [
+                    {
+                      "name": "Get Emoji Variations",
+                      "id": "58708e82-057b-41ff-9290-f993c0509cd1",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v2/emoji/:gif_id/variations?api_key=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v2",
+                            "emoji",
+                            ":gif_id",
+                            "variations"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) GIPHY API key (Beta or Production).",
+                              "key": "api_key",
+                              "value": "<string>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "id": "4808d86d-6c02-4802-abae-97507fd52255",
+                              "key": "gif_id",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Return all variations of a single animated emoji."
+                      },
+                      "response": [
+                        {
+                          "id": "b91cf6f7-8272-4a3e-b854-9bc572ccfefd",
+                          "name": "A paginated list of GIF or Sticker objects.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v2/emoji/:gif_id/variations?api_key=<API Key>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v2",
+                                "emoji",
+                                ":gif_id",
+                                "variations"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) GIPHY API key (Beta or Production).",
+                                  "key": "api_key",
+                                  "value": "<API Key>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "gif_id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"data\": [\n    {\n      \"type\": \"emoji\",\n      \"id\": \"<string>\",\n      \"slug\": \"<string>\",\n      \"url\": \"<uri>\",\n      \"bitly_gif_url\": \"<uri>\",\n      \"bitly_url\": \"<uri>\",\n      \"embed_url\": \"<uri>\",\n      \"username\": \"<string>\",\n      \"source\": \"<string>\",\n      \"rating\": \"g\",\n      \"content_url\": \"<string>\",\n      \"user\": {\n        \"avatar_url\": \"<uri>\",\n        \"banner_image\": \"<uri>\",\n        \"banner_url\": \"<uri>\",\n        \"profile_url\": \"<uri>\",\n        \"username\": \"<string>\",\n        \"display_name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"instagram_url\": \"<uri>\",\n        \"website_url\": \"<uri>\",\n        \"is_verified\": \"<boolean>\"\n      },\n      \"source_tld\": \"<string>\",\n      \"source_post_url\": \"<uri>\",\n      \"update_datetime\": \"<dateTime>\",\n      \"create_datetime\": \"<dateTime>\",\n      \"import_datetime\": \"<dateTime>\",\n      \"trending_datetime\": \"<dateTime>\",\n      \"images\": {\n        \"dolor_1\": {\n          \"url\": \"<uri>\",\n          \"width\": \"<string>\",\n          \"height\": \"<string>\",\n          \"size\": \"<string>\",\n          \"mp4\": \"<uri>\",\n          \"mp4_size\": \"<string>\",\n          \"webp\": \"<uri>\",\n          \"webp_size\": \"<string>\",\n          \"frames\": \"<string>\",\n          \"hash\": \"<string>\"\n        },\n        \"eiusmod_\": {\n          \"url\": \"<uri>\",\n          \"width\": \"<string>\",\n          \"height\": \"<string>\",\n          \"size\": \"<string>\",\n          \"mp4\": \"<uri>\",\n          \"mp4_size\": \"<string>\",\n          \"webp\": \"<uri>\",\n          \"webp_size\": \"<string>\",\n          \"frames\": \"<string>\",\n          \"hash\": \"<string>\"\n        },\n        \"Excepteur_9e\": {\n          \"url\": \"<uri>\",\n          \"width\": \"<string>\",\n          \"height\": \"<string>\",\n          \"size\": \"<string>\",\n          \"mp4\": \"<uri>\",\n          \"mp4_size\": \"<string>\",\n          \"webp\": \"<uri>\",\n          \"webp_size\": \"<string>\",\n          \"frames\": \"<string>\",\n          \"hash\": \"<string>\"\n        }\n      },\n      \"title\": \"<string>\",\n      \"alt_text\": \"<string>\",\n      \"is_low_contrast\": \"<boolean>\",\n      \"analytics_response_payload\": \"<string>\",\n      \"analytics\": {\n        \"onload\": {\n          \"url\": \"<uri>\"\n        },\n        \"onclick\": {\n          \"url\": \"<uri>\"\n        },\n        \"onsent\": {\n          \"url\": \"<uri>\"\n        }\n      }\n    },\n    {\n      \"type\": \"gif\",\n      \"id\": \"<string>\",\n      \"slug\": \"<string>\",\n      \"url\": \"<uri>\",\n      \"bitly_gif_url\": \"<uri>\",\n      \"bitly_url\": \"<uri>\",\n      \"embed_url\": \"<uri>\",\n      \"username\": \"<string>\",\n      \"source\": \"<string>\",\n      \"rating\": \"pg\",\n      \"content_url\": \"<string>\",\n      \"user\": {\n        \"avatar_url\": \"<uri>\",\n        \"banner_image\": \"<uri>\",\n        \"banner_url\": \"<uri>\",\n        \"profile_url\": \"<uri>\",\n        \"username\": \"<string>\",\n        \"display_name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"instagram_url\": \"<uri>\",\n        \"website_url\": \"<uri>\",\n        \"is_verified\": \"<boolean>\"\n      },\n      \"source_tld\": \"<string>\",\n      \"source_post_url\": \"<uri>\",\n      \"update_datetime\": \"<dateTime>\",\n      \"create_datetime\": \"<dateTime>\",\n      \"import_datetime\": \"<dateTime>\",\n      \"trending_datetime\": \"<dateTime>\",\n      \"images\": {\n        \"commodo_6\": {\n          \"url\": \"<uri>\",\n          \"width\": \"<string>\",\n          \"height\": \"<string>\",\n          \"size\": \"<string>\",\n          \"mp4\": \"<uri>\",\n          \"mp4_size\": \"<string>\",\n          \"webp\": \"<uri>\",\n          \"webp_size\": \"<string>\",\n          \"frames\": \"<string>\",\n          \"hash\": \"<string>\"\n        },\n        \"eiusmod_98\": {\n          \"url\": \"<uri>\",\n          \"width\": \"<string>\",\n          \"height\": \"<string>\",\n          \"size\": \"<string>\",\n          \"mp4\": \"<uri>\",\n          \"mp4_size\": \"<string>\",\n          \"webp\": \"<uri>\",\n          \"webp_size\": \"<string>\",\n          \"frames\": \"<string>\",\n          \"hash\": \"<string>\"\n        }\n      },\n      \"title\": \"<string>\",\n      \"alt_text\": \"<string>\",\n      \"is_low_contrast\": \"<boolean>\",\n      \"analytics_response_payload\": \"<string>\",\n      \"analytics\": {\n        \"onload\": {\n          \"url\": \"<uri>\"\n        },\n        \"onclick\": {\n          \"url\": \"<uri>\"\n        },\n        \"onsent\": {\n          \"url\": \"<uri>\"\n        }\n      }\n    }\n  ],\n  \"pagination\": {\n    \"offset\": \"<integer>\",\n    \"total_count\": \"<integer>\",\n    \"count\": \"<integer>\"\n  },\n  \"meta\": {\n    \"msg\": \"<string>\",\n    \"status\": \"<integer>\",\n    \"response_id\": \"<string>\"\n  }\n}",
+                          "createdAt": "2026-07-28T01:44:09.000Z",
+                          "updatedAt": "2026-07-28T01:44:09.000Z",
+                          "uid": "35240-b91cf6f7-8272-4a3e-b854-9bc572ccfefd"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:44:09.000Z",
+                      "updatedAt": "2026-07-28T01:44:09.000Z",
+                      "uid": "35240-58708e82-057b-41ff-9290-f993c0509cd1"
+                    }
+                  ],
+                  "id": "cec3de13-67be-412c-b159-99bf88306592",
+                  "createdAt": "2026-07-28T01:44:09.000Z",
+                  "updatedAt": "2026-07-28T01:44:09.000Z",
+                  "uid": "35240-cec3de13-67be-412c-b159-99bf88306592"
+                }
+              ],
+              "id": "294bfd94-b62e-45a5-a125-84e5be842bea",
+              "createdAt": "2026-07-28T01:44:09.000Z",
+              "updatedAt": "2026-07-28T01:44:09.000Z",
+              "uid": "35240-294bfd94-b62e-45a5-a125-84e5be842bea"
+            },
+            {
+              "name": "List Animated Emoji",
+              "id": "02cb1548-3fa6-4518-bfd0-f3d5f622ba40",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/v2/emoji?api_key=<string>&limit=25&offset=0",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "emoji"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) GIPHY API key (Beta or Production).",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Maximum number of items to return per page.",
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "description": "Position in the result set for pagination.",
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ]
+                },
+                "description": "Return GIPHY's animated emoji library."
+              },
+              "response": [
+                {
+                  "id": "7bd71404-5ef9-4c6d-a5fe-df6b40d12e0e",
+                  "name": "A paginated list of GIF or Sticker objects.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v2/emoji?api_key=<API Key>&limit=25&offset=0",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v2",
+                        "emoji"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) GIPHY API key (Beta or Production).",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "Maximum number of items to return per page.",
+                          "key": "limit",
+                          "value": "25"
+                        },
+                        {
+                          "description": "Position in the result set for pagination.",
+                          "key": "offset",
+                          "value": "0"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"data\": [\n    {\n      \"type\": \"emoji\",\n      \"id\": \"<string>\",\n      \"slug\": \"<string>\",\n      \"url\": \"<uri>\",\n      \"bitly_gif_url\": \"<uri>\",\n      \"bitly_url\": \"<uri>\",\n      \"embed_url\": \"<uri>\",\n      \"username\": \"<string>\",\n      \"source\": \"<string>\",\n      \"rating\": \"g\",\n      \"content_url\": \"<string>\",\n      \"user\": {\n        \"avatar_url\": \"<uri>\",\n        \"banner_image\": \"<uri>\",\n        \"banner_url\": \"<uri>\",\n        \"profile_url\": \"<uri>\",\n        \"username\": \"<string>\",\n        \"display_name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"instagram_url\": \"<uri>\",\n        \"website_url\": \"<uri>\",\n        \"is_verified\": \"<boolean>\"\n      },\n      \"source_tld\": \"<string>\",\n      \"source_post_url\": \"<uri>\",\n      \"update_datetime\": \"<dateTime>\",\n      \"create_datetime\": \"<dateTime>\",\n      \"import_datetime\": \"<dateTime>\",\n      \"trending_datetime\": \"<dateTime>\",\n      \"images\": {\n        \"dolor_1\": {\n          \"url\": \"<uri>\",\n          \"width\": \"<string>\",\n          \"height\": \"<string>\",\n          \"size\": \"<string>\",\n          \"mp4\": \"<uri>\",\n          \"mp4_size\": \"<string>\",\n          \"webp\": \"<uri>\",\n          \"webp_size\": \"<string>\",\n          \"frames\": \"<string>\",\n          \"hash\": \"<string>\"\n        },\n        \"eiusmod_\": {\n          \"url\": \"<uri>\",\n          \"width\": \"<string>\",\n          \"height\": \"<string>\",\n          \"size\": \"<string>\",\n          \"mp4\": \"<uri>\",\n          \"mp4_size\": \"<string>\",\n          \"webp\": \"<uri>\",\n          \"webp_size\": \"<string>\",\n          \"frames\": \"<string>\",\n          \"hash\": \"<string>\"\n        },\n        \"Excepteur_9e\": {\n          \"url\": \"<uri>\",\n          \"width\": \"<string>\",\n          \"height\": \"<string>\",\n          \"size\": \"<string>\",\n          \"mp4\": \"<uri>\",\n          \"mp4_size\": \"<string>\",\n          \"webp\": \"<uri>\",\n          \"webp_size\": \"<string>\",\n          \"frames\": \"<string>\",\n          \"hash\": \"<string>\"\n        }\n      },\n      \"title\": \"<string>\",\n      \"alt_text\": \"<string>\",\n      \"is_low_contrast\": \"<boolean>\",\n      \"analytics_response_payload\": \"<string>\",\n      \"analytics\": {\n        \"onload\": {\n          \"url\": \"<uri>\"\n        },\n        \"onclick\": {\n          \"url\": \"<uri>\"\n        },\n        \"onsent\": {\n          \"url\": \"<uri>\"\n        }\n      }\n    },\n    {\n      \"type\": \"gif\",\n      \"id\": \"<string>\",\n      \"slug\": \"<string>\",\n      \"url\": \"<uri>\",\n      \"bitly_gif_url\": \"<uri>\",\n      \"bitly_url\": \"<uri>\",\n      \"embed_url\": \"<uri>\",\n      \"username\": \"<string>\",\n      \"source\": \"<string>\",\n      \"rating\": \"pg\",\n      \"content_url\": \"<string>\",\n      \"user\": {\n        \"avatar_url\": \"<uri>\",\n        \"banner_image\": \"<uri>\",\n        \"banner_url\": \"<uri>\",\n        \"profile_url\": \"<uri>\",\n        \"username\": \"<string>\",\n        \"display_name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"instagram_url\": \"<uri>\",\n        \"website_url\": \"<uri>\",\n        \"is_verified\": \"<boolean>\"\n      },\n      \"source_tld\": \"<string>\",\n      \"source_post_url\": \"<uri>\",\n      \"update_datetime\": \"<dateTime>\",\n      \"create_datetime\": \"<dateTime>\",\n      \"import_datetime\": \"<dateTime>\",\n      \"trending_datetime\": \"<dateTime>\",\n      \"images\": {\n        \"commodo_6\": {\n          \"url\": \"<uri>\",\n          \"width\": \"<string>\",\n          \"height\": \"<string>\",\n          \"size\": \"<string>\",\n          \"mp4\": \"<uri>\",\n          \"mp4_size\": \"<string>\",\n          \"webp\": \"<uri>\",\n          \"webp_size\": \"<string>\",\n          \"frames\": \"<string>\",\n          \"hash\": \"<string>\"\n        },\n        \"eiusmod_98\": {\n          \"url\": \"<uri>\",\n          \"width\": \"<string>\",\n          \"height\": \"<string>\",\n          \"size\": \"<string>\",\n          \"mp4\": \"<uri>\",\n          \"mp4_size\": \"<string>\",\n          \"webp\": \"<uri>\",\n          \"webp_size\": \"<string>\",\n          \"frames\": \"<string>\",\n          \"hash\": \"<string>\"\n        }\n      },\n      \"title\": \"<string>\",\n      \"alt_text\": \"<string>\",\n      \"is_low_contrast\": \"<boolean>\",\n      \"analytics_response_payload\": \"<string>\",\n      \"analytics\": {\n        \"onload\": {\n          \"url\": \"<uri>\"\n        },\n        \"onclick\": {\n          \"url\": \"<uri>\"\n        },\n        \"onsent\": {\n          \"url\": \"<uri>\"\n        }\n      }\n    }\n  ],\n  \"pagination\": {\n    \"offset\": \"<integer>\",\n    \"total_count\": \"<integer>\",\n    \"count\": \"<integer>\"\n  },\n  \"meta\": {\n    \"msg\": \"<string>\",\n    \"status\": \"<integer>\",\n    \"response_id\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-07-28T01:44:09.000Z",
+                  "updatedAt": "2026-07-28T01:44:09.000Z",
+                  "uid": "35240-7bd71404-5ef9-4c6d-a5fe-df6b40d12e0e"
+                }
+              ],
+              "createdAt": "2026-07-28T01:44:09.000Z",
+              "updatedAt": "2026-07-28T01:44:09.000Z",
+              "uid": "35240-02cb1548-3fa6-4518-bfd0-f3d5f622ba40"
+            }
+          ],
+          "id": "f6e8fac3-5cff-4133-9957-2fea31e56b33",
+          "createdAt": "2026-07-28T01:44:09.000Z",
+          "updatedAt": "2026-07-28T01:44:09.000Z",
+          "uid": "35240-f6e8fac3-5cff-4133-9957-2fea31e56b33"
+        }
+      ],
+      "id": "86d099c3-1fee-462d-b035-7643384f1d26",
+      "createdAt": "2026-07-28T01:44:09.000Z",
+      "updatedAt": "2026-07-28T01:44:09.000Z",
+      "uid": "35240-86d099c3-1fee-462d-b035-7643384f1d26"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.giphy.com"
+    }
+  ]
+}

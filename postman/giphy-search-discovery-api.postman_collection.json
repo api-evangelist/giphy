@@ -1,0 +1,426 @@
+{
+  "info": {
+    "_postman_id": "9f62342d-f035-44eb-938f-fe683b9228e2",
+    "name": "GIPHY Analytics Search Discovery API",
+    "description": "The GIPHY API provides programmatic access to the world's largest library of\nGIFs, stickers, animated emoji and Clips (GIFs with sound). Search, trending,\ntranslate, random, and category endpoints all return rich media objects with\nmultiple image renditions optimized for any surface.\n\nAuthentication is via API key. New developers receive a rate-limited Beta key;\na Production key is granted after application review.\n\n\nContact Support:\n Name: GIPHY Developers\n Email: support@giphy.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:44:12.000Z",
+    "updatedAt": "2026-07-28T01:44:13.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-9f62342d-f035-44eb-938f-fe683b9228e2"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "gifs",
+          "item": [
+            {
+              "name": "search",
+              "item": [
+                {
+                  "name": "tags",
+                  "item": [
+                    {
+                      "name": "Autocomplete Search Tags",
+                      "id": "23db9af4-743d-4f4d-b92d-7026ff2c43c7",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/gifs/search/tags?api_key=<string>&q=<string>&limit=25&offset=0",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "gifs",
+                            "search",
+                            "tags"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) GIPHY API key (Beta or Production).",
+                              "key": "api_key",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "(Required) Partial search term.",
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Maximum number of items to return per page.",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Position in the result set for pagination.",
+                              "key": "offset",
+                              "value": "0"
+                            }
+                          ]
+                        },
+                        "description": "Return tag suggestions for a partial search term."
+                      },
+                      "response": [
+                        {
+                          "id": "1b9ce723-a9e1-4e38-b941-7cd12072b193",
+                          "name": "Tag autocomplete results.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/gifs/search/tags?api_key=<API Key>&q=<string>&limit=25&offset=0",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "gifs",
+                                "search",
+                                "tags"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) GIPHY API key (Beta or Production).",
+                                  "key": "api_key",
+                                  "value": "<API Key>"
+                                },
+                                {
+                                  "description": "(Required) Partial search term.",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Maximum number of items to return per page.",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Position in the result set for pagination.",
+                                  "key": "offset",
+                                  "value": "0"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"data\": [\n    {\n      \"name\": \"<string>\",\n      \"analytics_response_payload\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"analytics_response_payload\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:44:13.000Z",
+                          "updatedAt": "2026-07-28T01:44:13.000Z",
+                          "uid": "35240-1b9ce723-a9e1-4e38-b941-7cd12072b193"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:44:13.000Z",
+                      "updatedAt": "2026-07-28T01:44:13.000Z",
+                      "uid": "35240-23db9af4-743d-4f4d-b92d-7026ff2c43c7"
+                    }
+                  ],
+                  "id": "e0a8ec89-148c-4608-9cb6-67e180021865",
+                  "createdAt": "2026-07-28T01:44:13.000Z",
+                  "updatedAt": "2026-07-28T01:44:13.000Z",
+                  "uid": "35240-e0a8ec89-148c-4608-9cb6-67e180021865"
+                }
+              ],
+              "id": "15807209-462a-41c8-aae2-96fbcc744e91",
+              "createdAt": "2026-07-28T01:44:13.000Z",
+              "updatedAt": "2026-07-28T01:44:13.000Z",
+              "uid": "35240-15807209-462a-41c8-aae2-96fbcc744e91"
+            }
+          ],
+          "id": "9ec319e7-57f9-42de-9bd2-8587fe171aef",
+          "createdAt": "2026-07-28T01:44:13.000Z",
+          "updatedAt": "2026-07-28T01:44:13.000Z",
+          "uid": "35240-9ec319e7-57f9-42de-9bd2-8587fe171aef"
+        },
+        {
+          "name": "tags",
+          "item": [
+            {
+              "name": "related",
+              "item": [
+                {
+                  "name": "{term}",
+                  "item": [
+                    {
+                      "name": "Get Related Search Terms",
+                      "id": "553db92f-eeab-4e4e-8262-0cefc57f071e",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/tags/related/:term?api_key=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "tags",
+                            "related",
+                            ":term"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) GIPHY API key (Beta or Production).",
+                              "key": "api_key",
+                              "value": "<string>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "id": "8246f862-81c4-48ee-b120-2074271dcdd0",
+                              "key": "term",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Return related search terms for a given query."
+                      },
+                      "response": [
+                        {
+                          "id": "e560be61-feea-4c3f-af4f-4c33b92796fb",
+                          "name": "Related search terms.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/tags/related/:term?api_key=<API Key>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "tags",
+                                "related",
+                                ":term"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) GIPHY API key (Beta or Production).",
+                                  "key": "api_key",
+                                  "value": "<API Key>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "term"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"data\": [\n    {\n      \"name\": \"<string>\",\n      \"analytics_response_payload\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"analytics_response_payload\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:44:13.000Z",
+                          "updatedAt": "2026-07-28T01:44:13.000Z",
+                          "uid": "35240-e560be61-feea-4c3f-af4f-4c33b92796fb"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:44:13.000Z",
+                      "updatedAt": "2026-07-28T01:44:13.000Z",
+                      "uid": "35240-553db92f-eeab-4e4e-8262-0cefc57f071e"
+                    }
+                  ],
+                  "id": "1b5bbc53-cc14-423e-946c-7a262ecdb82a",
+                  "createdAt": "2026-07-28T01:44:13.000Z",
+                  "updatedAt": "2026-07-28T01:44:13.000Z",
+                  "uid": "35240-1b5bbc53-cc14-423e-946c-7a262ecdb82a"
+                }
+              ],
+              "id": "29996a02-ce5a-496b-b145-9447e2857be8",
+              "createdAt": "2026-07-28T01:44:13.000Z",
+              "updatedAt": "2026-07-28T01:44:13.000Z",
+              "uid": "35240-29996a02-ce5a-496b-b145-9447e2857be8"
+            }
+          ],
+          "id": "cede4d87-c968-4af6-8d5e-0b3ab9214d6d",
+          "createdAt": "2026-07-28T01:44:13.000Z",
+          "updatedAt": "2026-07-28T01:44:13.000Z",
+          "uid": "35240-cede4d87-c968-4af6-8d5e-0b3ab9214d6d"
+        },
+        {
+          "name": "trending",
+          "item": [
+            {
+              "name": "searches",
+              "item": [
+                {
+                  "name": "Get Trending Search Terms",
+                  "id": "274afd18-214f-4688-9052-deec8c596935",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/trending/searches?api_key=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "trending",
+                        "searches"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) GIPHY API key (Beta or Production).",
+                          "key": "api_key",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "description": "Return the most popular search terms across GIPHY."
+                  },
+                  "response": [
+                    {
+                      "id": "22804319-8aee-418a-a8cc-26d08d2da880",
+                      "name": "Trending search terms.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/trending/searches?api_key=<API Key>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "trending",
+                            "searches"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) GIPHY API key (Beta or Production).",
+                              "key": "api_key",
+                              "value": "<API Key>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"data\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"meta\": {\n    \"msg\": \"<string>\",\n    \"status\": \"<integer>\",\n    \"response_id\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-07-28T01:44:13.000Z",
+                      "updatedAt": "2026-07-28T01:44:13.000Z",
+                      "uid": "35240-22804319-8aee-418a-a8cc-26d08d2da880"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:44:13.000Z",
+                  "updatedAt": "2026-07-28T01:44:13.000Z",
+                  "uid": "35240-274afd18-214f-4688-9052-deec8c596935"
+                }
+              ],
+              "id": "d82d6082-8367-44a8-8faf-0a0d13beadbe",
+              "createdAt": "2026-07-28T01:44:13.000Z",
+              "updatedAt": "2026-07-28T01:44:13.000Z",
+              "uid": "35240-d82d6082-8367-44a8-8faf-0a0d13beadbe"
+            }
+          ],
+          "id": "432c374b-d267-49e9-8727-a681aa28b337",
+          "createdAt": "2026-07-28T01:44:13.000Z",
+          "updatedAt": "2026-07-28T01:44:13.000Z",
+          "uid": "35240-432c374b-d267-49e9-8727-a681aa28b337"
+        }
+      ],
+      "id": "0a0f6d34-99e3-450e-bc52-fac292916e44",
+      "createdAt": "2026-07-28T01:44:13.000Z",
+      "updatedAt": "2026-07-28T01:44:13.000Z",
+      "uid": "35240-0a0f6d34-99e3-450e-bc52-fac292916e44"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.giphy.com"
+    }
+  ]
+}

@@ -1,0 +1,1554 @@
+{
+  "info": {
+    "_postman_id": "8d81a397-8005-470d-8841-7154d62fa480",
+    "name": "GIPHY Analytics GIFs API",
+    "description": "The GIPHY API provides programmatic access to the world's largest library of\nGIFs, stickers, animated emoji and Clips (GIFs with sound). Search, trending,\ntranslate, random, and category endpoints all return rich media objects with\nmultiple image renditions optimized for any surface.\n\nAuthentication is via API key. New developers receive a rate-limited Beta key;\na Production key is granted after application review.\n\n\nContact Support:\n Name: GIPHY Developers\n Email: support@giphy.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:44:10.000Z",
+    "updatedAt": "2026-07-28T01:44:11.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-8d81a397-8005-470d-8841-7154d62fa480"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "gifs",
+          "item": [
+            {
+              "name": "search",
+              "item": [
+                {
+                  "name": "Search GIFs",
+                  "id": "c4f3d566-f1c6-47d0-84ec-43e4f5c83059",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/gifs/search?api_key=<string>&q=<string>&limit=25&offset=0&rating=y&lang=<string>&bundle=messaging_non_clips&random_id=<string>&country_code=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "gifs",
+                        "search"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) GIPHY API key (Beta or Production).",
+                          "key": "api_key",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "(Required) Search query term or phrase, URL-encoded, max 50 characters.",
+                          "key": "q",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Maximum number of items to return per page.",
+                          "key": "limit",
+                          "value": "25"
+                        },
+                        {
+                          "description": "Position in the result set for pagination.",
+                          "key": "offset",
+                          "value": "0"
+                        },
+                        {
+                          "description": "Filter results by MPAA-style rating.",
+                          "key": "rating",
+                          "value": "y"
+                        },
+                        {
+                          "description": "Default language (ISO 639-1) for regional content.",
+                          "key": "lang",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Reduce response payload by requesting only the rendition bundle you need.",
+                          "key": "bundle",
+                          "value": "messaging_non_clips"
+                        },
+                        {
+                          "description": "Privacy-preserving user identifier produced by /v1/randomid.",
+                          "key": "random_id",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "ISO 3166-1 alpha-2 country code used to localize results.",
+                          "key": "country_code",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "description": "Search GIPHY's library of millions of GIFs by keyword."
+                  },
+                  "response": [
+                    {
+                      "id": "4d06d8e2-e6de-4fd2-ab1e-1cc252f64e38",
+                      "name": "A paginated list of GIF or Sticker objects.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/gifs/search?api_key=<API Key>&q=<string>&limit=25&offset=0&rating=y&lang=<string>&bundle=messaging_non_clips&random_id=<string>&country_code=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "gifs",
+                            "search"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) GIPHY API key (Beta or Production).",
+                              "key": "api_key",
+                              "value": "<API Key>"
+                            },
+                            {
+                              "description": "(Required) Search query term or phrase, URL-encoded, max 50 characters.",
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Maximum number of items to return per page.",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Position in the result set for pagination.",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Filter results by MPAA-style rating.",
+                              "key": "rating",
+                              "value": "y"
+                            },
+                            {
+                              "description": "Default language (ISO 639-1) for regional content.",
+                              "key": "lang",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Reduce response payload by requesting only the rendition bundle you need.",
+                              "key": "bundle",
+                              "value": "messaging_non_clips"
+                            },
+                            {
+                              "description": "Privacy-preserving user identifier produced by /v1/randomid.",
+                              "key": "random_id",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "ISO 3166-1 alpha-2 country code used to localize results.",
+                              "key": "country_code",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"data\": [\n    {\n      \"type\": \"sticker\",\n      \"id\": \"<string>\",\n      \"slug\": \"<string>\",\n      \"url\": \"<uri>\",\n      \"bitly_gif_url\": \"<uri>\",\n      \"bitly_url\": \"<uri>\",\n      \"embed_url\": \"<uri>\",\n      \"username\": \"<string>\",\n      \"source\": \"<string>\",\n      \"rating\": \"g\",\n      \"content_url\": \"<string>\",\n      \"user\": {\n        \"avatar_url\": \"<uri>\",\n        \"banner_image\": \"<uri>\",\n        \"banner_url\": \"<uri>\",\n        \"profile_url\": \"<uri>\",\n        \"username\": \"<string>\",\n        \"display_name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"instagram_url\": \"<uri>\",\n        \"website_url\": \"<uri>\",\n        \"is_verified\": \"<boolean>\"\n      },\n      \"source_tld\": \"<string>\",\n      \"source_post_url\": \"<uri>\",\n      \"update_datetime\": \"<dateTime>\",\n      \"create_datetime\": \"<dateTime>\",\n      \"import_datetime\": \"<dateTime>\",\n      \"trending_datetime\": \"<dateTime>\",\n      \"images\": {\n        \"ea_f30\": {\n          \"url\": \"<uri>\",\n          \"width\": \"<string>\",\n          \"height\": \"<string>\",\n          \"size\": \"<string>\",\n          \"mp4\": \"<uri>\",\n          \"mp4_size\": \"<string>\",\n          \"webp\": \"<uri>\",\n          \"webp_size\": \"<string>\",\n          \"frames\": \"<string>\",\n          \"hash\": \"<string>\"\n        }\n      },\n      \"title\": \"<string>\",\n      \"alt_text\": \"<string>\",\n      \"is_low_contrast\": \"<boolean>\",\n      \"analytics_response_payload\": \"<string>\",\n      \"analytics\": {\n        \"onload\": {\n          \"url\": \"<uri>\"\n        },\n        \"onclick\": {\n          \"url\": \"<uri>\"\n        },\n        \"onsent\": {\n          \"url\": \"<uri>\"\n        }\n      }\n    },\n    {\n      \"type\": \"sticker\",\n      \"id\": \"<string>\",\n      \"slug\": \"<string>\",\n      \"url\": \"<uri>\",\n      \"bitly_gif_url\": \"<uri>\",\n      \"bitly_url\": \"<uri>\",\n      \"embed_url\": \"<uri>\",\n      \"username\": \"<string>\",\n      \"source\": \"<string>\",\n      \"rating\": \"pg-13\",\n      \"content_url\": \"<string>\",\n      \"user\": {\n        \"avatar_url\": \"<uri>\",\n        \"banner_image\": \"<uri>\",\n        \"banner_url\": \"<uri>\",\n        \"profile_url\": \"<uri>\",\n        \"username\": \"<string>\",\n        \"display_name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"instagram_url\": \"<uri>\",\n        \"website_url\": \"<uri>\",\n        \"is_verified\": \"<boolean>\"\n      },\n      \"source_tld\": \"<string>\",\n      \"source_post_url\": \"<uri>\",\n      \"update_datetime\": \"<dateTime>\",\n      \"create_datetime\": \"<dateTime>\",\n      \"import_datetime\": \"<dateTime>\",\n      \"trending_datetime\": \"<dateTime>\",\n      \"images\": {\n        \"ut2a1\": {\n          \"url\": \"<uri>\",\n          \"width\": \"<string>\",\n          \"height\": \"<string>\",\n          \"size\": \"<string>\",\n          \"mp4\": \"<uri>\",\n          \"mp4_size\": \"<string>\",\n          \"webp\": \"<uri>\",\n          \"webp_size\": \"<string>\",\n          \"frames\": \"<string>\",\n          \"hash\": \"<string>\"\n        },\n        \"enim28\": {\n          \"url\": \"<uri>\",\n          \"width\": \"<string>\",\n          \"height\": \"<string>\",\n          \"size\": \"<string>\",\n          \"mp4\": \"<uri>\",\n          \"mp4_size\": \"<string>\",\n          \"webp\": \"<uri>\",\n          \"webp_size\": \"<string>\",\n          \"frames\": \"<string>\",\n          \"hash\": \"<string>\"\n        }\n      },\n      \"title\": \"<string>\",\n      \"alt_text\": \"<string>\",\n      \"is_low_contrast\": \"<boolean>\",\n      \"analytics_response_payload\": \"<string>\",\n      \"analytics\": {\n        \"onload\": {\n          \"url\": \"<uri>\"\n        },\n        \"onclick\": {\n          \"url\": \"<uri>\"\n        },\n        \"onsent\": {\n          \"url\": \"<uri>\"\n        }\n      }\n    }\n  ],\n  \"pagination\": {\n    \"offset\": \"<integer>\",\n    \"total_count\": \"<integer>\",\n    \"count\": \"<integer>\"\n  },\n  \"meta\": {\n    \"msg\": \"<string>\",\n    \"status\": \"<integer>\",\n    \"response_id\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-07-28T01:44:11.000Z",
+                      "updatedAt": "2026-07-28T01:44:11.000Z",
+                      "uid": "35240-4d06d8e2-e6de-4fd2-ab1e-1cc252f64e38"
+                    },
+                    {
+                      "id": "0b5b2314-1b3a-4378-a7d6-784bad24021b",
+                      "name": "Malformed request.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/gifs/search?api_key=<API Key>&q=<string>&limit=25&offset=0&rating=y&lang=<string>&bundle=messaging_non_clips&random_id=<string>&country_code=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "gifs",
+                            "search"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) GIPHY API key (Beta or Production).",
+                              "key": "api_key",
+                              "value": "<API Key>"
+                            },
+                            {
+                              "description": "(Required) Search query term or phrase, URL-encoded, max 50 characters.",
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Maximum number of items to return per page.",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Position in the result set for pagination.",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Filter results by MPAA-style rating.",
+                              "key": "rating",
+                              "value": "y"
+                            },
+                            {
+                              "description": "Default language (ISO 639-1) for regional content.",
+                              "key": "lang",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Reduce response payload by requesting only the rendition bundle you need.",
+                              "key": "bundle",
+                              "value": "messaging_non_clips"
+                            },
+                            {
+                              "description": "Privacy-preserving user identifier produced by /v1/randomid.",
+                              "key": "random_id",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "ISO 3166-1 alpha-2 country code used to localize results.",
+                              "key": "country_code",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"meta\": {\n    \"msg\": \"<string>\",\n    \"status\": \"<integer>\",\n    \"response_id\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-07-28T01:44:11.000Z",
+                      "updatedAt": "2026-07-28T01:44:11.000Z",
+                      "uid": "35240-0b5b2314-1b3a-4378-a7d6-784bad24021b"
+                    },
+                    {
+                      "id": "8dfb59d8-ade2-4929-885f-59cf5fc165f6",
+                      "name": "Missing or invalid API key.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/gifs/search?api_key=<API Key>&q=<string>&limit=25&offset=0&rating=y&lang=<string>&bundle=messaging_non_clips&random_id=<string>&country_code=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "gifs",
+                            "search"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) GIPHY API key (Beta or Production).",
+                              "key": "api_key",
+                              "value": "<API Key>"
+                            },
+                            {
+                              "description": "(Required) Search query term or phrase, URL-encoded, max 50 characters.",
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Maximum number of items to return per page.",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Position in the result set for pagination.",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Filter results by MPAA-style rating.",
+                              "key": "rating",
+                              "value": "y"
+                            },
+                            {
+                              "description": "Default language (ISO 639-1) for regional content.",
+                              "key": "lang",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Reduce response payload by requesting only the rendition bundle you need.",
+                              "key": "bundle",
+                              "value": "messaging_non_clips"
+                            },
+                            {
+                              "description": "Privacy-preserving user identifier produced by /v1/randomid.",
+                              "key": "random_id",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "ISO 3166-1 alpha-2 country code used to localize results.",
+                              "key": "country_code",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"meta\": {\n    \"msg\": \"<string>\",\n    \"status\": \"<integer>\",\n    \"response_id\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-07-28T01:44:11.000Z",
+                      "updatedAt": "2026-07-28T01:44:11.000Z",
+                      "uid": "35240-8dfb59d8-ade2-4929-885f-59cf5fc165f6"
+                    },
+                    {
+                      "id": "a688d1d4-0d9b-4474-8c20-6ee04f4f4214",
+                      "name": "API rate limit exceeded.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/gifs/search?api_key=<API Key>&q=<string>&limit=25&offset=0&rating=y&lang=<string>&bundle=messaging_non_clips&random_id=<string>&country_code=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "gifs",
+                            "search"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) GIPHY API key (Beta or Production).",
+                              "key": "api_key",
+                              "value": "<API Key>"
+                            },
+                            {
+                              "description": "(Required) Search query term or phrase, URL-encoded, max 50 characters.",
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Maximum number of items to return per page.",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Position in the result set for pagination.",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Filter results by MPAA-style rating.",
+                              "key": "rating",
+                              "value": "y"
+                            },
+                            {
+                              "description": "Default language (ISO 639-1) for regional content.",
+                              "key": "lang",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Reduce response payload by requesting only the rendition bundle you need.",
+                              "key": "bundle",
+                              "value": "messaging_non_clips"
+                            },
+                            {
+                              "description": "Privacy-preserving user identifier produced by /v1/randomid.",
+                              "key": "random_id",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "ISO 3166-1 alpha-2 country code used to localize results.",
+                              "key": "country_code",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Too Many Requests",
+                      "code": 429,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"meta\": {\n    \"msg\": \"<string>\",\n    \"status\": \"<integer>\",\n    \"response_id\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-07-28T01:44:11.000Z",
+                      "updatedAt": "2026-07-28T01:44:11.000Z",
+                      "uid": "35240-a688d1d4-0d9b-4474-8c20-6ee04f4f4214"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:44:11.000Z",
+                  "updatedAt": "2026-07-28T01:44:11.000Z",
+                  "uid": "35240-c4f3d566-f1c6-47d0-84ec-43e4f5c83059"
+                }
+              ],
+              "id": "c2b55700-062b-4fc8-a50f-332c7e321a25",
+              "createdAt": "2026-07-28T01:44:11.000Z",
+              "updatedAt": "2026-07-28T01:44:11.000Z",
+              "uid": "35240-c2b55700-062b-4fc8-a50f-332c7e321a25"
+            },
+            {
+              "name": "trending",
+              "item": [
+                {
+                  "name": "Get Trending GIFs",
+                  "id": "c8da63db-5749-4038-b7d3-f7c1f5fa78da",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/gifs/trending?api_key=<string>&limit=25&offset=0&rating=y&bundle=messaging_non_clips&random_id=<string>&country_code=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "gifs",
+                        "trending"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) GIPHY API key (Beta or Production).",
+                          "key": "api_key",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Maximum number of items to return per page.",
+                          "key": "limit",
+                          "value": "25"
+                        },
+                        {
+                          "description": "Position in the result set for pagination.",
+                          "key": "offset",
+                          "value": "0"
+                        },
+                        {
+                          "description": "Filter results by MPAA-style rating.",
+                          "key": "rating",
+                          "value": "y"
+                        },
+                        {
+                          "description": "Reduce response payload by requesting only the rendition bundle you need.",
+                          "key": "bundle",
+                          "value": "messaging_non_clips"
+                        },
+                        {
+                          "description": "Privacy-preserving user identifier produced by /v1/randomid.",
+                          "key": "random_id",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "ISO 3166-1 alpha-2 country code used to localize results.",
+                          "key": "country_code",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "description": "Return the most relevant and engaging GIFs each day."
+                  },
+                  "response": [
+                    {
+                      "id": "7edef986-fb06-4c1c-9b4b-5e476ae8b122",
+                      "name": "A paginated list of GIF or Sticker objects.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/gifs/trending?api_key=<API Key>&limit=25&offset=0&rating=y&bundle=messaging_non_clips&random_id=<string>&country_code=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "gifs",
+                            "trending"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) GIPHY API key (Beta or Production).",
+                              "key": "api_key",
+                              "value": "<API Key>"
+                            },
+                            {
+                              "description": "Maximum number of items to return per page.",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Position in the result set for pagination.",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Filter results by MPAA-style rating.",
+                              "key": "rating",
+                              "value": "y"
+                            },
+                            {
+                              "description": "Reduce response payload by requesting only the rendition bundle you need.",
+                              "key": "bundle",
+                              "value": "messaging_non_clips"
+                            },
+                            {
+                              "description": "Privacy-preserving user identifier produced by /v1/randomid.",
+                              "key": "random_id",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "ISO 3166-1 alpha-2 country code used to localize results.",
+                              "key": "country_code",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"data\": [\n    {\n      \"type\": \"sticker\",\n      \"id\": \"<string>\",\n      \"slug\": \"<string>\",\n      \"url\": \"<uri>\",\n      \"bitly_gif_url\": \"<uri>\",\n      \"bitly_url\": \"<uri>\",\n      \"embed_url\": \"<uri>\",\n      \"username\": \"<string>\",\n      \"source\": \"<string>\",\n      \"rating\": \"g\",\n      \"content_url\": \"<string>\",\n      \"user\": {\n        \"avatar_url\": \"<uri>\",\n        \"banner_image\": \"<uri>\",\n        \"banner_url\": \"<uri>\",\n        \"profile_url\": \"<uri>\",\n        \"username\": \"<string>\",\n        \"display_name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"instagram_url\": \"<uri>\",\n        \"website_url\": \"<uri>\",\n        \"is_verified\": \"<boolean>\"\n      },\n      \"source_tld\": \"<string>\",\n      \"source_post_url\": \"<uri>\",\n      \"update_datetime\": \"<dateTime>\",\n      \"create_datetime\": \"<dateTime>\",\n      \"import_datetime\": \"<dateTime>\",\n      \"trending_datetime\": \"<dateTime>\",\n      \"images\": {\n        \"ea_f30\": {\n          \"url\": \"<uri>\",\n          \"width\": \"<string>\",\n          \"height\": \"<string>\",\n          \"size\": \"<string>\",\n          \"mp4\": \"<uri>\",\n          \"mp4_size\": \"<string>\",\n          \"webp\": \"<uri>\",\n          \"webp_size\": \"<string>\",\n          \"frames\": \"<string>\",\n          \"hash\": \"<string>\"\n        }\n      },\n      \"title\": \"<string>\",\n      \"alt_text\": \"<string>\",\n      \"is_low_contrast\": \"<boolean>\",\n      \"analytics_response_payload\": \"<string>\",\n      \"analytics\": {\n        \"onload\": {\n          \"url\": \"<uri>\"\n        },\n        \"onclick\": {\n          \"url\": \"<uri>\"\n        },\n        \"onsent\": {\n          \"url\": \"<uri>\"\n        }\n      }\n    },\n    {\n      \"type\": \"sticker\",\n      \"id\": \"<string>\",\n      \"slug\": \"<string>\",\n      \"url\": \"<uri>\",\n      \"bitly_gif_url\": \"<uri>\",\n      \"bitly_url\": \"<uri>\",\n      \"embed_url\": \"<uri>\",\n      \"username\": \"<string>\",\n      \"source\": \"<string>\",\n      \"rating\": \"pg-13\",\n      \"content_url\": \"<string>\",\n      \"user\": {\n        \"avatar_url\": \"<uri>\",\n        \"banner_image\": \"<uri>\",\n        \"banner_url\": \"<uri>\",\n        \"profile_url\": \"<uri>\",\n        \"username\": \"<string>\",\n        \"display_name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"instagram_url\": \"<uri>\",\n        \"website_url\": \"<uri>\",\n        \"is_verified\": \"<boolean>\"\n      },\n      \"source_tld\": \"<string>\",\n      \"source_post_url\": \"<uri>\",\n      \"update_datetime\": \"<dateTime>\",\n      \"create_datetime\": \"<dateTime>\",\n      \"import_datetime\": \"<dateTime>\",\n      \"trending_datetime\": \"<dateTime>\",\n      \"images\": {\n        \"ut2a1\": {\n          \"url\": \"<uri>\",\n          \"width\": \"<string>\",\n          \"height\": \"<string>\",\n          \"size\": \"<string>\",\n          \"mp4\": \"<uri>\",\n          \"mp4_size\": \"<string>\",\n          \"webp\": \"<uri>\",\n          \"webp_size\": \"<string>\",\n          \"frames\": \"<string>\",\n          \"hash\": \"<string>\"\n        },\n        \"enim28\": {\n          \"url\": \"<uri>\",\n          \"width\": \"<string>\",\n          \"height\": \"<string>\",\n          \"size\": \"<string>\",\n          \"mp4\": \"<uri>\",\n          \"mp4_size\": \"<string>\",\n          \"webp\": \"<uri>\",\n          \"webp_size\": \"<string>\",\n          \"frames\": \"<string>\",\n          \"hash\": \"<string>\"\n        }\n      },\n      \"title\": \"<string>\",\n      \"alt_text\": \"<string>\",\n      \"is_low_contrast\": \"<boolean>\",\n      \"analytics_response_payload\": \"<string>\",\n      \"analytics\": {\n        \"onload\": {\n          \"url\": \"<uri>\"\n        },\n        \"onclick\": {\n          \"url\": \"<uri>\"\n        },\n        \"onsent\": {\n          \"url\": \"<uri>\"\n        }\n      }\n    }\n  ],\n  \"pagination\": {\n    \"offset\": \"<integer>\",\n    \"total_count\": \"<integer>\",\n    \"count\": \"<integer>\"\n  },\n  \"meta\": {\n    \"msg\": \"<string>\",\n    \"status\": \"<integer>\",\n    \"response_id\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-07-28T01:44:11.000Z",
+                      "updatedAt": "2026-07-28T01:44:11.000Z",
+                      "uid": "35240-7edef986-fb06-4c1c-9b4b-5e476ae8b122"
+                    },
+                    {
+                      "id": "6f74af0c-c5e5-4e3b-b452-3ea95538dbc7",
+                      "name": "Missing or invalid API key.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/gifs/trending?api_key=<API Key>&limit=25&offset=0&rating=y&bundle=messaging_non_clips&random_id=<string>&country_code=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "gifs",
+                            "trending"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) GIPHY API key (Beta or Production).",
+                              "key": "api_key",
+                              "value": "<API Key>"
+                            },
+                            {
+                              "description": "Maximum number of items to return per page.",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Position in the result set for pagination.",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Filter results by MPAA-style rating.",
+                              "key": "rating",
+                              "value": "y"
+                            },
+                            {
+                              "description": "Reduce response payload by requesting only the rendition bundle you need.",
+                              "key": "bundle",
+                              "value": "messaging_non_clips"
+                            },
+                            {
+                              "description": "Privacy-preserving user identifier produced by /v1/randomid.",
+                              "key": "random_id",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "ISO 3166-1 alpha-2 country code used to localize results.",
+                              "key": "country_code",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"meta\": {\n    \"msg\": \"<string>\",\n    \"status\": \"<integer>\",\n    \"response_id\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-07-28T01:44:11.000Z",
+                      "updatedAt": "2026-07-28T01:44:11.000Z",
+                      "uid": "35240-6f74af0c-c5e5-4e3b-b452-3ea95538dbc7"
+                    },
+                    {
+                      "id": "7cb76b76-a94e-4b70-9a33-e5cc3a34d82b",
+                      "name": "API rate limit exceeded.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/gifs/trending?api_key=<API Key>&limit=25&offset=0&rating=y&bundle=messaging_non_clips&random_id=<string>&country_code=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "gifs",
+                            "trending"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) GIPHY API key (Beta or Production).",
+                              "key": "api_key",
+                              "value": "<API Key>"
+                            },
+                            {
+                              "description": "Maximum number of items to return per page.",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Position in the result set for pagination.",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Filter results by MPAA-style rating.",
+                              "key": "rating",
+                              "value": "y"
+                            },
+                            {
+                              "description": "Reduce response payload by requesting only the rendition bundle you need.",
+                              "key": "bundle",
+                              "value": "messaging_non_clips"
+                            },
+                            {
+                              "description": "Privacy-preserving user identifier produced by /v1/randomid.",
+                              "key": "random_id",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "ISO 3166-1 alpha-2 country code used to localize results.",
+                              "key": "country_code",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Too Many Requests",
+                      "code": 429,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"meta\": {\n    \"msg\": \"<string>\",\n    \"status\": \"<integer>\",\n    \"response_id\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-07-28T01:44:11.000Z",
+                      "updatedAt": "2026-07-28T01:44:11.000Z",
+                      "uid": "35240-7cb76b76-a94e-4b70-9a33-e5cc3a34d82b"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:44:11.000Z",
+                  "updatedAt": "2026-07-28T01:44:11.000Z",
+                  "uid": "35240-c8da63db-5749-4038-b7d3-f7c1f5fa78da"
+                }
+              ],
+              "id": "44c4b2f8-7efb-4c03-97ee-a54cdb044217",
+              "createdAt": "2026-07-28T01:44:11.000Z",
+              "updatedAt": "2026-07-28T01:44:11.000Z",
+              "uid": "35240-44c4b2f8-7efb-4c03-97ee-a54cdb044217"
+            },
+            {
+              "name": "translate",
+              "item": [
+                {
+                  "name": "Translate Term to GIF",
+                  "id": "4fe67880-4786-4fc1-8fc1-d666ab2944b4",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/gifs/translate?api_key=<string>&s=<string>&weirdness=<integer>&rating=y&random_id=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "gifs",
+                        "translate"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) GIPHY API key (Beta or Production).",
+                          "key": "api_key",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "(Required) Search term to translate to a GIF.",
+                          "key": "s",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Translate weirdness (0 conservative ... 10 most weird).",
+                          "key": "weirdness",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "Filter results by MPAA-style rating.",
+                          "key": "rating",
+                          "value": "y"
+                        },
+                        {
+                          "description": "Privacy-preserving user identifier produced by /v1/randomid.",
+                          "key": "random_id",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "description": "Convert words and phrases to a single, contextually relevant GIF."
+                  },
+                  "response": [
+                    {
+                      "id": "59fccd93-e71b-447f-98f8-1aeff994ab52",
+                      "name": "A single GIF or Sticker object.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/gifs/translate?api_key=<API Key>&s=<string>&weirdness=<integer>&rating=y&random_id=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "gifs",
+                            "translate"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) GIPHY API key (Beta or Production).",
+                              "key": "api_key",
+                              "value": "<API Key>"
+                            },
+                            {
+                              "description": "(Required) Search term to translate to a GIF.",
+                              "key": "s",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Translate weirdness (0 conservative ... 10 most weird).",
+                              "key": "weirdness",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "Filter results by MPAA-style rating.",
+                              "key": "rating",
+                              "value": "y"
+                            },
+                            {
+                              "description": "Privacy-preserving user identifier produced by /v1/randomid.",
+                              "key": "random_id",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"data\": {\n    \"type\": \"gif\",\n    \"id\": \"<string>\",\n    \"slug\": \"<string>\",\n    \"url\": \"<uri>\",\n    \"bitly_gif_url\": \"<uri>\",\n    \"bitly_url\": \"<uri>\",\n    \"embed_url\": \"<uri>\",\n    \"username\": \"<string>\",\n    \"source\": \"<string>\",\n    \"rating\": \"g\",\n    \"content_url\": \"<string>\",\n    \"user\": {\n      \"avatar_url\": \"<uri>\",\n      \"banner_image\": \"<uri>\",\n      \"banner_url\": \"<uri>\",\n      \"profile_url\": \"<uri>\",\n      \"username\": \"<string>\",\n      \"display_name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"instagram_url\": \"<uri>\",\n      \"website_url\": \"<uri>\",\n      \"is_verified\": \"<boolean>\"\n    },\n    \"source_tld\": \"<string>\",\n    \"source_post_url\": \"<uri>\",\n    \"update_datetime\": \"<dateTime>\",\n    \"create_datetime\": \"<dateTime>\",\n    \"import_datetime\": \"<dateTime>\",\n    \"trending_datetime\": \"<dateTime>\",\n    \"images\": {\n      \"suntb\": {\n        \"url\": \"<uri>\",\n        \"width\": \"<string>\",\n        \"height\": \"<string>\",\n        \"size\": \"<string>\",\n        \"mp4\": \"<uri>\",\n        \"mp4_size\": \"<string>\",\n        \"webp\": \"<uri>\",\n        \"webp_size\": \"<string>\",\n        \"frames\": \"<string>\",\n        \"hash\": \"<string>\"\n      },\n      \"exercitationd\": {\n        \"url\": \"<uri>\",\n        \"width\": \"<string>\",\n        \"height\": \"<string>\",\n        \"size\": \"<string>\",\n        \"mp4\": \"<uri>\",\n        \"mp4_size\": \"<string>\",\n        \"webp\": \"<uri>\",\n        \"webp_size\": \"<string>\",\n        \"frames\": \"<string>\",\n        \"hash\": \"<string>\"\n      },\n      \"deserunt_41b\": {\n        \"url\": \"<uri>\",\n        \"width\": \"<string>\",\n        \"height\": \"<string>\",\n        \"size\": \"<string>\",\n        \"mp4\": \"<uri>\",\n        \"mp4_size\": \"<string>\",\n        \"webp\": \"<uri>\",\n        \"webp_size\": \"<string>\",\n        \"frames\": \"<string>\",\n        \"hash\": \"<string>\"\n      },\n      \"dolorec0_\": {\n        \"url\": \"<uri>\",\n        \"width\": \"<string>\",\n        \"height\": \"<string>\",\n        \"size\": \"<string>\",\n        \"mp4\": \"<uri>\",\n        \"mp4_size\": \"<string>\",\n        \"webp\": \"<uri>\",\n        \"webp_size\": \"<string>\",\n        \"frames\": \"<string>\",\n        \"hash\": \"<string>\"\n      },\n      \"do_00\": {\n        \"url\": \"<uri>\",\n        \"width\": \"<string>\",\n        \"height\": \"<string>\",\n        \"size\": \"<string>\",\n        \"mp4\": \"<uri>\",\n        \"mp4_size\": \"<string>\",\n        \"webp\": \"<uri>\",\n        \"webp_size\": \"<string>\",\n        \"frames\": \"<string>\",\n        \"hash\": \"<string>\"\n      }\n    },\n    \"title\": \"<string>\",\n    \"alt_text\": \"<string>\",\n    \"is_low_contrast\": \"<boolean>\",\n    \"analytics_response_payload\": \"<string>\",\n    \"analytics\": {\n      \"onload\": {\n        \"url\": \"<uri>\"\n      },\n      \"onclick\": {\n        \"url\": \"<uri>\"\n      },\n      \"onsent\": {\n        \"url\": \"<uri>\"\n      }\n    }\n  },\n  \"meta\": {\n    \"msg\": \"<string>\",\n    \"status\": \"<integer>\",\n    \"response_id\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-07-28T01:44:11.000Z",
+                      "updatedAt": "2026-07-28T01:44:11.000Z",
+                      "uid": "35240-59fccd93-e71b-447f-98f8-1aeff994ab52"
+                    },
+                    {
+                      "id": "24e50567-56bb-440c-af26-c879c3230cd0",
+                      "name": "Malformed request.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/gifs/translate?api_key=<API Key>&s=<string>&weirdness=<integer>&rating=y&random_id=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "gifs",
+                            "translate"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) GIPHY API key (Beta or Production).",
+                              "key": "api_key",
+                              "value": "<API Key>"
+                            },
+                            {
+                              "description": "(Required) Search term to translate to a GIF.",
+                              "key": "s",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Translate weirdness (0 conservative ... 10 most weird).",
+                              "key": "weirdness",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "Filter results by MPAA-style rating.",
+                              "key": "rating",
+                              "value": "y"
+                            },
+                            {
+                              "description": "Privacy-preserving user identifier produced by /v1/randomid.",
+                              "key": "random_id",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"meta\": {\n    \"msg\": \"<string>\",\n    \"status\": \"<integer>\",\n    \"response_id\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-07-28T01:44:11.000Z",
+                      "updatedAt": "2026-07-28T01:44:11.000Z",
+                      "uid": "35240-24e50567-56bb-440c-af26-c879c3230cd0"
+                    },
+                    {
+                      "id": "36845fe1-4c55-4f66-8808-2350a7d096a7",
+                      "name": "Missing or invalid API key.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/gifs/translate?api_key=<API Key>&s=<string>&weirdness=<integer>&rating=y&random_id=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "gifs",
+                            "translate"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) GIPHY API key (Beta or Production).",
+                              "key": "api_key",
+                              "value": "<API Key>"
+                            },
+                            {
+                              "description": "(Required) Search term to translate to a GIF.",
+                              "key": "s",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Translate weirdness (0 conservative ... 10 most weird).",
+                              "key": "weirdness",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "Filter results by MPAA-style rating.",
+                              "key": "rating",
+                              "value": "y"
+                            },
+                            {
+                              "description": "Privacy-preserving user identifier produced by /v1/randomid.",
+                              "key": "random_id",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"meta\": {\n    \"msg\": \"<string>\",\n    \"status\": \"<integer>\",\n    \"response_id\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-07-28T01:44:11.000Z",
+                      "updatedAt": "2026-07-28T01:44:11.000Z",
+                      "uid": "35240-36845fe1-4c55-4f66-8808-2350a7d096a7"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:44:11.000Z",
+                  "updatedAt": "2026-07-28T01:44:11.000Z",
+                  "uid": "35240-4fe67880-4786-4fc1-8fc1-d666ab2944b4"
+                }
+              ],
+              "id": "a3a1532c-f276-4055-9e17-cc882b9fc92b",
+              "createdAt": "2026-07-28T01:44:11.000Z",
+              "updatedAt": "2026-07-28T01:44:11.000Z",
+              "uid": "35240-a3a1532c-f276-4055-9e17-cc882b9fc92b"
+            },
+            {
+              "name": "random",
+              "item": [
+                {
+                  "name": "Get Random GIF",
+                  "id": "4b67099e-62c9-4ba6-af62-5e420df99c57",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/gifs/random?api_key=<string>&tag=<string>&rating=y&random_id=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "gifs",
+                        "random"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) GIPHY API key (Beta or Production).",
+                          "key": "api_key",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Filter results by tag.",
+                          "key": "tag",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Filter results by MPAA-style rating.",
+                          "key": "rating",
+                          "value": "y"
+                        },
+                        {
+                          "description": "Privacy-preserving user identifier produced by /v1/randomid.",
+                          "key": "random_id",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "description": "Return a single random GIF, optionally filtered by tag."
+                  },
+                  "response": [
+                    {
+                      "id": "20d2fedd-0a94-4546-a2d6-73f4fff165ac",
+                      "name": "A single GIF or Sticker object.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/gifs/random?api_key=<API Key>&tag=<string>&rating=y&random_id=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "gifs",
+                            "random"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) GIPHY API key (Beta or Production).",
+                              "key": "api_key",
+                              "value": "<API Key>"
+                            },
+                            {
+                              "description": "Filter results by tag.",
+                              "key": "tag",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Filter results by MPAA-style rating.",
+                              "key": "rating",
+                              "value": "y"
+                            },
+                            {
+                              "description": "Privacy-preserving user identifier produced by /v1/randomid.",
+                              "key": "random_id",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"data\": {\n    \"type\": \"gif\",\n    \"id\": \"<string>\",\n    \"slug\": \"<string>\",\n    \"url\": \"<uri>\",\n    \"bitly_gif_url\": \"<uri>\",\n    \"bitly_url\": \"<uri>\",\n    \"embed_url\": \"<uri>\",\n    \"username\": \"<string>\",\n    \"source\": \"<string>\",\n    \"rating\": \"g\",\n    \"content_url\": \"<string>\",\n    \"user\": {\n      \"avatar_url\": \"<uri>\",\n      \"banner_image\": \"<uri>\",\n      \"banner_url\": \"<uri>\",\n      \"profile_url\": \"<uri>\",\n      \"username\": \"<string>\",\n      \"display_name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"instagram_url\": \"<uri>\",\n      \"website_url\": \"<uri>\",\n      \"is_verified\": \"<boolean>\"\n    },\n    \"source_tld\": \"<string>\",\n    \"source_post_url\": \"<uri>\",\n    \"update_datetime\": \"<dateTime>\",\n    \"create_datetime\": \"<dateTime>\",\n    \"import_datetime\": \"<dateTime>\",\n    \"trending_datetime\": \"<dateTime>\",\n    \"images\": {\n      \"suntb\": {\n        \"url\": \"<uri>\",\n        \"width\": \"<string>\",\n        \"height\": \"<string>\",\n        \"size\": \"<string>\",\n        \"mp4\": \"<uri>\",\n        \"mp4_size\": \"<string>\",\n        \"webp\": \"<uri>\",\n        \"webp_size\": \"<string>\",\n        \"frames\": \"<string>\",\n        \"hash\": \"<string>\"\n      },\n      \"exercitationd\": {\n        \"url\": \"<uri>\",\n        \"width\": \"<string>\",\n        \"height\": \"<string>\",\n        \"size\": \"<string>\",\n        \"mp4\": \"<uri>\",\n        \"mp4_size\": \"<string>\",\n        \"webp\": \"<uri>\",\n        \"webp_size\": \"<string>\",\n        \"frames\": \"<string>\",\n        \"hash\": \"<string>\"\n      },\n      \"deserunt_41b\": {\n        \"url\": \"<uri>\",\n        \"width\": \"<string>\",\n        \"height\": \"<string>\",\n        \"size\": \"<string>\",\n        \"mp4\": \"<uri>\",\n        \"mp4_size\": \"<string>\",\n        \"webp\": \"<uri>\",\n        \"webp_size\": \"<string>\",\n        \"frames\": \"<string>\",\n        \"hash\": \"<string>\"\n      },\n      \"dolorec0_\": {\n        \"url\": \"<uri>\",\n        \"width\": \"<string>\",\n        \"height\": \"<string>\",\n        \"size\": \"<string>\",\n        \"mp4\": \"<uri>\",\n        \"mp4_size\": \"<string>\",\n        \"webp\": \"<uri>\",\n        \"webp_size\": \"<string>\",\n        \"frames\": \"<string>\",\n        \"hash\": \"<string>\"\n      },\n      \"do_00\": {\n        \"url\": \"<uri>\",\n        \"width\": \"<string>\",\n        \"height\": \"<string>\",\n        \"size\": \"<string>\",\n        \"mp4\": \"<uri>\",\n        \"mp4_size\": \"<string>\",\n        \"webp\": \"<uri>\",\n        \"webp_size\": \"<string>\",\n        \"frames\": \"<string>\",\n        \"hash\": \"<string>\"\n      }\n    },\n    \"title\": \"<string>\",\n    \"alt_text\": \"<string>\",\n    \"is_low_contrast\": \"<boolean>\",\n    \"analytics_response_payload\": \"<string>\",\n    \"analytics\": {\n      \"onload\": {\n        \"url\": \"<uri>\"\n      },\n      \"onclick\": {\n        \"url\": \"<uri>\"\n      },\n      \"onsent\": {\n        \"url\": \"<uri>\"\n      }\n    }\n  },\n  \"meta\": {\n    \"msg\": \"<string>\",\n    \"status\": \"<integer>\",\n    \"response_id\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-07-28T01:44:11.000Z",
+                      "updatedAt": "2026-07-28T01:44:11.000Z",
+                      "uid": "35240-20d2fedd-0a94-4546-a2d6-73f4fff165ac"
+                    },
+                    {
+                      "id": "aeac7ad3-0945-4512-ae7e-318da8dac3ea",
+                      "name": "Missing or invalid API key.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/gifs/random?api_key=<API Key>&tag=<string>&rating=y&random_id=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "gifs",
+                            "random"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) GIPHY API key (Beta or Production).",
+                              "key": "api_key",
+                              "value": "<API Key>"
+                            },
+                            {
+                              "description": "Filter results by tag.",
+                              "key": "tag",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Filter results by MPAA-style rating.",
+                              "key": "rating",
+                              "value": "y"
+                            },
+                            {
+                              "description": "Privacy-preserving user identifier produced by /v1/randomid.",
+                              "key": "random_id",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"meta\": {\n    \"msg\": \"<string>\",\n    \"status\": \"<integer>\",\n    \"response_id\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-07-28T01:44:11.000Z",
+                      "updatedAt": "2026-07-28T01:44:11.000Z",
+                      "uid": "35240-aeac7ad3-0945-4512-ae7e-318da8dac3ea"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:44:11.000Z",
+                  "updatedAt": "2026-07-28T01:44:11.000Z",
+                  "uid": "35240-4b67099e-62c9-4ba6-af62-5e420df99c57"
+                }
+              ],
+              "id": "4ea3a088-3953-4fb1-9360-65d8dfb65831",
+              "createdAt": "2026-07-28T01:44:11.000Z",
+              "updatedAt": "2026-07-28T01:44:11.000Z",
+              "uid": "35240-4ea3a088-3953-4fb1-9360-65d8dfb65831"
+            },
+            {
+              "name": "{gif_id}",
+              "item": [
+                {
+                  "name": "Get GIF by ID",
+                  "id": "d9650ec6-02b6-4d11-8406-70b75398976f",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/gifs/:gif_id?api_key=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "gifs",
+                        ":gif_id"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) GIPHY API key (Beta or Production).",
+                          "key": "api_key",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "00ddbd84-3e1f-45be-83e5-277540e0285f",
+                          "key": "gif_id",
+                          "value": "<string>",
+                          "description": "(Required) GIPHY ID of the GIF."
+                        }
+                      ]
+                    },
+                    "description": "Retrieve metadata for a single GIF."
+                  },
+                  "response": [
+                    {
+                      "id": "5927d8a3-5a33-4147-83c3-5d07f96eac33",
+                      "name": "A single GIF or Sticker object.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/gifs/:gif_id?api_key=<API Key>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "gifs",
+                            ":gif_id"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) GIPHY API key (Beta or Production).",
+                              "key": "api_key",
+                              "value": "<API Key>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "gif_id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"data\": {\n    \"type\": \"gif\",\n    \"id\": \"<string>\",\n    \"slug\": \"<string>\",\n    \"url\": \"<uri>\",\n    \"bitly_gif_url\": \"<uri>\",\n    \"bitly_url\": \"<uri>\",\n    \"embed_url\": \"<uri>\",\n    \"username\": \"<string>\",\n    \"source\": \"<string>\",\n    \"rating\": \"g\",\n    \"content_url\": \"<string>\",\n    \"user\": {\n      \"avatar_url\": \"<uri>\",\n      \"banner_image\": \"<uri>\",\n      \"banner_url\": \"<uri>\",\n      \"profile_url\": \"<uri>\",\n      \"username\": \"<string>\",\n      \"display_name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"instagram_url\": \"<uri>\",\n      \"website_url\": \"<uri>\",\n      \"is_verified\": \"<boolean>\"\n    },\n    \"source_tld\": \"<string>\",\n    \"source_post_url\": \"<uri>\",\n    \"update_datetime\": \"<dateTime>\",\n    \"create_datetime\": \"<dateTime>\",\n    \"import_datetime\": \"<dateTime>\",\n    \"trending_datetime\": \"<dateTime>\",\n    \"images\": {\n      \"suntb\": {\n        \"url\": \"<uri>\",\n        \"width\": \"<string>\",\n        \"height\": \"<string>\",\n        \"size\": \"<string>\",\n        \"mp4\": \"<uri>\",\n        \"mp4_size\": \"<string>\",\n        \"webp\": \"<uri>\",\n        \"webp_size\": \"<string>\",\n        \"frames\": \"<string>\",\n        \"hash\": \"<string>\"\n      },\n      \"exercitationd\": {\n        \"url\": \"<uri>\",\n        \"width\": \"<string>\",\n        \"height\": \"<string>\",\n        \"size\": \"<string>\",\n        \"mp4\": \"<uri>\",\n        \"mp4_size\": \"<string>\",\n        \"webp\": \"<uri>\",\n        \"webp_size\": \"<string>\",\n        \"frames\": \"<string>\",\n        \"hash\": \"<string>\"\n      },\n      \"deserunt_41b\": {\n        \"url\": \"<uri>\",\n        \"width\": \"<string>\",\n        \"height\": \"<string>\",\n        \"size\": \"<string>\",\n        \"mp4\": \"<uri>\",\n        \"mp4_size\": \"<string>\",\n        \"webp\": \"<uri>\",\n        \"webp_size\": \"<string>\",\n        \"frames\": \"<string>\",\n        \"hash\": \"<string>\"\n      },\n      \"dolorec0_\": {\n        \"url\": \"<uri>\",\n        \"width\": \"<string>\",\n        \"height\": \"<string>\",\n        \"size\": \"<string>\",\n        \"mp4\": \"<uri>\",\n        \"mp4_size\": \"<string>\",\n        \"webp\": \"<uri>\",\n        \"webp_size\": \"<string>\",\n        \"frames\": \"<string>\",\n        \"hash\": \"<string>\"\n      },\n      \"do_00\": {\n        \"url\": \"<uri>\",\n        \"width\": \"<string>\",\n        \"height\": \"<string>\",\n        \"size\": \"<string>\",\n        \"mp4\": \"<uri>\",\n        \"mp4_size\": \"<string>\",\n        \"webp\": \"<uri>\",\n        \"webp_size\": \"<string>\",\n        \"frames\": \"<string>\",\n        \"hash\": \"<string>\"\n      }\n    },\n    \"title\": \"<string>\",\n    \"alt_text\": \"<string>\",\n    \"is_low_contrast\": \"<boolean>\",\n    \"analytics_response_payload\": \"<string>\",\n    \"analytics\": {\n      \"onload\": {\n        \"url\": \"<uri>\"\n      },\n      \"onclick\": {\n        \"url\": \"<uri>\"\n      },\n      \"onsent\": {\n        \"url\": \"<uri>\"\n      }\n    }\n  },\n  \"meta\": {\n    \"msg\": \"<string>\",\n    \"status\": \"<integer>\",\n    \"response_id\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-07-28T01:44:11.000Z",
+                      "updatedAt": "2026-07-28T01:44:11.000Z",
+                      "uid": "35240-5927d8a3-5a33-4147-83c3-5d07f96eac33"
+                    },
+                    {
+                      "id": "cfc5cded-763a-488e-bcef-432c2ad00f7b",
+                      "name": "Resource not found.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/gifs/:gif_id?api_key=<API Key>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "gifs",
+                            ":gif_id"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) GIPHY API key (Beta or Production).",
+                              "key": "api_key",
+                              "value": "<API Key>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "gif_id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"meta\": {\n    \"msg\": \"<string>\",\n    \"status\": \"<integer>\",\n    \"response_id\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-07-28T01:44:11.000Z",
+                      "updatedAt": "2026-07-28T01:44:11.000Z",
+                      "uid": "35240-cfc5cded-763a-488e-bcef-432c2ad00f7b"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:44:11.000Z",
+                  "updatedAt": "2026-07-28T01:44:11.000Z",
+                  "uid": "35240-d9650ec6-02b6-4d11-8406-70b75398976f"
+                }
+              ],
+              "id": "acbfda2b-03f4-4b23-b405-56a3e461585e",
+              "createdAt": "2026-07-28T01:44:11.000Z",
+              "updatedAt": "2026-07-28T01:44:11.000Z",
+              "uid": "35240-acbfda2b-03f4-4b23-b405-56a3e461585e"
+            },
+            {
+              "name": "Get GIFs by ID",
+              "id": "acaa26dc-c8e7-4f5d-afe3-d039aab49ed8",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/v1/gifs?api_key=<string>&ids=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "gifs"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) GIPHY API key (Beta or Production).",
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) Comma-separated list of GIF IDs (max 100).",
+                      "key": "ids",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Fetch metadata for up to 100 GIFs at once, by comma-separated IDs."
+              },
+              "response": [
+                {
+                  "id": "355b36ab-c6f2-45a9-9b39-7c14afdd6bab",
+                  "name": "A paginated list of GIF or Sticker objects.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/gifs?api_key=<API Key>&ids=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "gifs"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) GIPHY API key (Beta or Production).",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "(Required) Comma-separated list of GIF IDs (max 100).",
+                          "key": "ids",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"data\": [\n    {\n      \"type\": \"sticker\",\n      \"id\": \"<string>\",\n      \"slug\": \"<string>\",\n      \"url\": \"<uri>\",\n      \"bitly_gif_url\": \"<uri>\",\n      \"bitly_url\": \"<uri>\",\n      \"embed_url\": \"<uri>\",\n      \"username\": \"<string>\",\n      \"source\": \"<string>\",\n      \"rating\": \"g\",\n      \"content_url\": \"<string>\",\n      \"user\": {\n        \"avatar_url\": \"<uri>\",\n        \"banner_image\": \"<uri>\",\n        \"banner_url\": \"<uri>\",\n        \"profile_url\": \"<uri>\",\n        \"username\": \"<string>\",\n        \"display_name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"instagram_url\": \"<uri>\",\n        \"website_url\": \"<uri>\",\n        \"is_verified\": \"<boolean>\"\n      },\n      \"source_tld\": \"<string>\",\n      \"source_post_url\": \"<uri>\",\n      \"update_datetime\": \"<dateTime>\",\n      \"create_datetime\": \"<dateTime>\",\n      \"import_datetime\": \"<dateTime>\",\n      \"trending_datetime\": \"<dateTime>\",\n      \"images\": {\n        \"ea_f30\": {\n          \"url\": \"<uri>\",\n          \"width\": \"<string>\",\n          \"height\": \"<string>\",\n          \"size\": \"<string>\",\n          \"mp4\": \"<uri>\",\n          \"mp4_size\": \"<string>\",\n          \"webp\": \"<uri>\",\n          \"webp_size\": \"<string>\",\n          \"frames\": \"<string>\",\n          \"hash\": \"<string>\"\n        }\n      },\n      \"title\": \"<string>\",\n      \"alt_text\": \"<string>\",\n      \"is_low_contrast\": \"<boolean>\",\n      \"analytics_response_payload\": \"<string>\",\n      \"analytics\": {\n        \"onload\": {\n          \"url\": \"<uri>\"\n        },\n        \"onclick\": {\n          \"url\": \"<uri>\"\n        },\n        \"onsent\": {\n          \"url\": \"<uri>\"\n        }\n      }\n    },\n    {\n      \"type\": \"sticker\",\n      \"id\": \"<string>\",\n      \"slug\": \"<string>\",\n      \"url\": \"<uri>\",\n      \"bitly_gif_url\": \"<uri>\",\n      \"bitly_url\": \"<uri>\",\n      \"embed_url\": \"<uri>\",\n      \"username\": \"<string>\",\n      \"source\": \"<string>\",\n      \"rating\": \"pg-13\",\n      \"content_url\": \"<string>\",\n      \"user\": {\n        \"avatar_url\": \"<uri>\",\n        \"banner_image\": \"<uri>\",\n        \"banner_url\": \"<uri>\",\n        \"profile_url\": \"<uri>\",\n        \"username\": \"<string>\",\n        \"display_name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"instagram_url\": \"<uri>\",\n        \"website_url\": \"<uri>\",\n        \"is_verified\": \"<boolean>\"\n      },\n      \"source_tld\": \"<string>\",\n      \"source_post_url\": \"<uri>\",\n      \"update_datetime\": \"<dateTime>\",\n      \"create_datetime\": \"<dateTime>\",\n      \"import_datetime\": \"<dateTime>\",\n      \"trending_datetime\": \"<dateTime>\",\n      \"images\": {\n        \"ut2a1\": {\n          \"url\": \"<uri>\",\n          \"width\": \"<string>\",\n          \"height\": \"<string>\",\n          \"size\": \"<string>\",\n          \"mp4\": \"<uri>\",\n          \"mp4_size\": \"<string>\",\n          \"webp\": \"<uri>\",\n          \"webp_size\": \"<string>\",\n          \"frames\": \"<string>\",\n          \"hash\": \"<string>\"\n        },\n        \"enim28\": {\n          \"url\": \"<uri>\",\n          \"width\": \"<string>\",\n          \"height\": \"<string>\",\n          \"size\": \"<string>\",\n          \"mp4\": \"<uri>\",\n          \"mp4_size\": \"<string>\",\n          \"webp\": \"<uri>\",\n          \"webp_size\": \"<string>\",\n          \"frames\": \"<string>\",\n          \"hash\": \"<string>\"\n        }\n      },\n      \"title\": \"<string>\",\n      \"alt_text\": \"<string>\",\n      \"is_low_contrast\": \"<boolean>\",\n      \"analytics_response_payload\": \"<string>\",\n      \"analytics\": {\n        \"onload\": {\n          \"url\": \"<uri>\"\n        },\n        \"onclick\": {\n          \"url\": \"<uri>\"\n        },\n        \"onsent\": {\n          \"url\": \"<uri>\"\n        }\n      }\n    }\n  ],\n  \"pagination\": {\n    \"offset\": \"<integer>\",\n    \"total_count\": \"<integer>\",\n    \"count\": \"<integer>\"\n  },\n  \"meta\": {\n    \"msg\": \"<string>\",\n    \"status\": \"<integer>\",\n    \"response_id\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-07-28T01:44:11.000Z",
+                  "updatedAt": "2026-07-28T01:44:11.000Z",
+                  "uid": "35240-355b36ab-c6f2-45a9-9b39-7c14afdd6bab"
+                },
+                {
+                  "id": "c09764c3-9637-4af3-abb8-335cd3ea620a",
+                  "name": "Malformed request.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/gifs?api_key=<API Key>&ids=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "gifs"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) GIPHY API key (Beta or Production).",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        },
+                        {
+                          "description": "(Required) Comma-separated list of GIF IDs (max 100).",
+                          "key": "ids",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"meta\": {\n    \"msg\": \"<string>\",\n    \"status\": \"<integer>\",\n    \"response_id\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-07-28T01:44:11.000Z",
+                  "updatedAt": "2026-07-28T01:44:11.000Z",
+                  "uid": "35240-c09764c3-9637-4af3-abb8-335cd3ea620a"
+                }
+              ],
+              "createdAt": "2026-07-28T01:44:11.000Z",
+              "updatedAt": "2026-07-28T01:44:11.000Z",
+              "uid": "35240-acaa26dc-c8e7-4f5d-afe3-d039aab49ed8"
+            }
+          ],
+          "id": "ae3e3b7c-e41e-424b-8612-464f629f4644",
+          "createdAt": "2026-07-28T01:44:11.000Z",
+          "updatedAt": "2026-07-28T01:44:11.000Z",
+          "uid": "35240-ae3e3b7c-e41e-424b-8612-464f629f4644"
+        }
+      ],
+      "id": "d6cf66cf-155c-4df5-89c3-e657a085e078",
+      "createdAt": "2026-07-28T01:44:11.000Z",
+      "updatedAt": "2026-07-28T01:44:11.000Z",
+      "uid": "35240-d6cf66cf-155c-4df5-89c3-e657a085e078"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.giphy.com"
+    }
+  ]
+}

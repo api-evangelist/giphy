@@ -1,0 +1,142 @@
+{
+  "info": {
+    "_postman_id": "66cb9ea2-fd1f-4fb0-b07a-8e3043970917",
+    "name": "GIPHY Analytics Utilities API",
+    "description": "The GIPHY API provides programmatic access to the world's largest library of\nGIFs, stickers, animated emoji and Clips (GIFs with sound). Search, trending,\ntranslate, random, and category endpoints all return rich media objects with\nmultiple image renditions optimized for any surface.\n\nAuthentication is via API key. New developers receive a rate-limited Beta key;\na Production key is granted after application review.\n\n\nContact Support:\n Name: GIPHY Developers\n Email: support@giphy.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:44:31.000Z",
+    "updatedAt": "2026-07-28T01:44:31.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-66cb9ea2-fd1f-4fb0-b07a-8e3043970917"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "randomid",
+          "item": [
+            {
+              "name": "Create Random ID",
+              "id": "08785d53-6a88-43e9-a72d-3a71bcc53fb7",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/v1/randomid?api_key=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "randomid"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) GIPHY API key (Beta or Production).",
+                      "key": "api_key",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Generate a unique, privacy-preserving identifier for tracking users in a session."
+              },
+              "response": [
+                {
+                  "id": "33595b1a-14e5-4da0-98f5-e4ee784b23ea",
+                  "name": "A new random ID.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/randomid?api_key=<API Key>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "randomid"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) GIPHY API key (Beta or Production).",
+                          "key": "api_key",
+                          "value": "<API Key>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"data\": {\n    \"random_id\": \"<string>\"\n  },\n  \"meta\": {\n    \"msg\": \"<string>\",\n    \"status\": \"<integer>\",\n    \"response_id\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-07-28T01:44:31.000Z",
+                  "updatedAt": "2026-07-28T01:44:31.000Z",
+                  "uid": "35240-33595b1a-14e5-4da0-98f5-e4ee784b23ea"
+                }
+              ],
+              "createdAt": "2026-07-28T01:44:31.000Z",
+              "updatedAt": "2026-07-28T01:44:31.000Z",
+              "uid": "35240-08785d53-6a88-43e9-a72d-3a71bcc53fb7"
+            }
+          ],
+          "id": "1c863907-7fdf-4348-9e77-7a83ac7ece82",
+          "createdAt": "2026-07-28T01:44:31.000Z",
+          "updatedAt": "2026-07-28T01:44:31.000Z",
+          "uid": "35240-1c863907-7fdf-4348-9e77-7a83ac7ece82"
+        }
+      ],
+      "id": "704a4a51-9778-4eb7-8fdf-72aaeaa34f5d",
+      "createdAt": "2026-07-28T01:44:31.000Z",
+      "updatedAt": "2026-07-28T01:44:31.000Z",
+      "uid": "35240-704a4a51-9778-4eb7-8fdf-72aaeaa34f5d"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.giphy.com"
+    }
+  ]
+}

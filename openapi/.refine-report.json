@@ -1,0 +1,34 @@
+{
+  "provider": "giphy",
+  "sources": [
+    "giphy-analytics-api-openapi.yml",
+    "giphy-animate-api-openapi.yml",
+    "giphy-categories-api-openapi.yml",
+    "giphy-channels-api-openapi.yml",
+    "giphy-clips-api-openapi.yml",
+    "giphy-emoji-api-openapi.yml",
+    "giphy-gifs-api-openapi.yml",
+    "giphy-search-discovery-api-openapi.yml",
+    "giphy-stickers-api-openapi.yml",
+    "giphy-upload-api-openapi.yml",
+    "giphy-utilities-api-openapi.yml"
+  ],
+  "outputs": [
+    "giphy-analytics-api-openapi.yml",
+    "giphy-animate-api-openapi.yml",
+    "giphy-categories-api-openapi.yml",
+    "giphy-channels-api-openapi.yml",
+    "giphy-clips-api-openapi.yml",
+    "giphy-emoji-api-openapi.yml",
+    "giphy-gifs-api-openapi.yml",
+    "giphy-search-discovery-api-openapi.yml",
+    "giphy-stickers-api-openapi.yml",
+    "giphy-upload-api-openapi.yml",
+    "giphy-utilities-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
