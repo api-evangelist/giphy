@@ -1,0 +1,152 @@
+{
+  "item": [
+    {
+      "id": "4f106264-c311-442a-bf67-901a4328e0b2",
+      "name": "Analytics",
+      "description": {
+        "content": "Pingback and action register endpoints for measuring user engagement.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cc6d8edd-7153-4141-adff-75a826e5ee8c",
+          "name": "Register Search Action",
+          "request": {
+            "name": "Register Search Action",
+            "description": {
+              "content": "Register an action (view, click, share) on a GIF using the analytics pingback URLs\nincluded in search responses. Endpoint is fire-and-forget; HTTP 200 indicates the\nevent was accepted.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "gifs",
+                "search",
+                "actions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) GIPHY API key (Beta or Production)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action_type\": \"<string>\",\n  \"analytics_response_payload\": \"<string>\",\n  \"random_id\": \"<string>\",\n  \"ts\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "544dbaae-cccd-4e16-af5c-152e692cff71",
+              "name": "Event accepted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "gifs",
+                    "search",
+                    "actions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action_type\": \"<string>\",\n  \"analytics_response_payload\": \"<string>\",\n  \"random_id\": \"<string>\",\n  \"ts\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.giphy.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3e03306e-cf0f-4dc4-ab9d-4f84112f7c0e",
+    "name": "GIPHY Analytics API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The GIPHY API provides programmatic access to the world's largest library of\nGIFs, stickers, animated emoji and Clips (GIFs with sound). Search, trending,\ntranslate, random, and category endpoints all return rich media objects with\nmultiple image renditions optimized for any surface.\n\nAuthentication is via API key. New developers receive a rate-limited Beta key;\na Production key is granted after application review.\n\n\nContact Support:\n Name: GIPHY Developers\n Email: support@giphy.com",
+      "type": "text/plain"
+    }
+  }
+}

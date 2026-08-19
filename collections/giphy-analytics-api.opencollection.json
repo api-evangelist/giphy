@@ -1,0 +1,49 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GIPHY Analytics API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Analytics",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Register Search Action",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.giphy.com/v1/gifs/search/actions",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Register an action (view, click, share) on a GIF using the analytics pingback URLs\nincluded in search responses. Endpoint is fire-and-forget; HTTP 200 indicates the\nevent was accepted.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,177 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GIPHY Analytics Stickers API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Stickers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Stickers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/stickers/search",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Position in the result set for pagination."
+              },
+              {
+                "name": "rating",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by MPAA-style rating."
+              },
+              {
+                "name": "lang",
+                "value": "",
+                "type": "query",
+                "description": "Default language (ISO 639-1) for regional content."
+              }
+            ]
+          },
+          "docs": "Search GIPHY's library of stickers (transparent-background animations)."
+        },
+        {
+          "info": {
+            "name": "Get Trending Stickers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/stickers/trending",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Position in the result set for pagination."
+              },
+              {
+                "name": "rating",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by MPAA-style rating."
+              }
+            ]
+          },
+          "docs": "Return the most relevant and engaging stickers each day."
+        },
+        {
+          "info": {
+            "name": "Translate Term to Sticker",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/stickers/translate",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "s",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "weirdness",
+                "value": "",
+                "type": "query",
+                "description": "Translate weirdness (0 conservative ... 10 most weird)."
+              },
+              {
+                "name": "rating",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by MPAA-style rating."
+              }
+            ]
+          },
+          "docs": "Convert words and phrases to a single contextually relevant sticker."
+        },
+        {
+          "info": {
+            "name": "Get Random Sticker",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/stickers/random",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "tag",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "rating",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by MPAA-style rating."
+              }
+            ]
+          },
+          "docs": "Return a single random sticker, optionally filtered by tag."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

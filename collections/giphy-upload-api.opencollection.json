@@ -1,0 +1,85 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GIPHY Analytics Upload API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Upload",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Upload GIF",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.giphy.com/v1/gifs",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "api_key",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "source_image_url",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "username",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "tags",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "source_post_url",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "is_hidden",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Upload a GIF or video file to GIPHY at `upload.giphy.com/v1/gifs`. Maximum file\nsize is 100 MB. This operation runs against the `upload.giphy.com` host (overrides\nthe default server).\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

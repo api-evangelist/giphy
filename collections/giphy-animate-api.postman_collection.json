@@ -1,0 +1,157 @@
+{
+  "item": [
+    {
+      "id": "8bab4400-86c6-4f16-87b7-adb32ca36620",
+      "name": "Animate",
+      "description": {
+        "content": "Programmatic creation of animated text/word GIFs.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7cadf062-843e-46e1-8ef2-24aa661f2f3b",
+          "name": "Animate Text",
+          "request": {
+            "name": "Animate Text",
+            "description": {
+              "content": "Programmatically generate an animated text GIF from a phrase.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "animate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) GIPHY API key (Beta or Production)."
+                },
+                {
+                  "disabled": false,
+                  "key": "m",
+                  "value": "<string>",
+                  "description": "(Required) Text or phrase to animate."
+                },
+                {
+                  "disabled": false,
+                  "key": "style",
+                  "value": "<string>",
+                  "description": "Optional animation style identifier."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "489e9177-d7ab-48af-8bc8-7964c6e34734",
+              "name": "A single GIF or Sticker object.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "animate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "m",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "style",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"type\": \"sticker\",\n    \"id\": \"string\",\n    \"slug\": \"string\",\n    \"url\": \"http://rvKOpPBwBWb.kkuyX8FzEwWynbjXcLR.fTIZpS5ttt\",\n    \"bitly_gif_url\": \"https://QNhqjJcWYuFEn.ijxxFnfkcCeii775m2\",\n    \"bitly_url\": \"https://EdLkS.ukbQ9jMtvCsKTIfDUUlCW7jbH75H4JRx8tjDkfm-bpPekoa.saDFpu7KH1\",\n    \"embed_url\": \"http://eJXPbXJXQHeFMDOKlKRExw.sjvSSWQ3nr\",\n    \"username\": \"string\",\n    \"source\": \"string\",\n    \"rating\": \"pg\",\n    \"content_url\": \"string\",\n    \"user\": {\n      \"avatar_url\": \"https://jdXzTImnWCFR.kklpO.+QnR,lIkI-sTH0tYEiKh8-9iJNzOh+pcJoNGCZKxAvD2pTJUDi\",\n      \"banner_image\": \"http://WxYCezFewjahwXSkMhzQ.cbccdDB6Q4KSi15B4DVm7x3HkZ1EDGsD\",\n      \"banner_url\": \"https://ClDlpVJmgrskLZvijfA.dbyb3q8tBj-6T2ANT2dY50xFvAeSzSWOW\",\n      \"profile_url\": \"http://xQjWuS.sxrCeiD1PMdK+jU7sdTI0UzBsvVjl9nOjf5n0ZXC.iLlG9qiyD2AYoFDFwsdhiRI\",\n      \"username\": \"string\",\n      \"display_name\": \"string\",\n      \"description\": \"string\",\n      \"instagram_url\": \"https://BOLkiPGasHt.ccfzvIM2aNwmge2YnhEMhq7EGGwvbhiAOnpZNngRq3NFOMfr,D2j4fglsA\",\n      \"website_url\": \"http://JEmHfkaIkZFPzLbzgMkxYVtvMQdClYU.zuLTsBQc-FV7dxT8fwLgX+Xb6+gnN,yaO\",\n      \"is_verified\": false\n    },\n    \"source_tld\": \"string\",\n    \"source_post_url\": \"http://foELIFhmuN.zmyntFTLl5ZDDa1E2TBQJchrQNPPH\",\n    \"update_datetime\": \"1998-10-19T02:05:10.647Z\",\n    \"create_datetime\": \"1994-10-23T00:31:55.564Z\",\n    \"import_datetime\": \"1989-04-29T11:27:12.486Z\",\n    \"trending_datetime\": \"1973-08-06T19:56:20.287Z\",\n    \"images\": {\n      \"key_0\": {\n        \"url\": \"https://qNQRYRgvJfXJNAGwjHsKnKMQlVImXx.ovqjpM\",\n        \"width\": \"string\",\n        \"height\": \"string\",\n        \"size\": \"string\",\n        \"mp4\": \"https://sBcRjTrNpiIUk.fqsDkue9apfbDtdF8wmZSH5CweUW5qvhK4F3UA1ppyFmWZ5aqWgloJBkp+d\",\n        \"mp4_size\": \"string\",\n        \"webp\": \"http://DJQeysDdAAemFzWxfDsNPinyBmIdqOXn.bjfkHQgdR4KqJiaKuu.EfNmGcbSSQZk5wFTRtBlgxkZ0XFPs0Lo+WIrpD.sDAX-pVX\",\n        \"webp_size\": \"string\",\n        \"frames\": \"string\",\n        \"hash\": \"string\"\n      },\n      \"key_1\": {\n        \"url\": \"https://GgfvEnqMi.hqjMVI9Jjn\",\n        \"width\": \"string\",\n        \"height\": \"string\",\n        \"size\": \"string\",\n        \"mp4\": \"https://nDlfoLvWVKdVkYYwFSJBWjNVVdZSMJB.gqdebTm1d+OCWOIfY8W-e33MMbpp2D.dVl0KBt\",\n        \"mp4_size\": \"string\",\n        \"webp\": \"https://NebFOfrUwKttFhkdUjSlTzsevsPBWMUsk.iwcgwWmBsvBx5aMxZMNeg7gfa.\",\n        \"webp_size\": \"string\",\n        \"frames\": \"string\",\n        \"hash\": \"string\"\n      }\n    },\n    \"title\": \"string\",\n    \"alt_text\": \"string\",\n    \"is_low_contrast\": false,\n    \"analytics_response_payload\": \"string\",\n    \"analytics\": {\n      \"onload\": {\n        \"url\": \"http://LkTwvNMPHrAfMHENh.zhuQ7feARI8ENt+ENomH\"\n      },\n      \"onclick\": {\n        \"url\": \"https://RGHHZHQzPJXqWV.rtYDmVCNna,cf.n0+qRjrEymv2N+41yCY-gBWKrp9MDJ.AhEpuztqu.biEnEe,aCZN\"\n      },\n      \"onsent\": {\n        \"url\": \"https://rgInITqJpzoteEXt.bihvvGh0rehZ0jOQ1Yjk6mTY55x\"\n      }\n    }\n  },\n  \"meta\": {\n    \"msg\": \"string\",\n    \"status\": 9951,\n    \"response_id\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.giphy.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4d8e2953-aaf7-487d-96ae-0384907acce0",
+    "name": "GIPHY Analytics Animate API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The GIPHY API provides programmatic access to the world's largest library of\nGIFs, stickers, animated emoji and Clips (GIFs with sound). Search, trending,\ntranslate, random, and category endpoints all return rich media objects with\nmultiple image renditions optimized for any surface.\n\nAuthentication is via API key. New developers receive a rate-limited Beta key;\na Production key is granted after application review.\n\n\nContact Support:\n Name: GIPHY Developers\n Email: support@giphy.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "item": [
+    {
+      "id": "b65ac8c8-f9a5-458a-b96e-262728a75dc1",
+      "name": "Categories",
+      "description": {
+        "content": "Top-level categories and subcategories used to organize GIFs.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "900b8703-4919-41c4-8095-9c56d1a5e706",
+          "name": "List GIF Categories",
+          "request": {
+            "name": "List GIF Categories",
+            "description": {
+              "content": "Return the list of GIF categories.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "gifs",
+                "categories"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) GIPHY API key (Beta or Production)."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "25",
+                  "description": "Maximum number of items to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Position in the result set for pagination."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2556c617-a0c0-412c-82b2-21a95ea69cd7",
+              "name": "A paginated list of categories.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "gifs",
+                    "categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"name\": \"string\",\n      \"name_encoded\": \"string\",\n      \"subcategories\": [\n        {\n          \"name\": \"string\",\n          \"name_encoded\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"name_encoded\": \"string\"\n        }\n      ],\n      \"gif\": {\n        \"type\": \"gif\",\n        \"id\": \"string\",\n        \"slug\": \"string\",\n        \"url\": \"https://ZqxIgiFeMYFgxwglMFNx.aqtdn645wz4FC4SAS8NJ2olSnVm1ZY4YuqVENoJmGM594iAdJSyQ8xIljhlxjwHfm-sN\",\n        \"bitly_gif_url\": \"https://wgDxVPhhZNzWtuAlMIZQNZVtl.pnX5OV-0WT6gyeFTSG1XsFmOfwY8uLpd3\",\n        \"bitly_url\": \"https://osWQABz.ckdrjOMJ-Vv-WBk7ovYCOHYHuFqqsLEjszA.XtOg4si6a8KlXiveKqF4\",\n        \"embed_url\": \"http://NDDiafkdVIUaieBwxPXi.feR6fwh0pwwSOQ.cIB4DeByGQ\",\n        \"username\": \"string\",\n        \"source\": \"string\",\n        \"rating\": \"r\",\n        \"content_url\": \"string\",\n        \"user\": {\n          \"avatar_url\": \"https://lIPAcVJ.kqup0vmtQV16+yfU+pkP,\",\n          \"banner_image\": \"https://NuqrKmffuwvWJeDsDGc.swvxFVXKEjgD6GGnycbsJDMHMtG0R8bizCn-AQkRq8Ijz2PmtEBL3LB,2UIfAdOX5za6.EJryjAXZg\",\n          \"banner_url\": \"http://Nb.nibxm4s\",\n          \"profile_url\": \"http://LiCzbgbqnEYHZhewPPdikvWSyTk.zgnQpA1FDw0fJzS88l.hK84Ol0uP+41Lfrdc2jxRgpgbCLY1r-RpTQOyK1hO+\",\n          \"username\": \"string\",\n          \"display_name\": \"string\",\n          \"description\": \"string\",\n          \"instagram_url\": \"http://SriOTlzLJmafGntKgaNwB.nphvYyIUETxN,lcOUtR\",\n          \"website_url\": \"http://IKRhpyKpKHEXHEepvHWZcAlk.gramzzbBd2uYni5s9BkZ+mJu33uBm+GBlHI8Y27vfioirAiiaeYFwN-pzoMC\",\n          \"is_verified\": true\n        },\n        \"source_tld\": \"string\",\n        \"source_post_url\": \"https://lhCBDTxJBwNMHnUGFHGgTsXmTckUeB.wkudRMY-EkZ0LvEs66ygJ4zr7QbPM\",\n        \"update_datetime\": \"1996-08-27T13:15:50.208Z\",\n        \"create_datetime\": \"1982-04-14T06:39:16.255Z\",\n        \"import_datetime\": \"1963-05-03T10:57:46.929Z\",\n        \"trending_datetime\": \"1962-03-31T20:45:45.418Z\",\n        \"images\": {\n          \"key_0\": {\n            \"url\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"width\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"height\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"size\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mp4\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mp4_size\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"webp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"webp_size\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"frames\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"hash\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"key_1\": {\n            \"url\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"width\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"height\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"size\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mp4\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mp4_size\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"webp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"webp_size\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"frames\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"hash\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"title\": \"string\",\n        \"alt_text\": \"string\",\n        \"is_low_contrast\": true,\n        \"analytics_response_payload\": \"string\",\n        \"analytics\": {\n          \"onload\": {\n            \"url\": \"http://wotdObuWTYYYvNwnppQNQHGAGrukTix.xxoNfvuA4kQkYERtqNj6KZODDdoPIcmT\"\n          },\n          \"onclick\": {\n            \"url\": \"https://hAhcUHTT.blsOnDbmis8JxXy57Nzl\"\n          },\n          \"onsent\": {\n            \"url\": \"http://LvARxmdxSMFWQUFuXzIv.nvkS0fv0ifhJ1sEpu9LU\"\n          }\n        }\n      }\n    },\n    {\n      \"name\": \"string\",\n      \"name_encoded\": \"string\",\n      \"subcategories\": [\n        {\n          \"name\": \"string\",\n          \"name_encoded\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"name_encoded\": \"string\"\n        }\n      ],\n      \"gif\": {\n        \"type\": \"sticker\",\n        \"id\": \"string\",\n        \"slug\": \"string\",\n        \"url\": \"https://MkHkGNvxkNbgyJWLj.vsp33WjI,B\",\n        \"bitly_gif_url\": \"http://YYbflIlf.fbtV.3J-BbFVNnRM1DwVEEYXLFaD+6om,t+.tB5mkMI0a9GAYtfBhnY\",\n        \"bitly_url\": \"http://SGBxSB.yqxC.hsl\",\n        \"embed_url\": \"https://HEwLOYmTyAjcgoiGXGBJvPhQqT.cvdmAtmwYnBzdA2DTT0,mmX-,l0eEcyoasy4G\",\n        \"username\": \"string\",\n        \"source\": \"string\",\n        \"rating\": \"r\",\n        \"content_url\": \"string\",\n        \"user\": {\n          \"avatar_url\": \"http://HJuLzBpwnLrcMokIgYfp.xca4,.MBsN5cGSPB+Myw+,Fo93c+paJRoz1xsGj,m.Kgkc,ONxlc4HV2dzhtYJB3ea6\",\n          \"banner_image\": \"https://ACl.umuUGlArdtXCiP.JQOCuufts+rmpk69Q81YMeiqe5rgSgp7U,MpeplKjLCtrtvYSA4ce\",\n          \"banner_url\": \"https://xidk.ttqqQUvHm\",\n          \"profile_url\": \"http://hGUFtScEpnAgFGV.hgruxiDFzE4bFg\",\n          \"username\": \"string\",\n          \"display_name\": \"string\",\n          \"description\": \"string\",\n          \"instagram_url\": \"http://kWnQHejPsUEATBkpDfoPaxeEmouyjNC.odOJ8avGhkTPeV6YYv5dIp3nEKVtlOK6Z9F.Lpn8UYgeD-RlE6erj\",\n          \"website_url\": \"http://LdeBAQFiMaIBcultqdPoN.phevH4ns.Y8.b\",\n          \"is_verified\": true\n        },\n        \"source_tld\": \"string\",\n        \"source_post_url\": \"http://kLmrzmrOLFwNbtJHySlsNp.ymxJSDzLR1cu3glPbGKoj2lDjX\",\n        \"update_datetime\": \"1982-07-08T18:03:36.451Z\",\n        \"create_datetime\": \"1955-08-24T22:14:48.135Z\",\n        \"import_datetime\": \"1990-09-22T13:54:38.145Z\",\n        \"trending_datetime\": \"1950-11-23T14:06:26.274Z\",\n        \"images\": {\n          \"key_0\": {\n            \"url\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"width\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"height\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"size\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mp4\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mp4_size\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"webp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"webp_size\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"frames\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"hash\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"key_1\": {\n            \"url\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"width\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"height\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"size\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mp4\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mp4_size\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"webp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"webp_size\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"frames\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"hash\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"key_2\": {\n            \"url\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"width\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"height\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"size\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mp4\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mp4_size\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"webp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"webp_size\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"frames\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"hash\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"title\": \"string\",\n        \"alt_text\": \"string\",\n        \"is_low_contrast\": true,\n        \"analytics_response_payload\": \"string\",\n        \"analytics\": {\n          \"onload\": {\n            \"url\": \"http://xWAHFyJ.aijyUw23uVQMT7rQmQxhmBTB5FXUn9Vucf81QDmcslAnTUIczSs.BJCZ3CcdFPXyub\"\n          },\n          \"onclick\": {\n            \"url\": \"https://TyqENwkodtRpfGGIIzHiMmogKHPaH.ujsvtf\"\n          },\n          \"onsent\": {\n            \"url\": \"http://OGYIUeqWyAEXxmvqQ.nkwdvXInzKLnuLM8GO\"\n          }\n        }\n      }\n    }\n  ],\n  \"pagination\": {\n    \"offset\": 8043,\n    \"total_count\": 6937,\n    \"count\": 9820\n  },\n  \"meta\": {\n    \"msg\": \"string\",\n    \"status\": 3615,\n    \"response_id\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.giphy.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "b4fb3b73-7326-48cb-be13-756c6fd29e41",
+    "name": "GIPHY Analytics Categories API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The GIPHY API provides programmatic access to the world's largest library of\nGIFs, stickers, animated emoji and Clips (GIFs with sound). Search, trending,\ntranslate, random, and category endpoints all return rich media objects with\nmultiple image renditions optimized for any surface.\n\nAuthentication is via API key. New developers receive a rate-limited Beta key;\na Production key is granted after application review.\n\n\nContact Support:\n Name: GIPHY Developers\n Email: support@giphy.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GIPHY Analytics Utilities API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Utilities",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create Random ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/randomid",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              }
+            ]
+          },
+          "docs": "Generate a unique, privacy-preserving identifier for tracking users in a session."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

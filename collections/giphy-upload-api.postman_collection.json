@@ -1,0 +1,260 @@
+{
+  "item": [
+    {
+      "id": "260c8a23-c017-47a4-8262-aa694bcf10f9",
+      "name": "Upload",
+      "description": {
+        "content": "Programmatic upload of GIFs and video assets.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4f4527e8-ce2d-42dd-94e2-08958a88a070",
+          "name": "Upload GIF",
+          "request": {
+            "name": "Upload GIF",
+            "description": {
+              "content": "Upload a GIF or video file to GIPHY at `upload.giphy.com/v1/gifs`. Maximum file\nsize is 100 MB. This operation runs against the `upload.giphy.com` host (overrides\nthe default server).\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v1",
+                "gifs"
+              ],
+              "host": [
+                "upload",
+                "giphy",
+                "com"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) GIPHY API key (Beta or Production)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "api_key",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) "
+                },
+                {
+                  "key": "file",
+                  "type": "file",
+                  "description": "Image or video file (≤100 MB)."
+                },
+                {
+                  "key": "source_image_url",
+                  "value": "<uri>",
+                  "type": "text",
+                  "description": "Optionally provide a URL instead of uploading bytes."
+                },
+                {
+                  "key": "username",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "tags",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "Comma-separated tag list."
+                },
+                {
+                  "key": "source_post_url",
+                  "value": "<uri>",
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "is_hidden",
+                  "value": "<boolean>",
+                  "type": "text",
+                  "description": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "429028d8-7f75-40df-874e-fcf03d207563",
+              "name": "Upload accepted, returns the new GIF identifier.",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v1",
+                    "gifs"
+                  ],
+                  "host": [
+                    "upload",
+                    "giphy",
+                    "com"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "api_key",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Image or video file (≤100 MB).",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Optionally provide a URL instead of uploading bytes.",
+                        "type": "text/plain"
+                      },
+                      "key": "source_image_url",
+                      "value": "<uri>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "username",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Comma-separated tag list.",
+                        "type": "text/plain"
+                      },
+                      "key": "tags",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "source_post_url",
+                      "value": "<uri>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "is_hidden",
+                      "value": "<boolean>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": \"string\"\n  },\n  \"meta\": {\n    \"msg\": \"string\",\n    \"status\": 2332,\n    \"response_id\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.giphy.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "af5d80c9-628a-458a-b958-43ae3ac1ad0e",
+    "name": "GIPHY Analytics Upload API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The GIPHY API provides programmatic access to the world's largest library of\nGIFs, stickers, animated emoji and Clips (GIFs with sound). Search, trending,\ntranslate, random, and category endpoints all return rich media objects with\nmultiple image renditions optimized for any surface.\n\nAuthentication is via API key. New developers receive a rate-limited Beta key;\na Production key is granted after application review.\n\n\nContact Support:\n Name: GIPHY Developers\n Email: support@giphy.com",
+      "type": "text/plain"
+    }
+  }
+}

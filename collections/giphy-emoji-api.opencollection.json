@@ -1,0 +1,81 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GIPHY Analytics Emoji API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Emoji",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Animated Emoji",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v2/emoji",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Position in the result set for pagination."
+              }
+            ]
+          },
+          "docs": "Return GIPHY's animated emoji library."
+        },
+        {
+          "info": {
+            "name": "Get Emoji Variations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v2/emoji/:gif_id/variations",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "gif_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Return all variations of a single animated emoji."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

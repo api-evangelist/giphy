@@ -1,0 +1,278 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GIPHY Analytics GIFs API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "GIFs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search GIFs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/gifs/search",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Search query term or phrase, URL-encoded, max 50 characters."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Position in the result set for pagination."
+              },
+              {
+                "name": "rating",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by MPAA-style rating."
+              },
+              {
+                "name": "lang",
+                "value": "",
+                "type": "query",
+                "description": "Default language (ISO 639-1) for regional content."
+              },
+              {
+                "name": "bundle",
+                "value": "",
+                "type": "query",
+                "description": "Reduce response payload by requesting only the rendition bundle you need."
+              },
+              {
+                "name": "random_id",
+                "value": "",
+                "type": "query",
+                "description": "Privacy-preserving user identifier produced by /v1/randomid."
+              },
+              {
+                "name": "country_code",
+                "value": "",
+                "type": "query",
+                "description": "ISO 3166-1 alpha-2 country code used to localize results."
+              }
+            ]
+          },
+          "docs": "Search GIPHY's library of millions of GIFs by keyword."
+        },
+        {
+          "info": {
+            "name": "Get Trending GIFs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/gifs/trending",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Position in the result set for pagination."
+              },
+              {
+                "name": "rating",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by MPAA-style rating."
+              },
+              {
+                "name": "bundle",
+                "value": "",
+                "type": "query",
+                "description": "Reduce response payload by requesting only the rendition bundle you need."
+              },
+              {
+                "name": "random_id",
+                "value": "",
+                "type": "query",
+                "description": "Privacy-preserving user identifier produced by /v1/randomid."
+              },
+              {
+                "name": "country_code",
+                "value": "",
+                "type": "query",
+                "description": "ISO 3166-1 alpha-2 country code used to localize results."
+              }
+            ]
+          },
+          "docs": "Return the most relevant and engaging GIFs each day."
+        },
+        {
+          "info": {
+            "name": "Translate Term to GIF",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/gifs/translate",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "s",
+                "value": "",
+                "type": "query",
+                "description": "Search term to translate to a GIF."
+              },
+              {
+                "name": "weirdness",
+                "value": "",
+                "type": "query",
+                "description": "Translate weirdness (0 conservative ... 10 most weird)."
+              },
+              {
+                "name": "rating",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by MPAA-style rating."
+              },
+              {
+                "name": "random_id",
+                "value": "",
+                "type": "query",
+                "description": "Privacy-preserving user identifier produced by /v1/randomid."
+              }
+            ]
+          },
+          "docs": "Convert words and phrases to a single, contextually relevant GIF."
+        },
+        {
+          "info": {
+            "name": "Get Random GIF",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/gifs/random",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "tag",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by tag."
+              },
+              {
+                "name": "rating",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by MPAA-style rating."
+              },
+              {
+                "name": "random_id",
+                "value": "",
+                "type": "query",
+                "description": "Privacy-preserving user identifier produced by /v1/randomid."
+              }
+            ]
+          },
+          "docs": "Return a single random GIF, optionally filtered by tag."
+        },
+        {
+          "info": {
+            "name": "Get GIF by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/gifs/:gif_id",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "gif_id",
+                "value": "",
+                "type": "path",
+                "description": "GIPHY ID of the GIF."
+              }
+            ]
+          },
+          "docs": "Retrieve metadata for a single GIF."
+        },
+        {
+          "info": {
+            "name": "Get GIFs by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/gifs",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of GIF IDs (max 100)."
+              }
+            ]
+          },
+          "docs": "Fetch metadata for up to 100 GIFs at once, by comma-separated IDs."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

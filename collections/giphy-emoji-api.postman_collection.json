@@ -1,0 +1,265 @@
+{
+  "item": [
+    {
+      "id": "012b0cdd-5ed3-4cc8-9a4a-ff9e45d93db9",
+      "name": "Emoji",
+      "description": {
+        "content": "GIPHY's animated emoji library and per-emoji variations.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f5d514e1-bae5-4d3d-b967-1eeaba4082f9",
+          "name": "List Animated Emoji",
+          "request": {
+            "name": "List Animated Emoji",
+            "description": {
+              "content": "Return GIPHY's animated emoji library.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "emoji"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) GIPHY API key (Beta or Production)."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "25",
+                  "description": "Maximum number of items to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Position in the result set for pagination."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f4fbd477-a080-4c00-b2e1-88862c4feb14",
+              "name": "A paginated list of GIF or Sticker objects.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "emoji"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"type\": \"gif\",\n      \"id\": \"string\",\n      \"slug\": \"string\",\n      \"url\": \"http://hLc.rscLg36mucJEXZVvFsQS5yQelF8BUadfRUhVG9mNpb.govBBM\",\n      \"bitly_gif_url\": \"https://lJsWghGELAxXNHShmCmAefYFGZEYi.bcceJ2KCw\",\n      \"bitly_url\": \"http://YfrKqptGDlTzSI.gmcwCsQ4PHQOoDW-ssbb5D0uBJ7\",\n      \"embed_url\": \"http://wZyXVWGMBmeOJraWFqlI.olkvFG5KitWK+,dIz1W4e5fz\",\n      \"username\": \"string\",\n      \"source\": \"string\",\n      \"rating\": \"pg-13\",\n      \"content_url\": \"string\",\n      \"user\": {\n        \"avatar_url\": \"https://tPGIQV.kxeX600F4\",\n        \"banner_image\": \"https://RuISU.pbtvZHa+m2NZ+FxvMG1PWvnWE-x7OBjuqFHpp3O\",\n        \"banner_url\": \"https://qVeNnuXungLNgCUhlACWAOfGO.sdy7M\",\n        \"profile_url\": \"https://hpWqYCauYoJqBBwsEccvlmMpjl.hdbqKPZcaURfPVbmcZ7gw7qOnliV2lBY9xgcg29,ktxseY6Kkizwt2icq1zkYj\",\n        \"username\": \"string\",\n        \"display_name\": \"string\",\n        \"description\": \"string\",\n        \"instagram_url\": \"https://XOM.ysjwIUxtWlW3NG.d2xdA5KdmiWhD5zDQwPvijXhxUKIluATYZccGXCtx-mghljBnQ5utf7saqeilnEtjx3h\",\n        \"website_url\": \"http://cBYioD.eskwILi4ur,6MByyOVKQojCQAy.cAEa.T.\",\n        \"is_verified\": true\n      },\n      \"source_tld\": \"string\",\n      \"source_post_url\": \"https://Y.fxeqjt+.G-1PzWNSsRrUAUxnIbfKjlNGhPAoXTJZb\",\n      \"update_datetime\": \"1955-07-09T05:32:53.984Z\",\n      \"create_datetime\": \"1979-10-14T16:40:46.014Z\",\n      \"import_datetime\": \"1946-11-19T06:59:37.552Z\",\n      \"trending_datetime\": \"2018-09-18T21:05:25.399Z\",\n      \"images\": {\n        \"key_0\": {\n          \"url\": \"https://jEebAbIFxHbSnhngVIkVpcikRN.keetvgv.NuJmGICbSBKnQGahC+g3mTHBqL.S0d4x9Bvc8EbU0vOtiDlL5LuBX7MB\",\n          \"width\": \"string\",\n          \"height\": \"string\",\n          \"size\": \"string\",\n          \"mp4\": \"http://wOKEkTvsdIHpAuyNcwDbizykOJ.ufNSFhF1dtcXAs6R1gva3VbPhH.C-xnZk1GvZkjlk4\",\n          \"mp4_size\": \"string\",\n          \"webp\": \"http://DitTViTqcuuBPFdFFRgTa.fiC94QNXpUYqeRnRKIcUrXK5TSsvlLBAmPbNO4umUnqv\",\n          \"webp_size\": \"string\",\n          \"frames\": \"string\",\n          \"hash\": \"string\"\n        }\n      },\n      \"title\": \"string\",\n      \"alt_text\": \"string\",\n      \"is_low_contrast\": true,\n      \"analytics_response_payload\": \"string\",\n      \"analytics\": {\n        \"onload\": {\n          \"url\": \"http://PaqmGDyyKJBnKpdAlmfhrDENwYwNpCKN.ttkkHlrwiKGjDBMTef7.,,o-Sq\"\n        },\n        \"onclick\": {\n          \"url\": \"http://arufhPYCAYm.senpIZ-dZXo.Qn61eV.Gvb9ft4cjCS.YCqf.DScBbZ.qkQodbB\"\n        },\n        \"onsent\": {\n          \"url\": \"http://YPgQRJGIDYZjjTESmg.qaky8V4PEQbAhU7ut6xfBPeEFjJP9eeAu1bd\"\n        }\n      }\n    },\n    {\n      \"type\": \"gif\",\n      \"id\": \"string\",\n      \"slug\": \"string\",\n      \"url\": \"https://FsQuVpWguskGiEAqCUROXyKgtURcsVmt.hyRP5jIdvhHiD2o6QB-6O9rVcvDp\",\n      \"bitly_gif_url\": \"http://YwfYKYiqduMixfDgOWvYC.rxiixurMfiZ11NtjBLuyykI\",\n      \"bitly_url\": \"https://RKQbaGjHWmRtRthAjOywEXlYrquoAhsNq.fylxnknWfOOOU+oqPtYWU7qtOHPeX1axQu95blR47KC8jNXhwFqToLugMYmOWI7M1U\",\n      \"embed_url\": \"https://aHBWNdUJLPeiCNPkQxBUtsibN.ohAlIKime9O,QjPWB1,y4ShUWEJvyQ2F,ExpdDsHGzt5BFNtLCXV-oSelSqPpPaVnyQyiKVWSNrS\",\n      \"username\": \"string\",\n      \"source\": \"string\",\n      \"rating\": \"pg\",\n      \"content_url\": \"string\",\n      \"user\": {\n        \"avatar_url\": \"http://XynmANZmPBCJNJLKUS.jwBf.4.F,mDvuwjpRj\",\n        \"banner_image\": \"http://nQfMgJzg.ripcmW2i7O2jzv+egld61E5uXcqqvJeKzIbH4dy8\",\n        \"banner_url\": \"http://CSxUPuPxiBPwUc.aavknOb237uLuQGicB6ISqzYoqoNHhKYDonHpowkYVFk\",\n        \"profile_url\": \"https://tBPzRnklIExcxndHqEKppHmKALgrF.xlN+guTLThulov4uFa0IV1JPJLHlBnG6SqJLKRN.LLPldHf8VRral\",\n        \"username\": \"string\",\n        \"display_name\": \"string\",\n        \"description\": \"string\",\n        \"instagram_url\": \"https://FU.coiYFd98bJwodDjxQkFzT7CxMSwzalM4wMyEudHcZn\",\n        \"website_url\": \"https://b.byknfNfg3YwObWzmH41j6is92DdNkqfDfvMTiJlqGip5BxW2fAQ7KlSMd\",\n        \"is_verified\": false\n      },\n      \"source_tld\": \"string\",\n      \"source_post_url\": \"http://eCWVPerpKVjl.zoazl2-3AT\",\n      \"update_datetime\": \"1988-06-02T11:25:34.137Z\",\n      \"create_datetime\": \"1979-11-15T04:44:31.600Z\",\n      \"import_datetime\": \"1958-11-30T04:06:20.253Z\",\n      \"trending_datetime\": \"2022-12-27T08:18:54.176Z\",\n      \"images\": {\n        \"key_0\": {\n          \"url\": \"https://QhMQrDvvHueQbnzNlyNvM.cstdP7J-j8nzm9rtkuJMAqNNhsnHrhVe8.m6UbFh-CTgKtdX,UU66s9wuwxEwNmMWLw4r-p1aLgW\",\n          \"width\": \"string\",\n          \"height\": \"string\",\n          \"size\": \"string\",\n          \"mp4\": \"http://nRBMassJBTCLTNCExftGlFWzOxenOkB.yiuYiavZckX.TGcuUdso\",\n          \"mp4_size\": \"string\",\n          \"webp\": \"https://SOLrsJiVwgDfJnmskhLkgegNH.cmmfChBRzeBnA.P\",\n          \"webp_size\": \"string\",\n          \"frames\": \"string\",\n          \"hash\": \"string\"\n        },\n        \"key_1\": {\n          \"url\": \"http://eJqxoQF.mvQ+EM23FupYxzX5GWSxxCIMLjA+mmyeHo4H0NJ5uPqnUoO.\",\n          \"width\": \"string\",\n          \"height\": \"string\",\n          \"size\": \"string\",\n          \"mp4\": \"http://TwqXInLHDQwVzOhpilFbxtupnLZyuTjD.lcer011+C0NRFCgAEuv7YJ+HSg3wSs8wDyxb5B2QLeoAzY2TVM1uIdfW\",\n          \"mp4_size\": \"string\",\n          \"webp\": \"https://njjyufcArsIvYO.rzzOWaRWX+cyusIkf2YOCrhcOqtVQGTi-V3pYjixZqoCKx4gc\",\n          \"webp_size\": \"string\",\n          \"frames\": \"string\",\n          \"hash\": \"string\"\n        },\n        \"key_2\": {\n          \"url\": \"https://UwrdcMpFEzSDLefnSiwClcsiUlKzoIO.oqiwhDzcnt2JQ\",\n          \"width\": \"string\",\n          \"height\": \"string\",\n          \"size\": \"string\",\n          \"mp4\": \"https://vZtYj.gdmGaJij+ZShIsmyLFVYxtLl.CIO6aAOO\",\n          \"mp4_size\": \"string\",\n          \"webp\": \"https://RyzccZNKxbxEJz.dxnxiq6Dd-hHNw\",\n          \"webp_size\": \"string\",\n          \"frames\": \"string\",\n          \"hash\": \"string\"\n        }\n      },\n      \"title\": \"string\",\n      \"alt_text\": \"string\",\n      \"is_low_contrast\": true,\n      \"analytics_response_payload\": \"string\",\n      \"analytics\": {\n        \"onload\": {\n          \"url\": \"https://PYVZZ.gqkNzYCbZ2Jzi09mzzvCNzR2RXUZdoMcvu\"\n        },\n        \"onclick\": {\n          \"url\": \"https://nkXjzvtpRv.ciAtavyX6NOVtTS3x,\"\n        },\n        \"onsent\": {\n          \"url\": \"http://B.hyxfpXjPhZcykbbZkQuG7f0W0Ypsxv4Qu,Tj2OcDr0,7rdFv,O4\"\n        }\n      }\n    }\n  ],\n  \"pagination\": {\n    \"offset\": 8598,\n    \"total_count\": 6083,\n    \"count\": 6874\n  },\n  \"meta\": {\n    \"msg\": \"string\",\n    \"status\": 6244,\n    \"response_id\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ae7cf4c6-826f-4863-9e04-889f972308b1",
+          "name": "Get Emoji Variations",
+          "request": {
+            "name": "Get Emoji Variations",
+            "description": {
+              "content": "Return all variations of a single animated emoji.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "emoji",
+                ":gif_id",
+                "variations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) GIPHY API key (Beta or Production)."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "gif_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b2369e69-0db9-4621-ab45-1e5dd5c361fc",
+              "name": "A paginated list of GIF or Sticker objects.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "emoji",
+                    ":gif_id",
+                    "variations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "gif_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"type\": \"gif\",\n      \"id\": \"string\",\n      \"slug\": \"string\",\n      \"url\": \"https://unuSQXsALZNEKTdUDkukvgPmZosgUhFV.girdbu\",\n      \"bitly_gif_url\": \"http://jQTdwVvoFIhuQhsYGenDgqz.jledJiZy64M-htS1lSsSRk-IFCuISIogaBOJ1+Ntl9ENBwMKDplXYgdGJ716G\",\n      \"bitly_url\": \"http://vmWfKFVaeludJ.nlyqnjrasJnp-ou\",\n      \"embed_url\": \"https://xIexITMHkIqaiZQRcvywZIBE.nyjcJtdb1bvhCZJV9\",\n      \"username\": \"string\",\n      \"source\": \"string\",\n      \"rating\": \"pg\",\n      \"content_url\": \"string\",\n      \"user\": {\n        \"avatar_url\": \"http://LDbUtmaK.udsa4XAzPE.IL2\",\n        \"banner_image\": \"http://QsuRbwOdF.rbLNFNTiKvCFMK2yUIwJL1JvEtdT\",\n        \"banner_url\": \"https://wcfBayJObMRZvwHtlQtKMrNHHNzfmd.mchgHsp8nMXY.KseX7BJdVNTC.NSV,tY7+KO\",\n        \"profile_url\": \"https://mbvFJmbhSRbcwZMZjzhjIGy.ylxynuGT3akRASGwSVLq.fr8gtQ6RIYYYUKPUiqO8thMcsxp2RhY.nzQuImMlVjWamr+cVm7Q\",\n        \"username\": \"string\",\n        \"display_name\": \"string\",\n        \"description\": \"string\",\n        \"instagram_url\": \"http://QHKIgDSXcf.yqcdm3KzjKLp5m2WNWfteffoUIhVxeqeldagklcUJMf8I+nUPUVuwV+nccKm2zkAqb.3+8O\",\n        \"website_url\": \"https://Nv.zxrI5rVLhgFAyvWxi7yOhVL1tuA.MizGDBWvXfODIueL3\",\n        \"is_verified\": false\n      },\n      \"source_tld\": \"string\",\n      \"source_post_url\": \"https://SnqAmkCMnEKPYgNuD.mwcwkcd5mg0qncpj\",\n      \"update_datetime\": \"2000-08-02T00:53:52.599Z\",\n      \"create_datetime\": \"1998-09-11T20:26:04.705Z\",\n      \"import_datetime\": \"1963-06-14T04:09:40.115Z\",\n      \"trending_datetime\": \"1947-02-04T09:04:19.022Z\",\n      \"images\": {\n        \"key_0\": {\n          \"url\": \"http://tnIePdoraInJCBnEEZophNMjTbzSJmcf.wgswLB4SZPzSdFOo0bf6RgLOGCY,nwp+PkNNNSzoftE+ieYZtNBlVAmSWkk0WBO,uYwWom\",\n          \"width\": \"string\",\n          \"height\": \"string\",\n          \"size\": \"string\",\n          \"mp4\": \"http://cGroNKMZyCJFLQMEXQPFOTQB.vhyup+ojmt4EE,m2xIVylP6SU.Gjs2dywk3\",\n          \"mp4_size\": \"string\",\n          \"webp\": \"http://CDUXnsWKTztJWPQVqFJRoNpKdCGiX.xcgvDX6vdZduKCCZrznTKaU,dzAJqRHBfeC4SQO7xvf3cayulw\",\n          \"webp_size\": \"string\",\n          \"frames\": \"string\",\n          \"hash\": \"string\"\n        },\n        \"key_1\": {\n          \"url\": \"http://LUuSammSS.aryunWocaJea7dAiZUp\",\n          \"width\": \"string\",\n          \"height\": \"string\",\n          \"size\": \"string\",\n          \"mp4\": \"https://JyOzuY.hcnsM6xaW,ZX1ztE5-e2KDTmlimSLAjJDroJ9M\",\n          \"mp4_size\": \"string\",\n          \"webp\": \"http://mQi.igpMcu0gg,HFJmyG6nzP3dfmvl4J+Ae2ElEDZZ0atbkIsSv9FHf\",\n          \"webp_size\": \"string\",\n          \"frames\": \"string\",\n          \"hash\": \"string\"\n        },\n        \"key_2\": {\n          \"url\": \"http://nk.qeqes7csOeiDeDfHQPQLOCT61lAmscZ,YOPA+LGsiR.WjzVWv4GvQNEphAgn0am+f-VKLFrOmOjq.Hd7VVfjF-\",\n          \"width\": \"string\",\n          \"height\": \"string\",\n          \"size\": \"string\",\n          \"mp4\": \"https://aygSryCXKsyLPWyUNdqFfLyJUhkKuB.zelP.ZOKixw,neFgM,LxwGnO5gKufptBFzHTYvR3,P8wnfuXzBHvB\",\n          \"mp4_size\": \"string\",\n          \"webp\": \"http://QxV.eztvZ1CjZW.pb1OSU-mKZcHs\",\n          \"webp_size\": \"string\",\n          \"frames\": \"string\",\n          \"hash\": \"string\"\n        }\n      },\n      \"title\": \"string\",\n      \"alt_text\": \"string\",\n      \"is_low_contrast\": true,\n      \"analytics_response_payload\": \"string\",\n      \"analytics\": {\n        \"onload\": {\n          \"url\": \"http://TadOIqLqezjCev.hbjcUDffNfuCX2MMpP78yUj.T54QAVksp-CpoiYCDJyNSg+EM4SRs4\"\n        },\n        \"onclick\": {\n          \"url\": \"http://tYqlRYFtSKpvsYsYNcPfd.cdb.H1jJ9polXS2XTKEnnsHat1Fsp2jWRG+HHYEy7\"\n        },\n        \"onsent\": {\n          \"url\": \"https://LcqbvDQo.iltann5\"\n        }\n      }\n    },\n    {\n      \"type\": \"gif\",\n      \"id\": \"string\",\n      \"slug\": \"string\",\n      \"url\": \"https://QujtxUtVfskFOPRvkNuJkARDDx.pqvHVkor-kvES.qWhUpg.eSkZe0ViFQBf+D6MjGpAmXOjcggg4ow.\",\n      \"bitly_gif_url\": \"https://oOJL.qtxMMGkWL2Sk5gGVOtOyfF+B7ARtEpI3VYUk0Tfy-lyqtsPEAogHk3\",\n      \"bitly_url\": \"https://Wubu.gwmuHl3Q\",\n      \"embed_url\": \"https://cVjgLQxnZnNXsqPLIHiSsEKARyyiCGee.jpugwZgGTkOwH,xG7b7rl0txWMeJc\",\n      \"username\": \"string\",\n      \"source\": \"string\",\n      \"rating\": \"pg-13\",\n      \"content_url\": \"string\",\n      \"user\": {\n        \"avatar_url\": \"http://QCsBlSzKPVdDDR.iyuqT2KmANcopi6vNppcRCQpfkPsmd7g,aT5vDsJoe+Miq-zPD+CfnsgQdgsshLgg.wY6yZs8djYEX4C\",\n        \"banner_image\": \"http://PsPHGUKzfyIlHqPFauTNA.iilA8V.L.RJywKTqg-CzDoyvUHU+TEsDR9rhasVm+-jfFiWbNQAfZj0\",\n        \"banner_url\": \"http://huXGlRWIJcApxVtZTnXvEysFwahpnwyZ.vgezQk,wgkn4GdHakDyenelPx7+Tc0.5GcXXUW,,7UIfEJCw4tQ3JXycyzKUO7sIm10YnvKKMzWTaYMg6TF.,8VTNSY\",\n        \"profile_url\": \"http://GOmmowv.ajXgCsJiLkFjypdbaJPcApG1q,hDABlHqm4QI8\",\n        \"username\": \"string\",\n        \"display_name\": \"string\",\n        \"description\": \"string\",\n        \"instagram_url\": \"https://PCLlXvEbsbguevnjugvuADMkuVkJfb.mtdK0sHhQLjuDpSGx5fAEx,fWyxmyHU16Ui6BM7VPnAJBmJIIjqjM8JgqAy,rX\",\n        \"website_url\": \"http://PkeKzcifeIZmy.mwGJGA55w3Ryk2pOhepq.ZcP,.wi-\",\n        \"is_verified\": false\n      },\n      \"source_tld\": \"string\",\n      \"source_post_url\": \"http://HK.ozzjNPaYw7jYXKGeRkxqyzwPSN6,Ppr-LO4Tn,CRc07ezxfQpnk2X5osdbc\",\n      \"update_datetime\": \"1955-02-21T04:06:54.994Z\",\n      \"create_datetime\": \"1959-05-04T13:34:28.113Z\",\n      \"import_datetime\": \"1963-05-25T01:11:34.561Z\",\n      \"trending_datetime\": \"2022-11-18T03:31:50.669Z\",\n      \"images\": {\n        \"key_0\": {\n          \"url\": \"https://WvJKGducyshrLxyuQVxmL.iyfkTYjs0GBYc.ov-yTQRepNDo4qNiemYzWyjddXerwMjaTs8o\",\n          \"width\": \"string\",\n          \"height\": \"string\",\n          \"size\": \"string\",\n          \"mp4\": \"http://jhvJHzbwDnQeFyfPMgqBo.cyxvQbXuUtqzrkPGauD,jZlUXUhEG5FynOQUtM8Eoa1nXHvJ\",\n          \"mp4_size\": \"string\",\n          \"webp\": \"https://fctfWOnoFGloLUOabTonpLX.aoblKp6neWaxuGFS7z0bRzHhD0JHCutryNpStY343X\",\n          \"webp_size\": \"string\",\n          \"frames\": \"string\",\n          \"hash\": \"string\"\n        },\n        \"key_1\": {\n          \"url\": \"https://CNXXHXgV.flfoxhKyxvPj1,c64Hf8vAmlpwDHVU7-6pfFg9Q\",\n          \"width\": \"string\",\n          \"height\": \"string\",\n          \"size\": \"string\",\n          \"mp4\": \"http://vRtsgbZuvPokApTWgalJXdoOjvoqX.khuTNgtbxw,+Geo,pdtvdpYbJRGZKo\",\n          \"mp4_size\": \"string\",\n          \"webp\": \"http://EQWdrZgdv.nzbXG+2,5JlVbufVPpWTXSHsBFrnGoi1Dxe2I-ptXyVWy.kXrm\",\n          \"webp_size\": \"string\",\n          \"frames\": \"string\",\n          \"hash\": \"string\"\n        },\n        \"key_2\": {\n          \"url\": \"http://KiBTspRIWsjwtiX.bku9rOA\",\n          \"width\": \"string\",\n          \"height\": \"string\",\n          \"size\": \"string\",\n          \"mp4\": \"https://dRgroiUjBzgdKmqOvRfWRiHfa.kgPE.KVVv\",\n          \"mp4_size\": \"string\",\n          \"webp\": \"https://IWEAmhRuUKMeuiCT.nmfpOomPRMzZotq1con7bJCerCVRrWfp77BN0dGrQJj0SRY0Q\",\n          \"webp_size\": \"string\",\n          \"frames\": \"string\",\n          \"hash\": \"string\"\n        }\n      },\n      \"title\": \"string\",\n      \"alt_text\": \"string\",\n      \"is_low_contrast\": true,\n      \"analytics_response_payload\": \"string\",\n      \"analytics\": {\n        \"onload\": {\n          \"url\": \"http://nfOKoAsavdvC.kjanyF8qMyxxScnM+XctfNdH2Rhp4Bfn7\"\n        },\n        \"onclick\": {\n          \"url\": \"http://hPyhbAJUOhEJMUNqPraSLHgbSHiXIPx.fupQxQ-VNxNGpNWrZc+tGW,YmDOIHVshwHPa+yO\"\n        },\n        \"onsent\": {\n          \"url\": \"http://yUsI.uuqEE8fxEu.Jbld5YVgfmHGwxwwGmBPIjogoZevJF3GHjq-9nUZyfzLTz6,nOXNa\"\n        }\n      }\n    }\n  ],\n  \"pagination\": {\n    \"offset\": 3523,\n    \"total_count\": 1943,\n    \"count\": 9772\n  },\n  \"meta\": {\n    \"msg\": \"string\",\n    \"status\": 6664,\n    \"response_id\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.giphy.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "04021e49-1f2d-4732-bda6-42da3ba37cc8",
+    "name": "GIPHY Analytics Emoji API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The GIPHY API provides programmatic access to the world's largest library of\nGIFs, stickers, animated emoji and Clips (GIFs with sound). Search, trending,\ntranslate, random, and category endpoints all return rich media objects with\nmultiple image renditions optimized for any surface.\n\nAuthentication is via API key. New developers receive a rate-limited Beta key;\na Production key is granted after application review.\n\n\nContact Support:\n Name: GIPHY Developers\n Email: support@giphy.com",
+      "type": "text/plain"
+    }
+  }
+}

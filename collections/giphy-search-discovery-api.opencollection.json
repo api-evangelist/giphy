@@ -1,0 +1,106 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GIPHY Analytics Search Discovery API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Search Discovery",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Autocomplete Search Tags",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/gifs/search/tags",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Partial search term."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Position in the result set for pagination."
+              }
+            ]
+          },
+          "docs": "Return tag suggestions for a partial search term."
+        },
+        {
+          "info": {
+            "name": "Get Related Search Terms",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/tags/related/:term",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "term",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Return related search terms for a given query."
+        },
+        {
+          "info": {
+            "name": "Get Trending Search Terms",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/trending/searches",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              }
+            ]
+          },
+          "docs": "Return the most popular search terms across GIPHY."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

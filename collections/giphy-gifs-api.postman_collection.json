@@ -1,0 +1,1482 @@
+{
+  "item": [
+    {
+      "id": "9c8e0a7b-28e6-46eb-a8a4-a8069a66c97b",
+      "name": "GIFs",
+      "description": {
+        "content": "Search, trending, translate, random, and lookup endpoints for animated GIFs.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3af168c7-62e0-4818-bb85-0574d880c8ba",
+          "name": "Search GIFs",
+          "request": {
+            "name": "Search GIFs",
+            "description": {
+              "content": "Search GIPHY's library of millions of GIFs by keyword.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "gifs",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) GIPHY API key (Beta or Production)."
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>",
+                  "description": "(Required) Search query term or phrase, URL-encoded, max 50 characters."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "25",
+                  "description": "Maximum number of items to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Position in the result set for pagination."
+                },
+                {
+                  "disabled": false,
+                  "key": "rating",
+                  "value": "<string>",
+                  "description": "Filter results by MPAA-style rating."
+                },
+                {
+                  "disabled": false,
+                  "key": "lang",
+                  "value": "<string>",
+                  "description": "Default language (ISO 639-1) for regional content."
+                },
+                {
+                  "disabled": false,
+                  "key": "bundle",
+                  "value": "<string>",
+                  "description": "Reduce response payload by requesting only the rendition bundle you need."
+                },
+                {
+                  "disabled": false,
+                  "key": "random_id",
+                  "value": "<string>",
+                  "description": "Privacy-preserving user identifier produced by /v1/randomid."
+                },
+                {
+                  "disabled": false,
+                  "key": "country_code",
+                  "value": "<string>",
+                  "description": "ISO 3166-1 alpha-2 country code used to localize results."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "75781c6e-d8a1-42ec-947d-978ac260c835",
+              "name": "A paginated list of GIF or Sticker objects.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "gifs",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "rating",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "lang",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "bundle",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "random_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"type\": \"gif\",\n      \"id\": \"string\",\n      \"slug\": \"string\",\n      \"url\": \"http://LlIw.zgttKpP4aRUYLoPWgYm7oRTPEhcprC,8UAK4Zx0QulRgiBlGjVs7xfz\",\n      \"bitly_gif_url\": \"http://caoeFxXTePzTbRcVcA.mywB3ZaP\",\n      \"bitly_url\": \"https://VtNmvUdxWL.ajjjHyeBMe4+G2MalYbY\",\n      \"embed_url\": \"https://lQUSoisifEiTDHPJeOY.ztltJSmA9cUR2\",\n      \"username\": \"string\",\n      \"source\": \"string\",\n      \"rating\": \"pg-13\",\n      \"content_url\": \"string\",\n      \"user\": {\n        \"avatar_url\": \"http://NtBSetjrQNUDNYFhUVzyNMteaX.htthw.DPYjD+9deaUM3MgI9rx9Wp0L6rgv7VEc1ngBxBBX+PiV1YhPHMhs+\",\n        \"banner_image\": \"http://vGjzrD.wsA+Mk23yf-m,6hMVOon.zNcE1Idf.XL3-XVrxjMUOeH4\",\n        \"banner_url\": \"http://bIiuyUdHJiyIimuxBUAHBtb.gspoNWR0XRljWAQqMB8zsiUNCxHS2qyuZYJDxjCzqzTJOCeoU\",\n        \"profile_url\": \"http://pTPQDyNPQcRrmIhmRpdHoQfOZNaZU.irkyv8M7tzpUl7BWdvcyG1CFVHlVxoogsmdYX,DFZ8GdF\",\n        \"username\": \"string\",\n        \"display_name\": \"string\",\n        \"description\": \"string\",\n        \"instagram_url\": \"http://grI.wkpcWMNRDKRbV7jDx7YvKFVvMwGHXOgon0OZOhLb0xx\",\n        \"website_url\": \"https://ggQHvOmoHDpGRlAvsiYSWA.vijjnlcJxfOq,vQoOlp3YMzcXd7qfRabVlvxpkqIkiV9TFaCafxkRMFCt4Gz7Q\",\n        \"is_verified\": true\n      },\n      \"source_tld\": \"string\",\n      \"source_post_url\": \"http://PDOkXesQqtDoqUKqByWGPeDmzilJr.qehaKFMYPqJFuj6eG5OlywNS182lgHi,lcj0FgNDrDedRmt\",\n      \"update_datetime\": \"1969-04-24T21:52:18.055Z\",\n      \"create_datetime\": \"2007-01-07T05:39:13.669Z\",\n      \"import_datetime\": \"1958-04-14T10:30:10.027Z\",\n      \"trending_datetime\": \"1961-06-29T00:59:23.933Z\",\n      \"images\": {\n        \"key_0\": {\n          \"url\": \"https://RpKRxffmINGSOtMdduPinoKOdV.pkh-33Doim+oIemA2VqK-oHaBtPIIyt.BE7NNxDLyfzwSGD-bz\",\n          \"width\": \"string\",\n          \"height\": \"string\",\n          \"size\": \"string\",\n          \"mp4\": \"http://usnQJYlDSboCzJAaLWArvvs.mpdxwjgulIljeyueYr7BRpieyelGCW-Ay2ZOvi5EobbK.AOkcdvjbZhspDN8o2U1LrFk\",\n          \"mp4_size\": \"string\",\n          \"webp\": \"https://aGPdNAbzsfJuiJRoluJvjzcAxs.ggtoq8iYdVWR+K6QnPRI+sMl,VbC\",\n          \"webp_size\": \"string\",\n          \"frames\": \"string\",\n          \"hash\": \"string\"\n        },\n        \"key_1\": {\n          \"url\": \"http://gRKvsTaJpBeIydpktr.rpnnil+IOUeS+PCviJg4\",\n          \"width\": \"string\",\n          \"height\": \"string\",\n          \"size\": \"string\",\n          \"mp4\": \"https://xjymbocDsmVTFc.jiKk-K7oPvrk+EWDtn.BF.nVFr1oyjaaAsW,evzN+QS7PGUDRYQ\",\n          \"mp4_size\": \"string\",\n          \"webp\": \"https://iWIxoOuxvjMTVWPTfvwkJOGo.xnO2FuTntGOy.Lws39WkHTLVGlMuR0CombWpRi,c\",\n          \"webp_size\": \"string\",\n          \"frames\": \"string\",\n          \"hash\": \"string\"\n        }\n      },\n      \"title\": \"string\",\n      \"alt_text\": \"string\",\n      \"is_low_contrast\": false,\n      \"analytics_response_payload\": \"string\",\n      \"analytics\": {\n        \"onload\": {\n          \"url\": \"http://jwPrqViQDrdvODWsHramvvwf.ihbjXN.gJaQ6EUP92xaEbRuJrkUh3Bhm0\"\n        },\n        \"onclick\": {\n          \"url\": \"http://QVihYpfPsbaSxROwHkCzCM.hfjxTisFAvY0A5Lk9eJayto-EJMmQTlRH0dH\"\n        },\n        \"onsent\": {\n          \"url\": \"http://GGdCZorFNtbnkEtsAnvbNKtgUOWv.duqy9cKeGxt,gwOr0vn40DAAcCJ.od,8Sw0A9EoXzabnTM5YNmudBxncs8VadZ\"\n        }\n      }\n    },\n    {\n      \"type\": \"gif\",\n      \"id\": \"string\",\n      \"slug\": \"string\",\n      \"url\": \"http://buMWHlXVrmuy.idkigt\",\n      \"bitly_gif_url\": \"https://cjYfacyyBqdRzB.xdfV8de3qkUauvyvTc,HOIQZLrpVkNmmGl1VyBtSDXS-L6Sl\",\n      \"bitly_url\": \"https://FSpf.oewk,TTQoFa74WOly1r.qcvgRvSUCSZ-Mro5uQOSMZVXnt\",\n      \"embed_url\": \"http://nnlyHIlIRZG.hltnXAPOBhAkN9T2.CAWkrSlPDZMMe4EHO1YxkDps\",\n      \"username\": \"string\",\n      \"source\": \"string\",\n      \"rating\": \"g\",\n      \"content_url\": \"string\",\n      \"user\": {\n        \"avatar_url\": \"http://EAwFYbxWhXvHJLINDonTHMdyErJNkfBUk.glmeQms7Npogsi46mUNHQugmVtVJ1N3hOHZmY.MM.N6cGYlw1OPFVEd0ybLIusw-fQ7Z,e\",\n        \"banner_image\": \"http://IDoGIWORmRFJUwPGNI.lewyAt7-kg,t\",\n        \"banner_url\": \"https://dXdKVTEBUquTORJjYxW.fbtHX+dZD5aMcTzVuMEuEK.l2oMg9TSH0bUG\",\n        \"profile_url\": \"http://rBbdbCztkl.gqoElP.FHHEucjkFd7MkUfVK,\",\n        \"username\": \"string\",\n        \"display_name\": \"string\",\n        \"description\": \"string\",\n        \"instagram_url\": \"https://pxPLgNiqHmnhEaDdvFm.yaebmFLANQYqG8aIRv,s\",\n        \"website_url\": \"https://yK.hsxTAZIRWFoIdRRHPWlXGlNC+XxADgZLwbTxrNBQp6TJAQXqDxmaL4Z,Gnu-smn72JtMdrzvwLaR33Wlqn\",\n        \"is_verified\": true\n      },\n      \"source_tld\": \"string\",\n      \"source_post_url\": \"http://rknSEZlRzP.kdN0a2miGG5bhaUg.\",\n      \"update_datetime\": \"2012-11-13T01:03:33.168Z\",\n      \"create_datetime\": \"1960-11-22T16:13:12.129Z\",\n      \"import_datetime\": \"1958-01-16T13:43:55.838Z\",\n      \"trending_datetime\": \"1961-01-28T22:26:30.848Z\",\n      \"images\": {\n        \"key_0\": {\n          \"url\": \"https://SQpoxJGZPOeimkJKwGlTVRbQYkoolw.hdonneGw-T+n1C+j2JTT2hJIkkMAyfrplha6Coy0VLPgxwMFN\",\n          \"width\": \"string\",\n          \"height\": \"string\",\n          \"size\": \"string\",\n          \"mp4\": \"https://rcMNzlPHWBbkQYySgRygNIJuaBjxmhbrf.unTPItHPkx1gfyTpP6gnEB.2IOa-vd2tOBq8ZocSII-TMOutgju\",\n          \"mp4_size\": \"string\",\n          \"webp\": \"http://JGPCVHewhSRjVcRXiMeSt.xuecYxgTZ3fmuS1upWoG+03uG4qOzvV-xYH5QAEzRhucUrji7W2GTcoWA1LA\",\n          \"webp_size\": \"string\",\n          \"frames\": \"string\",\n          \"hash\": \"string\"\n        },\n        \"key_1\": {\n          \"url\": \"https://qvSyNDnnXBtKbeiwSJk.sppjpMlAH9QgDQk-umFqseY+6SQjQ\",\n          \"width\": \"string\",\n          \"height\": \"string\",\n          \"size\": \"string\",\n          \"mp4\": \"http://ilkXkP.chrhrL8NnGRwXAmY0OnPGyo-xEH.3SuSpkEuGI4lSFNvKm2Y\",\n          \"mp4_size\": \"string\",\n          \"webp\": \"http://jlhbZkxOiyBgprciDqERYWYmDYH.ibjahXCz2UC,-GIcKbzNoPIs+VsrLnMnN8\",\n          \"webp_size\": \"string\",\n          \"frames\": \"string\",\n          \"hash\": \"string\"\n        }\n      },\n      \"title\": \"string\",\n      \"alt_text\": \"string\",\n      \"is_low_contrast\": true,\n      \"analytics_response_payload\": \"string\",\n      \"analytics\": {\n        \"onload\": {\n          \"url\": \"https://tsEXVdX.leuMD7bn,YWsfFaRVUFmpoV2KmdpW1ntvaJa9Uei3oTRijoejg-9FytTk,sIf\"\n        },\n        \"onclick\": {\n          \"url\": \"http://X.rmobQMYURBSCxzVza,3PkQV4EuXmxdtp6DIlvaTir+-pb.I3eXtkTKznmy4O\"\n        },\n        \"onsent\": {\n          \"url\": \"http://HENAtzrfwefxFCtHzggCzBMKSrHXo.qpjwBah-BCt+LQDDQZ6FLutv5DeSzrWmFNPTmnIQPlb\"\n        }\n      }\n    }\n  ],\n  \"pagination\": {\n    \"offset\": 6800,\n    \"total_count\": 5511,\n    \"count\": 5162\n  },\n  \"meta\": {\n    \"msg\": \"string\",\n    \"status\": 2110,\n    \"response_id\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8faf0742-abc2-4e20-b2ac-eaeff26d194e",
+              "name": "Malformed request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "gifs",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "rating",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "lang",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "bundle",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "random_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"msg\": \"string\",\n    \"status\": 8721,\n    \"response_id\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cce663e8-ccb6-46c2-984f-f3a603df2046",
+              "name": "Missing or invalid API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "gifs",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "rating",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "lang",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "bundle",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "random_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"msg\": \"string\",\n    \"status\": 8721,\n    \"response_id\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d12dccd2-60c4-42c4-aaf3-94dda05ed193",
+              "name": "API rate limit exceeded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "gifs",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "rating",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "lang",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "bundle",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "random_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"msg\": \"string\",\n    \"status\": 8721,\n    \"response_id\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "08fa1267-a8ae-4a3b-9fae-9d20c1cf4f95",
+          "name": "Get Trending GIFs",
+          "request": {
+            "name": "Get Trending GIFs",
+            "description": {
+              "content": "Return the most relevant and engaging GIFs each day.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "gifs",
+                "trending"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) GIPHY API key (Beta or Production)."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "25",
+                  "description": "Maximum number of items to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Position in the result set for pagination."
+                },
+                {
+                  "disabled": false,
+                  "key": "rating",
+                  "value": "<string>",
+                  "description": "Filter results by MPAA-style rating."
+                },
+                {
+                  "disabled": false,
+                  "key": "bundle",
+                  "value": "<string>",
+                  "description": "Reduce response payload by requesting only the rendition bundle you need."
+                },
+                {
+                  "disabled": false,
+                  "key": "random_id",
+                  "value": "<string>",
+                  "description": "Privacy-preserving user identifier produced by /v1/randomid."
+                },
+                {
+                  "disabled": false,
+                  "key": "country_code",
+                  "value": "<string>",
+                  "description": "ISO 3166-1 alpha-2 country code used to localize results."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "db0f0215-348b-4863-bcbd-b2b6f4342d8d",
+              "name": "A paginated list of GIF or Sticker objects.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "gifs",
+                    "trending"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "rating",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "bundle",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "random_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"type\": \"sticker\",\n      \"id\": \"string\",\n      \"slug\": \"string\",\n      \"url\": \"https://qWpvTUZpjTKmydGRHmfDc.skbssbizDnNtZSbYDzH0,nmtnDht\",\n      \"bitly_gif_url\": \"http://toTEFQBANzLxoKjNk.pjuyb9vFEjbyrblB+zPs+zJKXOIdUX,+ckdSYhUfKl0DoL50qOgnfec.IIOnQ9,\",\n      \"bitly_url\": \"https://UWDdQMrCkv.ltsLS97,FGjoZB.LYp8V,ne.\",\n      \"embed_url\": \"https://dzTabjvLNPttE.fgnbxsPphylwjJeXly94-BfqghEeDMki\",\n      \"username\": \"string\",\n      \"source\": \"string\",\n      \"rating\": \"pg\",\n      \"content_url\": \"string\",\n      \"user\": {\n        \"avatar_url\": \"https://TvVgWLJx.gbzpotq.JgBCfXwXxYENjAZWY.Za4tWy2vh4bbkrYWtWdMBgiT2x\",\n        \"banner_image\": \"https://HKjEzKQzDvPizbfigKqehcxykHsZ.wvtcaz5nIo.7aXd\",\n        \"banner_url\": \"http://ZAZYyBDjFZQkDQbsIjpfafqeViycW.ltCWMKjUjYdTHrQy1LEIiDg2hCn2Y1d.Zruc0DLCKocOGFPFpgJf3heFlKCr6dkfJ.QwjMfHNOdYVP\",\n        \"profile_url\": \"http://SSCG.ffkyeXYeprwMtLqdzeErpdP-UySszRo6B+vXvasu7-ntB4WhxWqgW8zrQY6zhxgkS,\",\n        \"username\": \"string\",\n        \"display_name\": \"string\",\n        \"description\": \"string\",\n        \"instagram_url\": \"https://ReXDRkZ.fyCH.aG4jkErE,dfGqzkLW7v\",\n        \"website_url\": \"http://CiMFytlOiyLwKzOpvbM.eglj4sXvfmF2.FluIoClkSrclJ-JcNkbvtn0uV-Q.Cgbjj4AdFVurUp\",\n        \"is_verified\": true\n      },\n      \"source_tld\": \"string\",\n      \"source_post_url\": \"http://ibkCJTpXhImRpwjQPARtxFcPFxGffOhHl.itdy7GVURT.ca\",\n      \"update_datetime\": \"1951-09-19T22:15:32.529Z\",\n      \"create_datetime\": \"1994-10-22T03:59:38.960Z\",\n      \"import_datetime\": \"1985-11-10T00:36:53.646Z\",\n      \"trending_datetime\": \"1973-07-11T15:23:32.259Z\",\n      \"images\": {\n        \"key_0\": {\n          \"url\": \"http://QYEcVyTffYKkwmjUrOaacjBR.qejVz91xdikAsb.7VGZdfZqoAAB1tlqyWWSESve3Ei\",\n          \"width\": \"string\",\n          \"height\": \"string\",\n          \"size\": \"string\",\n          \"mp4\": \"http://OPJznUUGCHRubptjf.mlgxboDe.2dwOBewR\",\n          \"mp4_size\": \"string\",\n          \"webp\": \"https://JsrVMWQlCB.yxQP5MGzF\",\n          \"webp_size\": \"string\",\n          \"frames\": \"string\",\n          \"hash\": \"string\"\n        },\n        \"key_1\": {\n          \"url\": \"http://HbqfcAXyJowWWwXbbBH.nstsZV9XCF8NLKJSAvm\",\n          \"width\": \"string\",\n          \"height\": \"string\",\n          \"size\": \"string\",\n          \"mp4\": \"https://MEmOHiYOJNsqHKnle.swsrHlW,JlOq.MP-FU4oKQsogv4niuw0ZYAnmriw7iScU2DgRLoGoUdtkg\",\n          \"mp4_size\": \"string\",\n          \"webp\": \"http://HKAEdcveRWrKRomXRRuFjEkoHfS.lkyAJSIFDWFTw3Tbpf0jU3AZDo7OP,.jBnZq.vi4AwUqJzbEklDiU4OF7Ln+,\",\n          \"webp_size\": \"string\",\n          \"frames\": \"string\",\n          \"hash\": \"string\"\n        }\n      },\n      \"title\": \"string\",\n      \"alt_text\": \"string\",\n      \"is_low_contrast\": false,\n      \"analytics_response_payload\": \"string\",\n      \"analytics\": {\n        \"onload\": {\n          \"url\": \"https://yyY.ixBSb-N+qPy,KrBCW4ljaWrCI5mgmk,4gf3NCj+R9hQZEjjRC9f+\"\n        },\n        \"onclick\": {\n          \"url\": \"http://XGuHT.dhiHuDBX--pzmh28TBs6zFMaaARJbdtaqJzfkWhm2Yx0K9OjxtYy.W1x1ptt\"\n        },\n        \"onsent\": {\n          \"url\": \"https://SLZwcbmyJqHDMIuazyDeDXag.dvoLMiK\"\n        }\n      }\n    },\n    {\n      \"type\": \"emoji\",\n      \"id\": \"string\",\n      \"slug\": \"string\",\n      \"url\": \"https://WkRy.zqrcYThTlu7wCu2z,NSyNgNrO6dlUbFuPBTzVs+qmU0iG8jCMuNTysAk,oAfqD\",\n      \"bitly_gif_url\": \"http://QoJdkhp.qfS,0EScFMduyxIGhT19sjh4ohn5Tq7YqYOCdRWcQ+hBtF2ILkcO.cXgr1+2\",\n      \"bitly_url\": \"http://kClPEtoxAyRNE.crbXLGGoiKbffExcNlHblEFpGTbQGg8,gUO0oatEPzJQh8V6kobQoixdxIHlL.ckAWliZg0r13hI+yotoFnoyQD9jxAWF\",\n      \"embed_url\": \"https://GMTa.jwAd+mNm+XNHfsINTnPSpTKeABC6tVrpKBaGhSM46JNuPAk9t+GCeZ\",\n      \"username\": \"string\",\n      \"source\": \"string\",\n      \"rating\": \"g\",\n      \"content_url\": \"string\",\n      \"user\": {\n        \"avatar_url\": \"https://NWfXHKHxYSUFwdG.kcwfL75ACoUoSFBW4etE1eKlCeTFRw,+4EyVizobxH\",\n        \"banner_image\": \"https://YmbzakCVpeMtyrPUzcKvvlvInQawyzG.waxiKsNwgpBJ460FPEHMbmp4uKn3aoV8lGeDCEdPF\",\n        \"banner_url\": \"https://eYXveSZkFoRKp.otZu8oeanE5YawiOBjUzPTzVJJ63LP,O.dfQMXMNYbf.R2P6bWLhBZVkz\",\n        \"profile_url\": \"https://AauncrdteiMYzJaFddPip.wrtCtdNXkt0R8qTN0rW\",\n        \"username\": \"string\",\n        \"display_name\": \"string\",\n        \"description\": \"string\",\n        \"instagram_url\": \"http://BipmhsQlhjsm.hhtPuBAuOne\",\n        \"website_url\": \"https://hRCkguzxPX.pmHolucf4QfDZLKpjVN7fbhmG62RfdL9hx-9p,bQAEAScscLUfXUw6oyj\",\n        \"is_verified\": true\n      },\n      \"source_tld\": \"string\",\n      \"source_post_url\": \"https://bJvLBBETGHtIcNHiXoJmJdaXhgHkXRR.ofiAjLVnw3+oxm,wUlR5EjS2QZSh,LJFZpBiZ6\",\n      \"update_datetime\": \"2009-03-14T14:57:16.003Z\",\n      \"create_datetime\": \"1956-01-20T09:25:58.442Z\",\n      \"import_datetime\": \"2009-12-23T17:42:41.399Z\",\n      \"trending_datetime\": \"1963-10-03T20:02:52.709Z\",\n      \"images\": {\n        \"key_0\": {\n          \"url\": \"http://svyDcULuGZJONesajMxs.qhnpqZz\",\n          \"width\": \"string\",\n          \"height\": \"string\",\n          \"size\": \"string\",\n          \"mp4\": \"https://UCVibi.cvcK7Ln9VaIBkRj7nXzloy0FjKoxMgdJ0iQLNTD\",\n          \"mp4_size\": \"string\",\n          \"webp\": \"http://ASShmYrKCEmwEhHCdjZgnVSHskP.uzsL46CW7oxIo1payIQdYMWA2l3X1BKccdPd,NGPvmPF0dnumLc+gFNx7nkIOMUDBs8SvmSy\",\n          \"webp_size\": \"string\",\n          \"frames\": \"string\",\n          \"hash\": \"string\"\n        }\n      },\n      \"title\": \"string\",\n      \"alt_text\": \"string\",\n      \"is_low_contrast\": false,\n      \"analytics_response_payload\": \"string\",\n      \"analytics\": {\n        \"onload\": {\n          \"url\": \"https://qKELkg.sxifTbIHOG8\"\n        },\n        \"onclick\": {\n          \"url\": \"http://NqbVgkaaMpSJdxhpWePVRvY.rkUQ2pXPzMsoBk,ADNdlPTj+cEPG0X4ZyQwgJNaAy5m+Rkv22Y6\"\n        },\n        \"onsent\": {\n          \"url\": \"https://pwZCEawkdJHNAMkWzk.mruyGnsvfAkAWypxCTGpWAjpxq\"\n        }\n      }\n    }\n  ],\n  \"pagination\": {\n    \"offset\": 697,\n    \"total_count\": 7747,\n    \"count\": 8693\n  },\n  \"meta\": {\n    \"msg\": \"string\",\n    \"status\": 7330,\n    \"response_id\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b625333d-c17d-4a0d-b7f6-fd7afcfea4c7",
+              "name": "Missing or invalid API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "gifs",
+                    "trending"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "rating",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "bundle",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "random_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"msg\": \"string\",\n    \"status\": 8721,\n    \"response_id\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0af63ef9-2d05-4b17-b45e-5b935774420b",
+              "name": "API rate limit exceeded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "gifs",
+                    "trending"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "rating",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "bundle",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "random_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"msg\": \"string\",\n    \"status\": 8721,\n    \"response_id\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9a74b114-d386-4225-8771-ef0c804bd054",
+          "name": "Translate Term to GIF",
+          "request": {
+            "name": "Translate Term to GIF",
+            "description": {
+              "content": "Convert words and phrases to a single, contextually relevant GIF.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "gifs",
+                "translate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) GIPHY API key (Beta or Production)."
+                },
+                {
+                  "disabled": false,
+                  "key": "s",
+                  "value": "<string>",
+                  "description": "(Required) Search term to translate to a GIF."
+                },
+                {
+                  "disabled": false,
+                  "key": "weirdness",
+                  "value": "<integer>",
+                  "description": "Translate weirdness (0 conservative ... 10 most weird)."
+                },
+                {
+                  "disabled": false,
+                  "key": "rating",
+                  "value": "<string>",
+                  "description": "Filter results by MPAA-style rating."
+                },
+                {
+                  "disabled": false,
+                  "key": "random_id",
+                  "value": "<string>",
+                  "description": "Privacy-preserving user identifier produced by /v1/randomid."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a48a39d2-709b-47d4-ac8f-b648512cd674",
+              "name": "A single GIF or Sticker object.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "gifs",
+                    "translate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "s",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "weirdness",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "rating",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "random_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"type\": \"sticker\",\n    \"id\": \"string\",\n    \"slug\": \"string\",\n    \"url\": \"https://PdKNxOFdznLuQQgGDCiJRilCPXEYBRlkS.njSj04qgWNMbjtMOxJvbMRdB9HReok5dztq7y\",\n    \"bitly_gif_url\": \"http://lXajzBuFZInIKdYMetuW.vaajgP1faC-zhZQVpqXhwxpcyuXRVIU0A\",\n    \"bitly_url\": \"http://fQkhlOHVeEnArfUsiMKRfYTuq.ktozfHzXCl-ZCe75a0JRKvk7yog6P,McK40Frt6uPt.,9O\",\n    \"embed_url\": \"http://LNleqElDqzQnwNQajyctMsiw.mcoxk0EIXyuUlmpoz7rNhu\",\n    \"username\": \"string\",\n    \"source\": \"string\",\n    \"rating\": \"pg-13\",\n    \"content_url\": \"string\",\n    \"user\": {\n      \"avatar_url\": \"http://HOuDdFOLlaN.vrbcFZ3JNUSyfcx6ba8s-MKLQwE7.P\",\n      \"banner_image\": \"https://G.mlyPlQIRnLv0uGwuGnfTuP709YT,-9Kko+eoxIax3W,qHGWk268zvHPzJ\",\n      \"banner_url\": \"https://uKBvzLyhKTnCJK.ptejnaXmBrqGTRAvLr1rAY.On-4f4fVTJ0aTnFQ+22-k2\",\n      \"profile_url\": \"http://pHwkahqLHLAoATk.lskMtw8io-wkBfmpjKJsVdCngyqK.BBCWgeu,,\",\n      \"username\": \"string\",\n      \"display_name\": \"string\",\n      \"description\": \"string\",\n      \"instagram_url\": \"http://BVyikhCWrFPSdhgBcyKZRKGlVqbRlc.ccwBBnYw5,hm34rQbp-zI5K0AnDrBD1te-V9u,FTncelKtFwttM6eKDK\",\n      \"website_url\": \"https://UJqNd.rryiGp+2WY9hYBhmn2p2gUmnI6MLO,b-JfX5lKwi+\",\n      \"is_verified\": false\n    },\n    \"source_tld\": \"string\",\n    \"source_post_url\": \"https://aznYyPiPNBiO.omtkX7UiJAQUWGkQaa4o7AJCVrEShYksBkfNRMAAdNMIwfKt\",\n    \"update_datetime\": \"1975-10-12T07:02:24.760Z\",\n    \"create_datetime\": \"2017-09-17T21:41:44.411Z\",\n    \"import_datetime\": \"2020-04-27T03:06:08.439Z\",\n    \"trending_datetime\": \"1947-06-21T03:15:19.735Z\",\n    \"images\": {\n      \"key_0\": {\n        \"url\": \"http://jfyXnYtGTg.rpnlWp.pvM.uBpkUS35vWF7B\",\n        \"width\": \"string\",\n        \"height\": \"string\",\n        \"size\": \"string\",\n        \"mp4\": \"https://TZfDopASxFhULixZGUJqB.yxsQ5sPUsOJOnuuA0dbZ4uWFBWLZOjAjD5OAjB4j2rzS-97\",\n        \"mp4_size\": \"string\",\n        \"webp\": \"https://mXoFkZvgtQVdpZccyZzZIoCdxNHoYTM.adhuI1aNVU5SW.Xot2b5jRh8.J\",\n        \"webp_size\": \"string\",\n        \"frames\": \"string\",\n        \"hash\": \"string\"\n      },\n      \"key_1\": {\n        \"url\": \"http://ceKTBKCHLBNNSwiIlZTEAecrwcQbF.buP6HTgBHp.MifIE.oDYr9wIFe5Bqh-M5RQD0,Mt7DNJNxb-xCMKrsFV6dxOBPgw\",\n        \"width\": \"string\",\n        \"height\": \"string\",\n        \"size\": \"string\",\n        \"mp4\": \"https://qzDfKhOqcBZgoDgMO.zvyhSz0+Uq2+27EifOn9\",\n        \"mp4_size\": \"string\",\n        \"webp\": \"http://qLUrhhdfnMbYroddTFcBDx.zxeilbvSnxRhcInuJy.hHzZei5e5lhuYSIvFcwPosi-\",\n        \"webp_size\": \"string\",\n        \"frames\": \"string\",\n        \"hash\": \"string\"\n      }\n    },\n    \"title\": \"string\",\n    \"alt_text\": \"string\",\n    \"is_low_contrast\": true,\n    \"analytics_response_payload\": \"string\",\n    \"analytics\": {\n      \"onload\": {\n        \"url\": \"http://PtBjN.duqA9ff,q-Y9.XkKx15Za\"\n      },\n      \"onclick\": {\n        \"url\": \"http://hHbErEnuUnEIVadGp.uieeRhbNqXmU8s9GvdooxaitKHUxre9u1XHYnDp1CktdyMiLQmPYMs\"\n      },\n      \"onsent\": {\n        \"url\": \"http://pwYtvQhUgrRQfbTShvdoctnlGkaaVE.aruKrPSZgxHIxz3LwYlUc5,ipooJ+mrx8Cvtj\"\n      }\n    }\n  },\n  \"meta\": {\n    \"msg\": \"string\",\n    \"status\": 6137,\n    \"response_id\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d668b221-e32e-4ae6-89e5-44cbe575bf0b",
+              "name": "Malformed request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "gifs",
+                    "translate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "s",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "weirdness",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "rating",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "random_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"msg\": \"string\",\n    \"status\": 8721,\n    \"response_id\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "24393168-d85a-45fb-83ea-ee56148b07a4",
+              "name": "Missing or invalid API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "gifs",
+                    "translate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "s",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "weirdness",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "rating",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "random_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"msg\": \"string\",\n    \"status\": 8721,\n    \"response_id\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7487107c-4b0e-471e-9254-d4ffcbacd7a9",
+          "name": "Get Random GIF",
+          "request": {
+            "name": "Get Random GIF",
+            "description": {
+              "content": "Return a single random GIF, optionally filtered by tag.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "gifs",
+                "random"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) GIPHY API key (Beta or Production)."
+                },
+                {
+                  "disabled": false,
+                  "key": "tag",
+                  "value": "<string>",
+                  "description": "Filter results by tag."
+                },
+                {
+                  "disabled": false,
+                  "key": "rating",
+                  "value": "<string>",
+                  "description": "Filter results by MPAA-style rating."
+                },
+                {
+                  "disabled": false,
+                  "key": "random_id",
+                  "value": "<string>",
+                  "description": "Privacy-preserving user identifier produced by /v1/randomid."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d0d74ac8-53b8-47b7-86df-5bf0b6039043",
+              "name": "A single GIF or Sticker object.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "gifs",
+                    "random"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tag",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "rating",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "random_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"type\": \"sticker\",\n    \"id\": \"string\",\n    \"slug\": \"string\",\n    \"url\": \"https://PdKNxOFdznLuQQgGDCiJRilCPXEYBRlkS.njSj04qgWNMbjtMOxJvbMRdB9HReok5dztq7y\",\n    \"bitly_gif_url\": \"http://lXajzBuFZInIKdYMetuW.vaajgP1faC-zhZQVpqXhwxpcyuXRVIU0A\",\n    \"bitly_url\": \"http://fQkhlOHVeEnArfUsiMKRfYTuq.ktozfHzXCl-ZCe75a0JRKvk7yog6P,McK40Frt6uPt.,9O\",\n    \"embed_url\": \"http://LNleqElDqzQnwNQajyctMsiw.mcoxk0EIXyuUlmpoz7rNhu\",\n    \"username\": \"string\",\n    \"source\": \"string\",\n    \"rating\": \"pg-13\",\n    \"content_url\": \"string\",\n    \"user\": {\n      \"avatar_url\": \"http://HOuDdFOLlaN.vrbcFZ3JNUSyfcx6ba8s-MKLQwE7.P\",\n      \"banner_image\": \"https://G.mlyPlQIRnLv0uGwuGnfTuP709YT,-9Kko+eoxIax3W,qHGWk268zvHPzJ\",\n      \"banner_url\": \"https://uKBvzLyhKTnCJK.ptejnaXmBrqGTRAvLr1rAY.On-4f4fVTJ0aTnFQ+22-k2\",\n      \"profile_url\": \"http://pHwkahqLHLAoATk.lskMtw8io-wkBfmpjKJsVdCngyqK.BBCWgeu,,\",\n      \"username\": \"string\",\n      \"display_name\": \"string\",\n      \"description\": \"string\",\n      \"instagram_url\": \"http://BVyikhCWrFPSdhgBcyKZRKGlVqbRlc.ccwBBnYw5,hm34rQbp-zI5K0AnDrBD1te-V9u,FTncelKtFwttM6eKDK\",\n      \"website_url\": \"https://UJqNd.rryiGp+2WY9hYBhmn2p2gUmnI6MLO,b-JfX5lKwi+\",\n      \"is_verified\": false\n    },\n    \"source_tld\": \"string\",\n    \"source_post_url\": \"https://aznYyPiPNBiO.omtkX7UiJAQUWGkQaa4o7AJCVrEShYksBkfNRMAAdNMIwfKt\",\n    \"update_datetime\": \"1975-10-12T07:02:24.760Z\",\n    \"create_datetime\": \"2017-09-17T21:41:44.411Z\",\n    \"import_datetime\": \"2020-04-27T03:06:08.439Z\",\n    \"trending_datetime\": \"1947-06-21T03:15:19.735Z\",\n    \"images\": {\n      \"key_0\": {\n        \"url\": \"http://jfyXnYtGTg.rpnlWp.pvM.uBpkUS35vWF7B\",\n        \"width\": \"string\",\n        \"height\": \"string\",\n        \"size\": \"string\",\n        \"mp4\": \"https://TZfDopASxFhULixZGUJqB.yxsQ5sPUsOJOnuuA0dbZ4uWFBWLZOjAjD5OAjB4j2rzS-97\",\n        \"mp4_size\": \"string\",\n        \"webp\": \"https://mXoFkZvgtQVdpZccyZzZIoCdxNHoYTM.adhuI1aNVU5SW.Xot2b5jRh8.J\",\n        \"webp_size\": \"string\",\n        \"frames\": \"string\",\n        \"hash\": \"string\"\n      },\n      \"key_1\": {\n        \"url\": \"http://ceKTBKCHLBNNSwiIlZTEAecrwcQbF.buP6HTgBHp.MifIE.oDYr9wIFe5Bqh-M5RQD0,Mt7DNJNxb-xCMKrsFV6dxOBPgw\",\n        \"width\": \"string\",\n        \"height\": \"string\",\n        \"size\": \"string\",\n        \"mp4\": \"https://qzDfKhOqcBZgoDgMO.zvyhSz0+Uq2+27EifOn9\",\n        \"mp4_size\": \"string\",\n        \"webp\": \"http://qLUrhhdfnMbYroddTFcBDx.zxeilbvSnxRhcInuJy.hHzZei5e5lhuYSIvFcwPosi-\",\n        \"webp_size\": \"string\",\n        \"frames\": \"string\",\n        \"hash\": \"string\"\n      }\n    },\n    \"title\": \"string\",\n    \"alt_text\": \"string\",\n    \"is_low_contrast\": true,\n    \"analytics_response_payload\": \"string\",\n    \"analytics\": {\n      \"onload\": {\n        \"url\": \"http://PtBjN.duqA9ff,q-Y9.XkKx15Za\"\n      },\n      \"onclick\": {\n        \"url\": \"http://hHbErEnuUnEIVadGp.uieeRhbNqXmU8s9GvdooxaitKHUxre9u1XHYnDp1CktdyMiLQmPYMs\"\n      },\n      \"onsent\": {\n        \"url\": \"http://pwYtvQhUgrRQfbTShvdoctnlGkaaVE.aruKrPSZgxHIxz3LwYlUc5,ipooJ+mrx8Cvtj\"\n      }\n    }\n  },\n  \"meta\": {\n    \"msg\": \"string\",\n    \"status\": 6137,\n    \"response_id\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a301911c-24ac-4cf6-91ac-ee77f18cb74d",
+              "name": "Missing or invalid API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "gifs",
+                    "random"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tag",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "rating",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "random_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"msg\": \"string\",\n    \"status\": 8721,\n    \"response_id\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "47e318a5-dbbb-4a54-a5d7-959ac185da18",
+          "name": "Get GIF by ID",
+          "request": {
+            "name": "Get GIF by ID",
+            "description": {
+              "content": "Retrieve metadata for a single GIF.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "gifs",
+                ":gif_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) GIPHY API key (Beta or Production)."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "gif_id",
+                  "description": "(Required) GIPHY ID of the GIF."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "06679979-c524-4a2f-904c-0a2ab30941f7",
+              "name": "A single GIF or Sticker object.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "gifs",
+                    ":gif_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "gif_id",
+                      "description": "(Required) GIPHY ID of the GIF."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"type\": \"sticker\",\n    \"id\": \"string\",\n    \"slug\": \"string\",\n    \"url\": \"https://PdKNxOFdznLuQQgGDCiJRilCPXEYBRlkS.njSj04qgWNMbjtMOxJvbMRdB9HReok5dztq7y\",\n    \"bitly_gif_url\": \"http://lXajzBuFZInIKdYMetuW.vaajgP1faC-zhZQVpqXhwxpcyuXRVIU0A\",\n    \"bitly_url\": \"http://fQkhlOHVeEnArfUsiMKRfYTuq.ktozfHzXCl-ZCe75a0JRKvk7yog6P,McK40Frt6uPt.,9O\",\n    \"embed_url\": \"http://LNleqElDqzQnwNQajyctMsiw.mcoxk0EIXyuUlmpoz7rNhu\",\n    \"username\": \"string\",\n    \"source\": \"string\",\n    \"rating\": \"pg-13\",\n    \"content_url\": \"string\",\n    \"user\": {\n      \"avatar_url\": \"http://HOuDdFOLlaN.vrbcFZ3JNUSyfcx6ba8s-MKLQwE7.P\",\n      \"banner_image\": \"https://G.mlyPlQIRnLv0uGwuGnfTuP709YT,-9Kko+eoxIax3W,qHGWk268zvHPzJ\",\n      \"banner_url\": \"https://uKBvzLyhKTnCJK.ptejnaXmBrqGTRAvLr1rAY.On-4f4fVTJ0aTnFQ+22-k2\",\n      \"profile_url\": \"http://pHwkahqLHLAoATk.lskMtw8io-wkBfmpjKJsVdCngyqK.BBCWgeu,,\",\n      \"username\": \"string\",\n      \"display_name\": \"string\",\n      \"description\": \"string\",\n      \"instagram_url\": \"http://BVyikhCWrFPSdhgBcyKZRKGlVqbRlc.ccwBBnYw5,hm34rQbp-zI5K0AnDrBD1te-V9u,FTncelKtFwttM6eKDK\",\n      \"website_url\": \"https://UJqNd.rryiGp+2WY9hYBhmn2p2gUmnI6MLO,b-JfX5lKwi+\",\n      \"is_verified\": false\n    },\n    \"source_tld\": \"string\",\n    \"source_post_url\": \"https://aznYyPiPNBiO.omtkX7UiJAQUWGkQaa4o7AJCVrEShYksBkfNRMAAdNMIwfKt\",\n    \"update_datetime\": \"1975-10-12T07:02:24.760Z\",\n    \"create_datetime\": \"2017-09-17T21:41:44.411Z\",\n    \"import_datetime\": \"2020-04-27T03:06:08.439Z\",\n    \"trending_datetime\": \"1947-06-21T03:15:19.735Z\",\n    \"images\": {\n      \"key_0\": {\n        \"url\": \"http://jfyXnYtGTg.rpnlWp.pvM.uBpkUS35vWF7B\",\n        \"width\": \"string\",\n        \"height\": \"string\",\n        \"size\": \"string\",\n        \"mp4\": \"https://TZfDopASxFhULixZGUJqB.yxsQ5sPUsOJOnuuA0dbZ4uWFBWLZOjAjD5OAjB4j2rzS-97\",\n        \"mp4_size\": \"string\",\n        \"webp\": \"https://mXoFkZvgtQVdpZccyZzZIoCdxNHoYTM.adhuI1aNVU5SW.Xot2b5jRh8.J\",\n        \"webp_size\": \"string\",\n        \"frames\": \"string\",\n        \"hash\": \"string\"\n      },\n      \"key_1\": {\n        \"url\": \"http://ceKTBKCHLBNNSwiIlZTEAecrwcQbF.buP6HTgBHp.MifIE.oDYr9wIFe5Bqh-M5RQD0,Mt7DNJNxb-xCMKrsFV6dxOBPgw\",\n        \"width\": \"string\",\n        \"height\": \"string\",\n        \"size\": \"string\",\n        \"mp4\": \"https://qzDfKhOqcBZgoDgMO.zvyhSz0+Uq2+27EifOn9\",\n        \"mp4_size\": \"string\",\n        \"webp\": \"http://qLUrhhdfnMbYroddTFcBDx.zxeilbvSnxRhcInuJy.hHzZei5e5lhuYSIvFcwPosi-\",\n        \"webp_size\": \"string\",\n        \"frames\": \"string\",\n        \"hash\": \"string\"\n      }\n    },\n    \"title\": \"string\",\n    \"alt_text\": \"string\",\n    \"is_low_contrast\": true,\n    \"analytics_response_payload\": \"string\",\n    \"analytics\": {\n      \"onload\": {\n        \"url\": \"http://PtBjN.duqA9ff,q-Y9.XkKx15Za\"\n      },\n      \"onclick\": {\n        \"url\": \"http://hHbErEnuUnEIVadGp.uieeRhbNqXmU8s9GvdooxaitKHUxre9u1XHYnDp1CktdyMiLQmPYMs\"\n      },\n      \"onsent\": {\n        \"url\": \"http://pwYtvQhUgrRQfbTShvdoctnlGkaaVE.aruKrPSZgxHIxz3LwYlUc5,ipooJ+mrx8Cvtj\"\n      }\n    }\n  },\n  \"meta\": {\n    \"msg\": \"string\",\n    \"status\": 6137,\n    \"response_id\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a28f482e-edf0-4508-9bd3-157ef08ccc86",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "gifs",
+                    ":gif_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "gif_id",
+                      "description": "(Required) GIPHY ID of the GIF."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"msg\": \"string\",\n    \"status\": 8721,\n    \"response_id\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fa403244-b0bf-4378-902b-9cf1169db9c0",
+          "name": "Get GIFs by ID",
+          "request": {
+            "name": "Get GIFs by ID",
+            "description": {
+              "content": "Fetch metadata for up to 100 GIFs at once, by comma-separated IDs.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "gifs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) GIPHY API key (Beta or Production)."
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<string>",
+                  "description": "(Required) Comma-separated list of GIF IDs (max 100)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "18c6733e-de33-44da-92c3-546cdd157c30",
+              "name": "A paginated list of GIF or Sticker objects.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "gifs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"type\": \"sticker\",\n      \"id\": \"string\",\n      \"slug\": \"string\",\n      \"url\": \"https://qWpvTUZpjTKmydGRHmfDc.skbssbizDnNtZSbYDzH0,nmtnDht\",\n      \"bitly_gif_url\": \"http://toTEFQBANzLxoKjNk.pjuyb9vFEjbyrblB+zPs+zJKXOIdUX,+ckdSYhUfKl0DoL50qOgnfec.IIOnQ9,\",\n      \"bitly_url\": \"https://UWDdQMrCkv.ltsLS97,FGjoZB.LYp8V,ne.\",\n      \"embed_url\": \"https://dzTabjvLNPttE.fgnbxsPphylwjJeXly94-BfqghEeDMki\",\n      \"username\": \"string\",\n      \"source\": \"string\",\n      \"rating\": \"pg\",\n      \"content_url\": \"string\",\n      \"user\": {\n        \"avatar_url\": \"https://TvVgWLJx.gbzpotq.JgBCfXwXxYENjAZWY.Za4tWy2vh4bbkrYWtWdMBgiT2x\",\n        \"banner_image\": \"https://HKjEzKQzDvPizbfigKqehcxykHsZ.wvtcaz5nIo.7aXd\",\n        \"banner_url\": \"http://ZAZYyBDjFZQkDQbsIjpfafqeViycW.ltCWMKjUjYdTHrQy1LEIiDg2hCn2Y1d.Zruc0DLCKocOGFPFpgJf3heFlKCr6dkfJ.QwjMfHNOdYVP\",\n        \"profile_url\": \"http://SSCG.ffkyeXYeprwMtLqdzeErpdP-UySszRo6B+vXvasu7-ntB4WhxWqgW8zrQY6zhxgkS,\",\n        \"username\": \"string\",\n        \"display_name\": \"string\",\n        \"description\": \"string\",\n        \"instagram_url\": \"https://ReXDRkZ.fyCH.aG4jkErE,dfGqzkLW7v\",\n        \"website_url\": \"http://CiMFytlOiyLwKzOpvbM.eglj4sXvfmF2.FluIoClkSrclJ-JcNkbvtn0uV-Q.Cgbjj4AdFVurUp\",\n        \"is_verified\": true\n      },\n      \"source_tld\": \"string\",\n      \"source_post_url\": \"http://ibkCJTpXhImRpwjQPARtxFcPFxGffOhHl.itdy7GVURT.ca\",\n      \"update_datetime\": \"1951-09-19T22:15:32.529Z\",\n      \"create_datetime\": \"1994-10-22T03:59:38.960Z\",\n      \"import_datetime\": \"1985-11-10T00:36:53.646Z\",\n      \"trending_datetime\": \"1973-07-11T15:23:32.259Z\",\n      \"images\": {\n        \"key_0\": {\n          \"url\": \"http://QYEcVyTffYKkwmjUrOaacjBR.qejVz91xdikAsb.7VGZdfZqoAAB1tlqyWWSESve3Ei\",\n          \"width\": \"string\",\n          \"height\": \"string\",\n          \"size\": \"string\",\n          \"mp4\": \"http://OPJznUUGCHRubptjf.mlgxboDe.2dwOBewR\",\n          \"mp4_size\": \"string\",\n          \"webp\": \"https://JsrVMWQlCB.yxQP5MGzF\",\n          \"webp_size\": \"string\",\n          \"frames\": \"string\",\n          \"hash\": \"string\"\n        },\n        \"key_1\": {\n          \"url\": \"http://HbqfcAXyJowWWwXbbBH.nstsZV9XCF8NLKJSAvm\",\n          \"width\": \"string\",\n          \"height\": \"string\",\n          \"size\": \"string\",\n          \"mp4\": \"https://MEmOHiYOJNsqHKnle.swsrHlW,JlOq.MP-FU4oKQsogv4niuw0ZYAnmriw7iScU2DgRLoGoUdtkg\",\n          \"mp4_size\": \"string\",\n          \"webp\": \"http://HKAEdcveRWrKRomXRRuFjEkoHfS.lkyAJSIFDWFTw3Tbpf0jU3AZDo7OP,.jBnZq.vi4AwUqJzbEklDiU4OF7Ln+,\",\n          \"webp_size\": \"string\",\n          \"frames\": \"string\",\n          \"hash\": \"string\"\n        }\n      },\n      \"title\": \"string\",\n      \"alt_text\": \"string\",\n      \"is_low_contrast\": false,\n      \"analytics_response_payload\": \"string\",\n      \"analytics\": {\n        \"onload\": {\n          \"url\": \"https://yyY.ixBSb-N+qPy,KrBCW4ljaWrCI5mgmk,4gf3NCj+R9hQZEjjRC9f+\"\n        },\n        \"onclick\": {\n          \"url\": \"http://XGuHT.dhiHuDBX--pzmh28TBs6zFMaaARJbdtaqJzfkWhm2Yx0K9OjxtYy.W1x1ptt\"\n        },\n        \"onsent\": {\n          \"url\": \"https://SLZwcbmyJqHDMIuazyDeDXag.dvoLMiK\"\n        }\n      }\n    },\n    {\n      \"type\": \"emoji\",\n      \"id\": \"string\",\n      \"slug\": \"string\",\n      \"url\": \"https://WkRy.zqrcYThTlu7wCu2z,NSyNgNrO6dlUbFuPBTzVs+qmU0iG8jCMuNTysAk,oAfqD\",\n      \"bitly_gif_url\": \"http://QoJdkhp.qfS,0EScFMduyxIGhT19sjh4ohn5Tq7YqYOCdRWcQ+hBtF2ILkcO.cXgr1+2\",\n      \"bitly_url\": \"http://kClPEtoxAyRNE.crbXLGGoiKbffExcNlHblEFpGTbQGg8,gUO0oatEPzJQh8V6kobQoixdxIHlL.ckAWliZg0r13hI+yotoFnoyQD9jxAWF\",\n      \"embed_url\": \"https://GMTa.jwAd+mNm+XNHfsINTnPSpTKeABC6tVrpKBaGhSM46JNuPAk9t+GCeZ\",\n      \"username\": \"string\",\n      \"source\": \"string\",\n      \"rating\": \"g\",\n      \"content_url\": \"string\",\n      \"user\": {\n        \"avatar_url\": \"https://NWfXHKHxYSUFwdG.kcwfL75ACoUoSFBW4etE1eKlCeTFRw,+4EyVizobxH\",\n        \"banner_image\": \"https://YmbzakCVpeMtyrPUzcKvvlvInQawyzG.waxiKsNwgpBJ460FPEHMbmp4uKn3aoV8lGeDCEdPF\",\n        \"banner_url\": \"https://eYXveSZkFoRKp.otZu8oeanE5YawiOBjUzPTzVJJ63LP,O.dfQMXMNYbf.R2P6bWLhBZVkz\",\n        \"profile_url\": \"https://AauncrdteiMYzJaFddPip.wrtCtdNXkt0R8qTN0rW\",\n        \"username\": \"string\",\n        \"display_name\": \"string\",\n        \"description\": \"string\",\n        \"instagram_url\": \"http://BipmhsQlhjsm.hhtPuBAuOne\",\n        \"website_url\": \"https://hRCkguzxPX.pmHolucf4QfDZLKpjVN7fbhmG62RfdL9hx-9p,bQAEAScscLUfXUw6oyj\",\n        \"is_verified\": true\n      },\n      \"source_tld\": \"string\",\n      \"source_post_url\": \"https://bJvLBBETGHtIcNHiXoJmJdaXhgHkXRR.ofiAjLVnw3+oxm,wUlR5EjS2QZSh,LJFZpBiZ6\",\n      \"update_datetime\": \"2009-03-14T14:57:16.003Z\",\n      \"create_datetime\": \"1956-01-20T09:25:58.442Z\",\n      \"import_datetime\": \"2009-12-23T17:42:41.399Z\",\n      \"trending_datetime\": \"1963-10-03T20:02:52.709Z\",\n      \"images\": {\n        \"key_0\": {\n          \"url\": \"http://svyDcULuGZJONesajMxs.qhnpqZz\",\n          \"width\": \"string\",\n          \"height\": \"string\",\n          \"size\": \"string\",\n          \"mp4\": \"https://UCVibi.cvcK7Ln9VaIBkRj7nXzloy0FjKoxMgdJ0iQLNTD\",\n          \"mp4_size\": \"string\",\n          \"webp\": \"http://ASShmYrKCEmwEhHCdjZgnVSHskP.uzsL46CW7oxIo1payIQdYMWA2l3X1BKccdPd,NGPvmPF0dnumLc+gFNx7nkIOMUDBs8SvmSy\",\n          \"webp_size\": \"string\",\n          \"frames\": \"string\",\n          \"hash\": \"string\"\n        }\n      },\n      \"title\": \"string\",\n      \"alt_text\": \"string\",\n      \"is_low_contrast\": false,\n      \"analytics_response_payload\": \"string\",\n      \"analytics\": {\n        \"onload\": {\n          \"url\": \"https://qKELkg.sxifTbIHOG8\"\n        },\n        \"onclick\": {\n          \"url\": \"http://NqbVgkaaMpSJdxhpWePVRvY.rkUQ2pXPzMsoBk,ADNdlPTj+cEPG0X4ZyQwgJNaAy5m+Rkv22Y6\"\n        },\n        \"onsent\": {\n          \"url\": \"https://pwZCEawkdJHNAMkWzk.mruyGnsvfAkAWypxCTGpWAjpxq\"\n        }\n      }\n    }\n  ],\n  \"pagination\": {\n    \"offset\": 697,\n    \"total_count\": 7747,\n    \"count\": 8693\n  },\n  \"meta\": {\n    \"msg\": \"string\",\n    \"status\": 7330,\n    \"response_id\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0d172692-731a-4bb0-a674-b8d85d774d42",
+              "name": "Malformed request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "gifs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"msg\": \"string\",\n    \"status\": 8721,\n    \"response_id\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.giphy.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "c3cfd626-3550-4d07-b15a-a436fba3aed4",
+    "name": "GIPHY Analytics GIFs API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The GIPHY API provides programmatic access to the world's largest library of\nGIFs, stickers, animated emoji and Clips (GIFs with sound). Search, trending,\ntranslate, random, and category endpoints all return rich media objects with\nmultiple image renditions optimized for any surface.\n\nAuthentication is via API key. New developers receive a rate-limited Beta key;\na Production key is granted after application review.\n\n\nContact Support:\n Name: GIPHY Developers\n Email: support@giphy.com",
+      "type": "text/plain"
+    }
+  }
+}

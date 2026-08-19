@@ -1,0 +1,123 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GIPHY Analytics Clips API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Clips",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Clips",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/clips/search",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Position in the result set for pagination."
+              },
+              {
+                "name": "rating",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by MPAA-style rating."
+              },
+              {
+                "name": "lang",
+                "value": "",
+                "type": "query",
+                "description": "Default language (ISO 639-1) for regional content."
+              },
+              {
+                "name": "country_code",
+                "value": "",
+                "type": "query",
+                "description": "ISO 3166-1 alpha-2 country code used to localize results."
+              }
+            ]
+          },
+          "docs": "Search the GIPHY Clips library (GIFs with sound)."
+        },
+        {
+          "info": {
+            "name": "Get Trending Clips",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.giphy.com/v1/clips/trending",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "GIPHY API key (Beta or Production)."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Position in the result set for pagination."
+              },
+              {
+                "name": "rating",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by MPAA-style rating."
+              },
+              {
+                "name": "country_code",
+                "value": "",
+                "type": "query",
+                "description": "ISO 3166-1 alpha-2 country code used to localize results."
+              }
+            ]
+          },
+          "docs": "Return the most popular Clips of the day."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
