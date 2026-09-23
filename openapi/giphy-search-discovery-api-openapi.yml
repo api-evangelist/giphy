@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: GIPHY Analytics Search Discovery API
+  title: GIPHY Search Discovery API
   description: 'The GIPHY API provides programmatic access to the world''s largest library of
 
     GIFs, stickers, animated emoji and Clips (GIFs with sound). Search, trending,
@@ -12,9 +12,7 @@ info:
 
     Authentication is via API key. New developers receive a rate-limited Beta key;
 
-    a Production key is granted after application review.
-
-    '
+    a Production key is granted after application review.'
   version: '1.0'
   contact:
     name: GIPHY Developers
@@ -125,14 +123,6 @@ paths:
                     $ref: '#/components/schemas/Meta'
 components:
   parameters:
-    Offset:
-      name: offset
-      in: query
-      required: false
-      description: Position in the result set for pagination.
-      schema:
-        type: integer
-        default: 0
     ApiKey:
       name: api_key
       in: query
@@ -149,6 +139,14 @@ components:
         type: integer
         default: 25
         maximum: 50
+    Offset:
+      name: offset
+      in: query
+      required: false
+      description: Position in the result set for pagination.
+      schema:
+        type: integer
+        default: 0
   schemas:
     Meta:
       type: object

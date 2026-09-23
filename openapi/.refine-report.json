@@ -1,17 +1,7 @@
 {
   "provider": "giphy",
   "sources": [
-    "giphy-analytics-api-openapi.yml",
-    "giphy-animate-api-openapi.yml",
-    "giphy-categories-api-openapi.yml",
-    "giphy-channels-api-openapi.yml",
-    "giphy-clips-api-openapi.yml",
-    "giphy-emoji-api-openapi.yml",
-    "giphy-gifs-api-openapi.yml",
-    "giphy-search-discovery-api-openapi.yml",
-    "giphy-stickers-api-openapi.yml",
-    "giphy-upload-api-openapi.yml",
-    "giphy-utilities-api-openapi.yml"
+    "_original/giphy-openapi.yml"
   ],
   "outputs": [
     "giphy-analytics-api-openapi.yml",
@@ -29,6 +19,22 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "giphy-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "giphy-analytics-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "giphy-animate-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "giphy-categories-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "giphy-channels-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "giphy-clips-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "giphy-emoji-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "giphy-gifs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "giphy-search-discovery-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "giphy-stickers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "giphy-upload-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "giphy-utilities-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

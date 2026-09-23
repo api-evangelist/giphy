@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: GIPHY Analytics GIFs API
+  title: GIPHY GI Fs API
   description: 'The GIPHY API provides programmatic access to the world''s largest library of
 
     GIFs, stickers, animated emoji and Clips (GIFs with sound). Search, trending,
@@ -12,9 +12,7 @@ info:
 
     Authentication is via API key. New developers receive a rate-limited Beta key;
 
-    a Production key is granted after application review.
-
-    '
+    a Production key is granted after application review.'
   version: '1.0'
   contact:
     name: GIPHY Developers
@@ -178,15 +176,6 @@ paths:
           $ref: '#/components/responses/BadRequest'
 components:
   schemas:
-    Meta:
-      type: object
-      properties:
-        msg:
-          type: string
-        status:
-          type: integer
-        response_id:
-          type: string
     User:
       type: object
       description: GIPHY user / channel associated with content.
@@ -217,28 +206,15 @@ components:
           format: uri
         is_verified:
           type: boolean
-    Analytics:
+    Meta:
       type: object
-      description: Pingback URLs returned alongside each GIF for measuring user engagement.
       properties:
-        onload:
-          type: object
-          properties:
-            url:
-              type: string
-              format: uri
-        onclick:
-          type: object
-          properties:
-            url:
-              type: string
-              format: uri
-        onsent:
-          type: object
-          properties:
-            url:
-              type: string
-              format: uri
+        msg:
+          type: string
+        status:
+          type: integer
+        response_id:
+          type: string
     Gif:
       type: object
       description: Standard GIPHY GIF object returned by most endpoints.
@@ -314,6 +290,16 @@ components:
           type: string
         analytics:
           $ref: '#/components/schemas/Analytics'
+    Images:
+      type: object
+      description: Map of rendition keys to rendition metadata. Available renditions include fixed_height, fixed_height_still, fixed_height_downsampled, fixed_height_small, fixed_height_small_still, fixed_width, fixed_width_still, fixed_width_downsampled, fixed_width_small, fixed_width_small_still, downsized, downsized_still, downsized_large, downsized_medium, downsized_small, original, original_still, looping, preview, preview_gif.
+      additionalProperties:
+        $ref: '#/components/schemas/Rendition'
+    Error:
+      type: object
+      properties:
+        meta:
+          $ref: '#/components/schemas/Meta'
     Pagination:
       type: object
       properties:
@@ -323,11 +309,6 @@ components:
           type: integer
         count:
           type: integer
-    Images:
-      type: object
-      description: Map of rendition keys to rendition metadata. Available renditions include fixed_height, fixed_height_still, fixed_height_downsampled, fixed_height_small, fixed_height_small_still, fixed_width, fixed_width_still, fixed_width_downsampled, fixed_width_small, fixed_width_small_still, downsized, downsized_still, downsized_large, downsized_medium, downsized_small, original, original_still, looping, preview, preview_gif.
-      additionalProperties:
-        $ref: '#/components/schemas/Rendition'
     Rendition:
       type: object
       properties:
@@ -357,113 +338,29 @@ components:
           type: string
         hash:
           type: string
-    Error:
+    Analytics:
       type: object
+      description: Pingback URLs returned alongside each GIF for measuring user engagement.
       properties:
-        meta:
-          $ref: '#/components/schemas/Meta'
-  parameters:
-    RandomId:
-      name: random_id
-      in: query
-      required: false
-      description: Privacy-preserving user identifier produced by /v1/randomid.
-      schema:
-        type: string
-    Limit:
-      name: limit
-      in: query
-      required: false
-      description: Maximum number of items to return per page.
-      schema:
-        type: integer
-        default: 25
-        maximum: 50
-    Rating:
-      name: rating
-      in: query
-      required: false
-      description: Filter results by MPAA-style rating.
-      schema:
-        type: string
-        enum:
-        - g
-        - pg
-        - pg-13
-        - r
-        - y
-    Weirdness:
-      name: weirdness
-      in: query
-      required: false
-      description: Translate weirdness (0 conservative ... 10 most weird).
-      schema:
-        type: integer
-        minimum: 0
-        maximum: 10
-    Offset:
-      name: offset
-      in: query
-      required: false
-      description: Position in the result set for pagination.
-      schema:
-        type: integer
-        default: 0
-    ApiKey:
-      name: api_key
-      in: query
-      required: true
-      description: GIPHY API key (Beta or Production).
-      schema:
-        type: string
-    Lang:
-      name: lang
-      in: query
-      required: false
-      description: Default language (ISO 639-1) for regional content.
-      schema:
-        type: string
-    CountryCode:
-      name: country_code
-      in: query
-      required: false
-      description: ISO 3166-1 alpha-2 country code used to localize results.
-      schema:
-        type: string
-    Bundle:
-      name: bundle
-      in: query
-      required: false
-      description: Reduce response payload by requesting only the rendition bundle you need.
-      schema:
-        type: string
-        enum:
-        - low_bandwidth
-        - messaging_non_clips
-        - sticker_layering
-        - clips_grid_picker
+        onload:
+          type: object
+          properties:
+            url:
+              type: string
+              format: uri
+        onclick:
+          type: object
+          properties:
+            url:
+              type: string
+              format: uri
+        onsent:
+          type: object
+          properties:
+            url:
+              type: string
+              format: uri
   responses:
-    GifListResponse:
-      description: A paginated list of GIF or Sticker objects.
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              data:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Gif'
-              pagination:
-                $ref: '#/components/schemas/Pagination'
-              meta:
-                $ref: '#/components/schemas/Meta'
-    RateLimited:
-      description: API rate limit exceeded.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
     Unauthorized:
       description: Missing or invalid API key.
       content:
@@ -487,12 +384,113 @@ components:
                 $ref: '#/components/schemas/Gif'
               meta:
                 $ref: '#/components/schemas/Meta'
+    GifListResponse:
+      description: A paginated list of GIF or Sticker objects.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Gif'
+              pagination:
+                $ref: '#/components/schemas/Pagination'
+              meta:
+                $ref: '#/components/schemas/Meta'
+    RateLimited:
+      description: API rate limit exceeded.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
     BadRequest:
       description: Malformed request.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
+  parameters:
+    RandomId:
+      name: random_id
+      in: query
+      required: false
+      description: Privacy-preserving user identifier produced by /v1/randomid.
+      schema:
+        type: string
+    Limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return per page.
+      schema:
+        type: integer
+        default: 25
+        maximum: 50
+    Bundle:
+      name: bundle
+      in: query
+      required: false
+      description: Reduce response payload by requesting only the rendition bundle you need.
+      schema:
+        type: string
+        enum:
+        - low_bandwidth
+        - messaging_non_clips
+        - sticker_layering
+        - clips_grid_picker
+    Lang:
+      name: lang
+      in: query
+      required: false
+      description: Default language (ISO 639-1) for regional content.
+      schema:
+        type: string
+    Weirdness:
+      name: weirdness
+      in: query
+      required: false
+      description: Translate weirdness (0 conservative ... 10 most weird).
+      schema:
+        type: integer
+        minimum: 0
+        maximum: 10
+    Offset:
+      name: offset
+      in: query
+      required: false
+      description: Position in the result set for pagination.
+      schema:
+        type: integer
+        default: 0
+    CountryCode:
+      name: country_code
+      in: query
+      required: false
+      description: ISO 3166-1 alpha-2 country code used to localize results.
+      schema:
+        type: string
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: GIPHY API key (Beta or Production).
+      schema:
+        type: string
+    Rating:
+      name: rating
+      in: query
+      required: false
+      description: Filter results by MPAA-style rating.
+      schema:
+        type: string
+        enum:
+        - g
+        - pg
+        - pg-13
+        - r
+        - y
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
