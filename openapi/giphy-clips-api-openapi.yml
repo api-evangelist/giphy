@@ -76,170 +76,7 @@ paths:
         '403':
           $ref: '#/components/responses/Forbidden'
 components:
-  parameters:
-    ApiKey:
-      name: api_key
-      in: query
-      required: true
-      description: GIPHY API key (Beta or Production).
-      schema:
-        type: string
-    Lang:
-      name: lang
-      in: query
-      required: false
-      description: Default language (ISO 639-1) for regional content.
-      schema:
-        type: string
-    Offset:
-      name: offset
-      in: query
-      required: false
-      description: Position in the result set for pagination.
-      schema:
-        type: integer
-        default: 0
-    Rating:
-      name: rating
-      in: query
-      required: false
-      description: Filter results by MPAA-style rating.
-      schema:
-        type: string
-        enum:
-        - g
-        - pg
-        - pg-13
-        - r
-        - y
-    CountryCode:
-      name: country_code
-      in: query
-      required: false
-      description: ISO 3166-1 alpha-2 country code used to localize results.
-      schema:
-        type: string
-    Limit:
-      name: limit
-      in: query
-      required: false
-      description: Maximum number of items to return per page.
-      schema:
-        type: integer
-        default: 25
-        maximum: 50
   schemas:
-    User:
-      type: object
-      description: GIPHY user / channel associated with content.
-      properties:
-        avatar_url:
-          type: string
-          format: uri
-        banner_image:
-          type: string
-          format: uri
-        banner_url:
-          type: string
-          format: uri
-        profile_url:
-          type: string
-          format: uri
-        username:
-          type: string
-        display_name:
-          type: string
-        description:
-          type: string
-        instagram_url:
-          type: string
-          format: uri
-        website_url:
-          type: string
-          format: uri
-        is_verified:
-          type: boolean
-    Pagination:
-      type: object
-      properties:
-        offset:
-          type: integer
-        total_count:
-          type: integer
-        count:
-          type: integer
-    Rendition:
-      type: object
-      properties:
-        url:
-          type: string
-          format: uri
-        width:
-          type: string
-          description: Width in pixels (string in API).
-        height:
-          type: string
-          description: Height in pixels (string in API).
-        size:
-          type: string
-          description: File size in bytes (string in API).
-        mp4:
-          type: string
-          format: uri
-        mp4_size:
-          type: string
-        webp:
-          type: string
-          format: uri
-        webp_size:
-          type: string
-        frames:
-          type: string
-        hash:
-          type: string
-    Clip:
-      allOf:
-      - $ref: '#/components/schemas/Gif'
-      - type: object
-        properties:
-          video:
-            type: object
-            description: Video metadata for Clip objects (GIFs with sound).
-            properties:
-              duration:
-                type: number
-              dimensions:
-                type: object
-                properties:
-                  width:
-                    type: integer
-                  height:
-                    type: integer
-              assets:
-                type: object
-                additionalProperties:
-                  type: object
-                  properties:
-                    url:
-                      type: string
-                      format: uri
-                    width:
-                      type: integer
-                    height:
-                      type: integer
-              captions:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    lang:
-                      type: string
-                    srt:
-                      type: string
-                      format: uri
-                    vtt:
-                      type: string
-                      format: uri
     Gif:
       type: object
       description: Standard GIPHY GIF object returned by most endpoints.
@@ -315,15 +152,75 @@ components:
           type: string
         analytics:
           $ref: '#/components/schemas/Analytics'
-    Meta:
+    Error:
       type: object
       properties:
-        msg:
+        meta:
+          $ref: '#/components/schemas/Meta'
+    Images:
+      type: object
+      description: Map of rendition keys to rendition metadata. Available renditions include fixed_height, fixed_height_still, fixed_height_downsampled, fixed_height_small, fixed_height_small_still, fixed_width, fixed_width_still, fixed_width_downsampled, fixed_width_small, fixed_width_small_still, downsized, downsized_still, downsized_large, downsized_medium, downsized_small, original, original_still, looping, preview, preview_gif.
+      additionalProperties:
+        $ref: '#/components/schemas/Rendition'
+    Rendition:
+      type: object
+      properties:
+        url:
           type: string
-        status:
-          type: integer
-        response_id:
+          format: uri
+        width:
           type: string
+          description: Width in pixels (string in API).
+        height:
+          type: string
+          description: Height in pixels (string in API).
+        size:
+          type: string
+          description: File size in bytes (string in API).
+        mp4:
+          type: string
+          format: uri
+        mp4_size:
+          type: string
+        webp:
+          type: string
+          format: uri
+        webp_size:
+          type: string
+        frames:
+          type: string
+        hash:
+          type: string
+    User:
+      type: object
+      description: GIPHY user / channel associated with content.
+      properties:
+        avatar_url:
+          type: string
+          format: uri
+        banner_image:
+          type: string
+          format: uri
+        banner_url:
+          type: string
+          format: uri
+        profile_url:
+          type: string
+          format: uri
+        username:
+          type: string
+        display_name:
+          type: string
+        description:
+          type: string
+        instagram_url:
+          type: string
+          format: uri
+        website_url:
+          type: string
+          format: uri
+        is_verified:
+          type: boolean
     Analytics:
       type: object
       description: Pingback URLs returned alongside each GIF for measuring user engagement.
@@ -346,16 +243,119 @@ components:
             url:
               type: string
               format: uri
-    Images:
-      type: object
-      description: Map of rendition keys to rendition metadata. Available renditions include fixed_height, fixed_height_still, fixed_height_downsampled, fixed_height_small, fixed_height_small_still, fixed_width, fixed_width_still, fixed_width_downsampled, fixed_width_small, fixed_width_small_still, downsized, downsized_still, downsized_large, downsized_medium, downsized_small, original, original_still, looping, preview, preview_gif.
-      additionalProperties:
-        $ref: '#/components/schemas/Rendition'
-    Error:
+    Clip:
+      allOf:
+      - $ref: '#/components/schemas/Gif'
+      - type: object
+        properties:
+          video:
+            type: object
+            description: Video metadata for Clip objects (GIFs with sound).
+            properties:
+              duration:
+                type: number
+              dimensions:
+                type: object
+                properties:
+                  width:
+                    type: integer
+                  height:
+                    type: integer
+              assets:
+                type: object
+                additionalProperties:
+                  type: object
+                  properties:
+                    url:
+                      type: string
+                      format: uri
+                    width:
+                      type: integer
+                    height:
+                      type: integer
+              captions:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    lang:
+                      type: string
+                    srt:
+                      type: string
+                      format: uri
+                    vtt:
+                      type: string
+                      format: uri
+    Meta:
       type: object
       properties:
-        meta:
-          $ref: '#/components/schemas/Meta'
+        msg:
+          type: string
+        status:
+          type: integer
+        response_id:
+          type: string
+    Pagination:
+      type: object
+      properties:
+        offset:
+          type: integer
+        total_count:
+          type: integer
+        count:
+          type: integer
+  parameters:
+    Rating:
+      name: rating
+      in: query
+      required: false
+      description: Filter results by MPAA-style rating.
+      schema:
+        type: string
+        enum:
+        - g
+        - pg
+        - pg-13
+        - r
+        - y
+    CountryCode:
+      name: country_code
+      in: query
+      required: false
+      description: ISO 3166-1 alpha-2 country code used to localize results.
+      schema:
+        type: string
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: GIPHY API key (Beta or Production).
+      schema:
+        type: string
+    Lang:
+      name: lang
+      in: query
+      required: false
+      description: Default language (ISO 639-1) for regional content.
+      schema:
+        type: string
+    Offset:
+      name: offset
+      in: query
+      required: false
+      description: Position in the result set for pagination.
+      schema:
+        type: integer
+        default: 0
+    Limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return per page.
+      schema:
+        type: integer
+        default: 25
+        maximum: 50
   responses:
     ClipListResponse:
       description: A paginated list of Clip objects (GIFs with sound).
