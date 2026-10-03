@@ -93,6 +93,14 @@ paths:
                   meta:
                     $ref: '#/components/schemas/Meta'
 components:
+  parameters:
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: GIPHY API key (Beta or Production).
+      schema:
+        type: string
   schemas:
     Meta:
       type: object
@@ -103,14 +111,6 @@ components:
           type: integer
         response_id:
           type: string
-  parameters:
-    ApiKey:
-      name: api_key
-      in: query
-      required: true
-      description: GIPHY API key (Beta or Production).
-      schema:
-        type: string
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

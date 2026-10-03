@@ -123,14 +123,13 @@ paths:
                     $ref: '#/components/schemas/Meta'
 components:
   parameters:
-    Offset:
-      name: offset
+    ApiKey:
+      name: api_key
       in: query
-      required: false
-      description: Position in the result set for pagination.
+      required: true
+      description: GIPHY API key (Beta or Production).
       schema:
-        type: integer
-        default: 0
+        type: string
     Limit:
       name: limit
       in: query
@@ -140,13 +139,14 @@ components:
         type: integer
         default: 25
         maximum: 50
-    ApiKey:
-      name: api_key
+    Offset:
+      name: offset
       in: query
-      required: true
-      description: GIPHY API key (Beta or Production).
+      required: false
+      description: Position in the result set for pagination.
       schema:
-        type: string
+        type: integer
+        default: 0
   schemas:
     Meta:
       type: object
