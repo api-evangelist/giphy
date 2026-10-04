@@ -67,65 +67,102 @@ paths:
                     $ref: '#/components/schemas/Meta'
 components:
   schemas:
-    User:
+    Images:
       type: object
-      description: GIPHY user / channel associated with content.
+      description: Map of rendition keys to rendition metadata. Available renditions include fixed_height, fixed_height_still, fixed_height_downsampled, fixed_height_small, fixed_height_small_still, fixed_width, fixed_width_still, fixed_width_downsampled, fixed_width_small, fixed_width_small_still, downsized, downsized_still, downsized_large, downsized_medium, downsized_small, original, original_still, looping, preview, preview_gif.
+      additionalProperties:
+        $ref: '#/components/schemas/Rendition'
+    Meta:
+      type: object
       properties:
-        avatar_url:
+        msg:
           type: string
-          format: uri
-        banner_image:
+        status:
+          type: integer
+        response_id:
           type: string
-          format: uri
-        banner_url:
+    Pagination:
+      type: object
+      properties:
+        offset:
+          type: integer
+        total_count:
+          type: integer
+        count:
+          type: integer
+    Channel:
+      type: object
+      description: GIPHY content channel.
+      properties:
+        id:
+          type: integer
+        slug:
           type: string
-          format: uri
-        profile_url:
-          type: string
-          format: uri
-        username:
+        url:
           type: string
         display_name:
           type: string
+        short_display_name:
+          type: string
         description:
           type: string
-        instagram_url:
+        type:
+          type: string
+          enum:
+          - community
+          - editorial
+        content_type:
+          type: string
+          enum:
+          - gif
+          - sticker
+          - mixed
+        banner_image:
           type: string
           format: uri
-        website_url:
-          type: string
-          format: uri
-        is_verified:
+        is_private:
           type: boolean
-    Rendition:
+        user:
+          $ref: '#/components/schemas/User'
+        featured_gif:
+          $ref: '#/components/schemas/Gif'
+        ancestors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Channel'
+        tags:
+          type: array
+          items:
+            type: object
+            properties:
+              channel:
+                type: integer
+              rank:
+                type: integer
+              tag:
+                type: string
+    Analytics:
       type: object
+      description: Pingback URLs returned alongside each GIF for measuring user engagement.
       properties:
-        url:
-          type: string
-          format: uri
-        width:
-          type: string
-          description: Width in pixels (string in API).
-        height:
-          type: string
-          description: Height in pixels (string in API).
-        size:
-          type: string
-          description: File size in bytes (string in API).
-        mp4:
-          type: string
-          format: uri
-        mp4_size:
-          type: string
-        webp:
-          type: string
-          format: uri
-        webp_size:
-          type: string
-        frames:
-          type: string
-        hash:
-          type: string
+        onload:
+          type: object
+          properties:
+            url:
+              type: string
+              format: uri
+        onclick:
+          type: object
+          properties:
+            url:
+              type: string
+              format: uri
+        onsent:
+          type: object
+          properties:
+            url:
+              type: string
+              format: uri
     Gif:
       type: object
       description: Standard GIPHY GIF object returned by most endpoints.
@@ -201,102 +238,65 @@ components:
           type: string
         analytics:
           $ref: '#/components/schemas/Analytics'
-    Meta:
+    Rendition:
       type: object
       properties:
-        msg:
-          type: string
-        status:
-          type: integer
-        response_id:
-          type: string
-    Pagination:
-      type: object
-      properties:
-        offset:
-          type: integer
-        total_count:
-          type: integer
-        count:
-          type: integer
-    Images:
-      type: object
-      description: Map of rendition keys to rendition metadata. Available renditions include fixed_height, fixed_height_still, fixed_height_downsampled, fixed_height_small, fixed_height_small_still, fixed_width, fixed_width_still, fixed_width_downsampled, fixed_width_small, fixed_width_small_still, downsized, downsized_still, downsized_large, downsized_medium, downsized_small, original, original_still, looping, preview, preview_gif.
-      additionalProperties:
-        $ref: '#/components/schemas/Rendition'
-    Channel:
-      type: object
-      description: GIPHY content channel.
-      properties:
-        id:
-          type: integer
-        slug:
-          type: string
         url:
           type: string
-        display_name:
+          format: uri
+        width:
           type: string
-        short_display_name:
+          description: Width in pixels (string in API).
+        height:
           type: string
-        description:
+          description: Height in pixels (string in API).
+        size:
           type: string
-        type:
+          description: File size in bytes (string in API).
+        mp4:
           type: string
-          enum:
-          - community
-          - editorial
-        content_type:
+          format: uri
+        mp4_size:
           type: string
-          enum:
-          - gif
-          - sticker
-          - mixed
+        webp:
+          type: string
+          format: uri
+        webp_size:
+          type: string
+        frames:
+          type: string
+        hash:
+          type: string
+    User:
+      type: object
+      description: GIPHY user / channel associated with content.
+      properties:
+        avatar_url:
+          type: string
+          format: uri
         banner_image:
           type: string
           format: uri
-        is_private:
+        banner_url:
+          type: string
+          format: uri
+        profile_url:
+          type: string
+          format: uri
+        username:
+          type: string
+        display_name:
+          type: string
+        description:
+          type: string
+        instagram_url:
+          type: string
+          format: uri
+        website_url:
+          type: string
+          format: uri
+        is_verified:
           type: boolean
-        user:
-          $ref: '#/components/schemas/User'
-        featured_gif:
-          $ref: '#/components/schemas/Gif'
-        ancestors:
-          type: array
-          items:
-            $ref: '#/components/schemas/Channel'
-        tags:
-          type: array
-          items:
-            type: object
-            properties:
-              channel:
-                type: integer
-              rank:
-                type: integer
-              tag:
-                type: string
-    Analytics:
-      type: object
-      description: Pingback URLs returned alongside each GIF for measuring user engagement.
-      properties:
-        onload:
-          type: object
-          properties:
-            url:
-              type: string
-              format: uri
-        onclick:
-          type: object
-          properties:
-            url:
-              type: string
-              format: uri
-        onsent:
-          type: object
-          properties:
-            url:
-              type: string
-              format: uri
   parameters:
     Limit:
       name: limit
@@ -307,13 +307,6 @@ components:
         type: integer
         default: 25
         maximum: 50
-    ApiKey:
-      name: api_key
-      in: query
-      required: true
-      description: GIPHY API key (Beta or Production).
-      schema:
-        type: string
     Offset:
       name: offset
       in: query
@@ -322,6 +315,13 @@ components:
       schema:
         type: integer
         default: 0
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: GIPHY API key (Beta or Production).
+      schema:
+        type: string
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

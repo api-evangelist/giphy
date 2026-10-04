@@ -123,13 +123,6 @@ paths:
                     $ref: '#/components/schemas/Meta'
 components:
   parameters:
-    ApiKey:
-      name: api_key
-      in: query
-      required: true
-      description: GIPHY API key (Beta or Production).
-      schema:
-        type: string
     Limit:
       name: limit
       in: query
@@ -147,6 +140,13 @@ components:
       schema:
         type: integer
         default: 0
+    ApiKey:
+      name: api_key
+      in: query
+      required: true
+      description: GIPHY API key (Beta or Production).
+      schema:
+        type: string
   schemas:
     Meta:
       type: object
