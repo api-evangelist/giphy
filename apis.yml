@@ -1069,6 +1069,8 @@ apis:
   - type: Pricing
     url: plans/giphy-plans-pricing.yml
 common:
+  - type: FinOps
+    url: finops/giphy-finops.yml
   - type: IssueTracker
     url: https://github.com/Giphy/GiphyAPI/issues
   - type: PostmanWorkspace
