@@ -1,3 +1,8 @@
+# Provenance stamped 2026-10-07 (roadmap#943): written by an API Evangelist sweep (dated 2026-05-30 by the file itself), not
+# harvested from the provider. `method: generated` so the economics campaign may replace it with a
+# dated, verbatim transcription; every figure below is unverified until it does.
+method: generated
+generated: '2026-05-30'
 apiCommonsPlans: '0.1'
 provider:
   id: giphy
@@ -67,3 +72,28 @@ plans:
     eligibility:
       - Email clips@giphy.com with use-case details.
     obtainedVia: mailto:clips@giphy.com
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  units: []
+  plans:
+  - name: Beta Key
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods: []
+  - name: Production Key
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods: []
+  - name: Clips Access
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods: []
