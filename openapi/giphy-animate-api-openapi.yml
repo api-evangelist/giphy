@@ -59,42 +59,35 @@ paths:
           $ref: '#/components/responses/SingleGifResponse'
 components:
   schemas:
-    Images:
-      type: object
-      description: Map of rendition keys to rendition metadata. Available renditions include fixed_height, fixed_height_still, fixed_height_downsampled, fixed_height_small, fixed_height_small_still, fixed_width, fixed_width_still, fixed_width_downsampled, fixed_width_small, fixed_width_small_still, downsized, downsized_still, downsized_large, downsized_medium, downsized_small, original, original_still, looping, preview, preview_gif.
-      additionalProperties:
-        $ref: '#/components/schemas/Rendition'
-    Meta:
+    Rendition:
       type: object
       properties:
-        msg:
+        url:
           type: string
-        status:
-          type: integer
-        response_id:
+          format: uri
+        width:
           type: string
-    Analytics:
-      type: object
-      description: Pingback URLs returned alongside each GIF for measuring user engagement.
-      properties:
-        onload:
-          type: object
-          properties:
-            url:
-              type: string
-              format: uri
-        onclick:
-          type: object
-          properties:
-            url:
-              type: string
-              format: uri
-        onsent:
-          type: object
-          properties:
-            url:
-              type: string
-              format: uri
+          description: Width in pixels (string in API).
+        height:
+          type: string
+          description: Height in pixels (string in API).
+        size:
+          type: string
+          description: File size in bytes (string in API).
+        mp4:
+          type: string
+          format: uri
+        mp4_size:
+          type: string
+        webp:
+          type: string
+          format: uri
+        webp_size:
+          type: string
+        frames:
+          type: string
+        hash:
+          type: string
     Gif:
       type: object
       description: Standard GIPHY GIF object returned by most endpoints.
@@ -170,34 +163,36 @@ components:
           type: string
         analytics:
           $ref: '#/components/schemas/Analytics'
-    Rendition:
+    Analytics:
+      type: object
+      description: Pingback URLs returned alongside each GIF for measuring user engagement.
+      properties:
+        onload:
+          type: object
+          properties:
+            url:
+              type: string
+              format: uri
+        onclick:
+          type: object
+          properties:
+            url:
+              type: string
+              format: uri
+        onsent:
+          type: object
+          properties:
+            url:
+              type: string
+              format: uri
+    Meta:
       type: object
       properties:
-        url:
+        msg:
           type: string
-          format: uri
-        width:
-          type: string
-          description: Width in pixels (string in API).
-        height:
-          type: string
-          description: Height in pixels (string in API).
-        size:
-          type: string
-          description: File size in bytes (string in API).
-        mp4:
-          type: string
-          format: uri
-        mp4_size:
-          type: string
-        webp:
-          type: string
-          format: uri
-        webp_size:
-          type: string
-        frames:
-          type: string
-        hash:
+        status:
+          type: integer
+        response_id:
           type: string
     User:
       type: object
@@ -229,6 +224,11 @@ components:
           format: uri
         is_verified:
           type: boolean
+    Images:
+      type: object
+      description: Map of rendition keys to rendition metadata. Available renditions include fixed_height, fixed_height_still, fixed_height_downsampled, fixed_height_small, fixed_height_small_still, fixed_width, fixed_width_still, fixed_width_downsampled, fixed_width_small, fixed_width_small_still, downsized, downsized_still, downsized_large, downsized_medium, downsized_small, original, original_still, looping, preview, preview_gif.
+      additionalProperties:
+        $ref: '#/components/schemas/Rendition'
   parameters:
     ApiKey:
       name: api_key
