@@ -1,4 +1,4 @@
-# Giphy (giphy)
+# Giphy
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,125 +66,215 @@
 
 GIPHY is the world's largest library of GIFs, stickers, animated emoji, and Clips (GIFs with sound), with a developer API used by messaging apps, social platforms, productivity tools, ads, and creator products. GIPHY is owned by Meta. Authentication is via API key (Beta or Production tier) and all surfaces share the same envelope (data + meta + pagination) with rich, multi-rendition media payloads.
 
-**APIs.json:** [https://developers.giphy.com/](https://developers.giphy.com/)
+**Areas:** Photography · Media · GIFs · Stickers · Emoji · Video · Messaging · Social · Meta
 
-## Tags
+## Giphy on APIs.io
 
-- Photography
-- Media
-- GIFs
-- Stickers
-- Emoji
-- Video
-- Messaging
-- Social
-- Meta
+Everything profiled for Giphy is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/giphy/](https://apis.io/providers/giphy/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (11)
 
-- **Created:** 2026-05-28
-- **Modified:** 2026-05-30
+- [Giphy Analytics API](https://apis.io/apis/giphy/giphy-analytics-api/) — Pingback and action register endpoints for measuring user engagement.
+- [Giphy Animate API](https://apis.io/apis/giphy/giphy-animate-api/) — Programmatic creation of animated text/word GIFs.
+- [Giphy Categories API](https://apis.io/apis/giphy/giphy-categories-api/) — Top-level categories and subcategories used to organize GIFs.
+- [Giphy Channels API](https://apis.io/apis/giphy/giphy-channels-api/) — Channel discovery and metadata.
+- [Giphy Clips API](https://apis.io/apis/giphy/giphy-clips-api/) — GIFs with sound. Access is gated; contact clips@giphy.com.
+- [Giphy Emoji API](https://apis.io/apis/giphy/giphy-emoji-api/) — GIPHY's animated emoji library and per-emoji variations.
+- [Giphy GIFs API](https://apis.io/apis/giphy/giphy-gifs-api/) — Search, trending, translate, random, and lookup endpoints for animated GIFs.
+- [Giphy Search Discovery API](https://apis.io/apis/giphy/giphy-search-discovery-api/) — Tag autocompletion, related search terms, and trending search queries.
+- [Giphy Stickers API](https://apis.io/apis/giphy/giphy-stickers-api/) — The same surface as GIFs but scoped to transparent-background stickers.
+- [Giphy Upload API](https://apis.io/apis/giphy/giphy-upload-api/) — Programmatic upload of GIFs and video assets.
+- [Giphy Utilities API](https://apis.io/apis/giphy/giphy-utilities-api/) — Identifier generation and other helpers.
 
-## APIs
+### Published properties
 
-### GIPHY API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-The GIPHY REST API. Search, trending, translate, random, lookup, categories, autocomplete, related/trending terms, channels, animated emoji, animated text, Clips, analytics pingbacks, and uploads — all behind a single API key.
+#### Agentic access (1)
 
-- **Human URL:** [https://developers.giphy.com/docs/api](https://developers.giphy.com/docs/api)
-- **Base URL:** `https://api.giphy.com`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Giphy Agentic Access](https://apis.io/agentic-access/giphy/giphy-agentic-access/)
 
-- GIFs
-- Stickers
-- Emoji
-- Clips
-- Channels
-- Categories
-- Search Discovery
-- Analytics
-- Upload
-- Utilities
+#### JSON Schema (9)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://developers.giphy.com/docs/api)
-- [API Reference](https://developers.giphy.com/docs/api/endpoint)
-- [Getting Started](https://developers.giphy.com/docs/api)
-- [Authentication](https://developers.giphy.com/docs/api#quick-start-guide)
-- [OpenAPI](openapi/giphy-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/giphy.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/giphy.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/giphy-gif-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/giphy-clip-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/giphy-user-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/giphy-channel-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/giphy-category-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/giphy-images-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/giphy-analytics-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/giphy-meta-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/giphy-pagination-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Structure](json-structure/giphy-gif-structure.json)
-- [JSON Structure](json-structure/giphy-clip-structure.json)
-- [JSON Structure](json-structure/giphy-images-structure.json)
-- [JSON Structure](json-structure/giphy-channel-structure.json)
-- [Example](examples/giphy-search-gifs-example.json)
-- [Example](examples/giphy-get-trending-gifs-example.json)
-- [Example](examples/giphy-translate-gif-example.json)
-- [Example](examples/giphy-get-random-gif-example.json)
-- [Example](examples/giphy-get-gif-by-id-example.json)
-- [Example](examples/giphy-list-gif-categories-example.json)
-- [Example](examples/giphy-autocomplete-search-tags-example.json)
-- [Example](examples/giphy-get-related-search-terms-example.json)
-- [Example](examples/giphy-get-trending-searches-example.json)
-- [Example](examples/giphy-search-stickers-example.json)
-- [Example](examples/giphy-list-emoji-example.json)
-- [Example](examples/giphy-search-clips-example.json)
-- [Example](examples/giphy-upload-gif-example.json)
-- [Example](examples/giphy-register-search-action-example.json)
-- [SDK](https://github.com/Giphy/giphy-ios-sdk)
-- [SDK](https://github.com/Giphy/giphy-android-sdk)
-- [SDK](https://github.com/Giphy/giphy-react-native-sdk)
-- [SDK](https://github.com/Giphy/giphy-flutter-sdk)
-- [SDK](https://github.com/Giphy/giphy-js)
-- [SDK](https://github.com/Giphy/giphy-python-client)
-- [SDK](https://github.com/Giphy/giphy-ruby-client)
-- [SDK](https://github.com/Giphy/giphy-php-client)
-- [Rate Limits](rate-limits/giphy-rate-limits.yml)
-- [Pricing](plans/giphy-plans-pricing.yml)
+- [GIPHY Analytics Pingbacks](https://apis.io/schemas/giphy/giphy-analytics/)
+- [GIPHY Category](https://apis.io/schemas/giphy/giphy-category/)
+- [GIPHY Channel](https://apis.io/schemas/giphy/giphy-channel/)
+- [GIPHY Clip](https://apis.io/schemas/giphy/giphy-clip/)
+- [GIPHY GIF](https://apis.io/schemas/giphy/giphy-gif/)
+- [GIPHY Images](https://apis.io/schemas/giphy/giphy-images/)
+- [GIPHY Meta](https://apis.io/schemas/giphy/giphy-meta/)
+- [GIPHY Pagination](https://apis.io/schemas/giphy/giphy-pagination/)
+- [GIPHY User](https://apis.io/schemas/giphy/giphy-user/)
 
-## Common Properties
+#### JSON Structure (4)
+
+Data models expressed in JSON Structure.
+
+- [Giphy Channel Structure](https://apis.io/json-structure/giphy/giphy-channel-structure/)
+- [Giphy Clip Structure](https://apis.io/json-structure/giphy/giphy-clip-structure/)
+- [Giphy Gif Structure](https://apis.io/json-structure/giphy/giphy-gif-structure/)
+- [Giphy Images Structure](https://apis.io/json-structure/giphy/giphy-images-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Giphy Context](https://apis.io/jsonld/giphy/giphy-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [GIPHY API Vocabulary](https://apis.io/vocabularies/giphy/giphy-vocabulary/)
+
+#### Examples (14)
+
+Example requests and responses.
+
+- [Giphy Autocomplete Search Tags Example](https://apis.io/examples/giphy/giphy-autocomplete-search-tags-example/)
+- [Giphy Get Gif By Id Example](https://apis.io/examples/giphy/giphy-get-gif-by-id-example/)
+- [Giphy Get Random Gif Example](https://apis.io/examples/giphy/giphy-get-random-gif-example/)
+- [Giphy Get Related Search Terms Example](https://apis.io/examples/giphy/giphy-get-related-search-terms-example/)
+- [Giphy Get Trending Gifs Example](https://apis.io/examples/giphy/giphy-get-trending-gifs-example/)
+- [Giphy Get Trending Searches Example](https://apis.io/examples/giphy/giphy-get-trending-searches-example/)
+- [Giphy List Emoji Example](https://apis.io/examples/giphy/giphy-list-emoji-example/)
+- [Giphy List Gif Categories Example](https://apis.io/examples/giphy/giphy-list-gif-categories-example/)
+- [Giphy Register Search Action Example](https://apis.io/examples/giphy/giphy-register-search-action-example/)
+- [Giphy Search Clips Example](https://apis.io/examples/giphy/giphy-search-clips-example/)
+- [Giphy Search Gifs Example](https://apis.io/examples/giphy/giphy-search-gifs-example/)
+- [Giphy Search Stickers Example](https://apis.io/examples/giphy/giphy-search-stickers-example/)
+- [Giphy Translate Gif Example](https://apis.io/examples/giphy/giphy-translate-gif-example/)
+- [Giphy Upload Gif Example](https://apis.io/examples/giphy/giphy-upload-gif-example/)
+
+#### Collections (23)
+
+Postman and Open Collection request collections.
+
+- [GIPHY API](https://apis.io/collections/giphy/open-giphy/)
+- [GIPHY Analytics API](https://apis.io/collections/giphy/open-giphy-analytics-api/)
+- [GIPHY Analytics Animate API](https://apis.io/collections/giphy/open-giphy-animate-api/)
+- [GIPHY Analytics Categories API](https://apis.io/collections/giphy/open-giphy-categories-api/)
+- [GIPHY Analytics Channels API](https://apis.io/collections/giphy/open-giphy-channels-api/)
+- [GIPHY Analytics Clips API](https://apis.io/collections/giphy/open-giphy-clips-api/)
+- [GIPHY Analytics Emoji API](https://apis.io/collections/giphy/open-giphy-emoji-api/)
+- [GIPHY Analytics GIFs API](https://apis.io/collections/giphy/open-giphy-gifs-api/)
+- [GIPHY Analytics Search Discovery API](https://apis.io/collections/giphy/open-giphy-search-discovery-api/)
+- [GIPHY Analytics Stickers API](https://apis.io/collections/giphy/open-giphy-stickers-api/)
+- [GIPHY Analytics Upload API](https://apis.io/collections/giphy/open-giphy-upload-api/)
+- [GIPHY Analytics Utilities API](https://apis.io/collections/giphy/open-giphy-utilities-api/)
+- [GIPHY Analytics API](https://apis.io/collections/giphy/postman-giphy-analytics-api/)
+- [GIPHY Analytics Animate API](https://apis.io/collections/giphy/postman-giphy-animate-api/)
+- [GIPHY Analytics Categories API](https://apis.io/collections/giphy/postman-giphy-categories-api/)
+- [GIPHY Analytics Channels API](https://apis.io/collections/giphy/postman-giphy-channels-api/)
+- [GIPHY Analytics Clips API](https://apis.io/collections/giphy/postman-giphy-clips-api/)
+- [GIPHY Analytics Emoji API](https://apis.io/collections/giphy/postman-giphy-emoji-api/)
+- [GIPHY Analytics GIFs API](https://apis.io/collections/giphy/postman-giphy-gifs-api/)
+- [GIPHY Analytics Search Discovery API](https://apis.io/collections/giphy/postman-giphy-search-discovery-api/)
+- [GIPHY Analytics Stickers API](https://apis.io/collections/giphy/postman-giphy-stickers-api/)
+- [GIPHY Analytics Upload API](https://apis.io/collections/giphy/postman-giphy-upload-api/)
+- [GIPHY Analytics Utilities API](https://apis.io/collections/giphy/postman-giphy-utilities-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Giphy — jsonschema rules](https://apis.io/rules/giphy/giphy-jsonschema-spectral-rules/)
+- [Giphy API Rules](https://apis.io/rules/giphy/giphy-rules/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Giphy Authentication](https://apis.io/security/giphy/giphy-authentication/)
+- [Giphy Domain Security](https://apis.io/security/giphy/giphy-domain-security/)
+- [Giphy Trust Center](https://apis.io/security/giphy/giphy-trust-center/)
+- [Giphy Vulnerability Disclosure](https://apis.io/security/giphy/giphy-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Giphy Plans Pricing](https://apis.io/plans/giphy/giphy-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Giphy Rate Limits](https://apis.io/rate-limits/giphy/giphy-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Giphy Finops](https://apis.io/finops/giphy/giphy-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://giphy.com/)
-- [Developer Portal](https://developers.giphy.com/)
 - [Documentation](https://developers.giphy.com/docs/)
-- [Console](https://developers.giphy.com/dashboard/)
-- [Sign Up](https://giphy.com/join)
-- [Login](https://giphy.com/login)
-- [Terms of Service](https://developers.giphy.com/terms/)
-- [Privacy Policy](https://support.giphy.com/hc/en-us/articles/360032872931-GIPHY-Privacy-Policy)
-- [Branding](https://support.giphy.com/hc/en-us/articles/360020027252-GIPHY-Brand-Guidelines)
 - [Support](https://support.giphy.com/hc/en-us)
-- [GitHub Organization](https://github.com/Giphy)
-- [GitHub Repository](https://github.com/Giphy/GiphyAPI)
 - [Blog](https://medium.com/@giphy)
-- [X (Twitter)](https://x.com/giphy)
-- [Tools](https://github.com/Giphy/giphy-bandwidth-saver)
-- [Tools](https://github.com/Giphy/cloudflare-cdn-config-ref-implementation)
-- [Tools](https://github.com/Giphy/fastly-compute-ref-implementation)
-- [Spectral Rules](rules/giphy-rules.yml)
-- [Vocabulary](vocabulary/giphy-vocabulary.yml)
-- [JSON-LD](json-ld/giphy-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Plans](plans/giphy-plans-pricing.yml)
-- [Rate Limits](rate-limits/giphy-rate-limits.yml)
-- [Resources](finops/giphy-finops.yml)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](undefined)
-- [Solutions](undefined)
+- [Terms of service](https://developers.giphy.com/terms/)
+- [Privacy policy](https://support.giphy.com/hc/en-us/articles/360032872931-GIPHY-Privacy-Policy)
+- [GitHub](https://github.com/Giphy)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 55.6** — strong · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 65.7 |
+| Contract governance | 27.3 |
+| Operational transparency | 13.2 |
+| Developer ergonomics | 82.1 |
+| Access clarity | 43.4 |
+
+**Agent readiness 21.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | documented (partial credit) |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | partial |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 31.4** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/giphy/](https://apis.io/providers/giphy/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Giphy: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/giphy/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
